@@ -9,7 +9,7 @@ import usersReducer from './users_reducer';
 
 
 
-const entities = combineReducers({
+const entitiesReducer = combineReducers({
     users: usersReducer,
     // videos,
     // likes,
