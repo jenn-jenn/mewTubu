@@ -2,11 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+
 // DEBUGGING USE
-import {signup, login, logout} from './util/session_api_util';
-
-
-
+import {signup, login, logout} from './actions/sessions/session_actions'; 
 
 window.signup = signup;
 window.login = login;

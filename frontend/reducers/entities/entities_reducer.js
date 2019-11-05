@@ -6,9 +6,6 @@ import usersReducer from './users_reducer';
 // import dislikes from '';
 // import comments from '';
 
-
-
-
 const entitiesReducer = combineReducers({
     users: usersReducer,
     // videos,

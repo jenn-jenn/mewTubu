@@ -7,6 +7,7 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
 // REGULAR ACTION CREATORS
 const receiveCurrentUser = (user) => {
+    // debugger
     return {
         type: RECEIVE_CURRENT_USER,
         user
@@ -14,12 +15,14 @@ const receiveCurrentUser = (user) => {
 };
 
 const logoutCurrentUser = () => {
+    // debugger
     return {
         type: LOGOUT_CURRENT_USER
     };
 };
 
 const receiveErrors = (errors) => {
+    // debugger
     return {
         type: RECEIVE_SESSION_ERRORS,
         errors
@@ -28,10 +31,12 @@ const receiveErrors = (errors) => {
 
 // THUNK ACTION CREATORS
 export const signup = (user) => (dispatch) => {
+    // debugger
     return SessionAPIUtil.signup(user).then( (user) => dispatch(receiveCurrentUser(user)));
 };
 
 export const login = (user) => (dispatch) => {
+    // debugger
     return SessionAPIUtil.login(user).then( (user) => dispatch(receiveCurrentUser(user)));
 };
 
