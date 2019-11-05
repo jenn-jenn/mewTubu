@@ -4,6 +4,13 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+node_modules/
+bundle.js
+bundle.js.map
+.byebug_history
+.DS_Store
+npm-debug.log
+
 # Ignore bundler config.
 /.bundle
 
@@ -26,10 +33,3 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-
-node_modules/
-bundle.js
-bundle.js.map
-.byebug_history
-.DS_Store
-npm-debug.log
