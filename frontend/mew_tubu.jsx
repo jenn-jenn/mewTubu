@@ -10,6 +10,5 @@ window.logout = logout;
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
-    ReactDOM.render(<h1>Welcome to MewTube</h1>, root);
+    ReactDOM.render(<h1>Welcome to MewTubu</h1>, root);
 });
-
