@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
-
+        // debugger
         const login = () => (
             <form onSubmit={this.handleSubmit} className="session-form">
                 <div className="input-group">

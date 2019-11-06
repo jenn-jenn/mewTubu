@@ -41,8 +41,9 @@ nav {
     padding: 5px;
 }
 
-button > a{
+button{
     font-size: 16px;
+    color: white;
 }
 
 #root {
@@ -77,7 +78,7 @@ button > a{
 .nav-btn {
     background-color: transparent;
     border: 1px white solid;
-    height: 40px;
+    height: 30px;
     width: 80px;
     padding: 2px;
 }
@@ -86,6 +87,16 @@ button > a{
     color: white;
     padding: 5px;
 }
+
+.welcome {
+    display: flex;
+    align-items: center;
+}
+
+.welcome > span {
+    margin-right: 5px;
+}
+
 
 .main-container {
     width: 300px;

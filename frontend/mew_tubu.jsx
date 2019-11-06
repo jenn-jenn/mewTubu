@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-// DEBUGGING USE
+// DEBUGGING PURPOSES
 import {signup, login, logout} from './actions/sessions/session_actions'; 
 
 window.signup = signup;
@@ -13,6 +13,7 @@ window.logout = logout;
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
     let store;
+
     if(window.currentUser) {
         const preloadedState = {
             entities: {
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             },
             session: { 
-                id: window.currentUser.id
+                currentUserId: window.currentUser.id
             }
         };
         store = configureStore(preloadedState);
@@ -32,5 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+
+    // DEBUGGING PURPOSES
+    let id = store.getState().session.currentUserId;
+    if(id) {
+        console.log(store.getState().entities.users[id])
+    }
+
     ReactDOM.render(<Root store={store} />, root);
 });
