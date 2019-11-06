@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Route,Link } from 'react-router-dom';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import LoginFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';
 import { AuthRoute } from '../util/route_util';
+import Home from './home/home';
 
 const App = () => (
     <div className="main-container">
@@ -18,7 +19,7 @@ const App = () => (
         </nav>
 
         <div className="content">
-            {/* <Route path="/"  */}
+            <Route exact path="/" component={Home} />
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
         </div>
