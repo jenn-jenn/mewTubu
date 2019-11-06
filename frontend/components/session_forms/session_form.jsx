@@ -4,15 +4,32 @@ import { Link } from 'react-router-dom';
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            email: '',
-            password: ''
+        if (props.location.state){
+            this.state = {
+                email: 'demo',
+                password: '123456'
+            };
+        } else {
+            this.state = {
+                email: '',
+                password: ''
+            };
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     update(field) {
         return(e) => {
             this.setState( {[field]: e.target.value} )
+        }
+    }
+
+    demo() {
+        return(e) => {
+            this.setState({
+                ['email']: 'demo',
+                ['password']: '123456'
+            })
         }
     }
 
@@ -37,7 +54,6 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        // debugger
         const login = () => (
             <form onSubmit={this.handleSubmit} className="session-form">
                 <div className="input-group">
@@ -100,21 +116,38 @@ class SessionForm extends React.Component {
             </form>
         );
 
+
         let display = () => (
             <div>
-
             </div>
         );
-        if(this.props.formType === "Login"){
-            display = login;
-        } else {
-            display = signup;
+        let link = null;
+
+        const demo = {
+            pathname: "/login",
+            state: true
         }
+
+        if(this.props.formType === "Login"){
+            debugger
+            display = login;
+            link = <Link to="/login" onClick={this.demo()}>Demo Login</Link>
+        } else {
+            debugger
+            display = signup;
+            link = <Link to={demo}>Demo Login</Link>
+        }
+
+  
 
         return (
             <div className="form-container-inner">
                 {this.renderErrors()}
                 {display()}
+                <div className="demo">
+                    {link}
+                </div>
+                
             </div>
         )
     }

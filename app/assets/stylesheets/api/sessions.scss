@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .content {
     color: white;
     width: 300px;
@@ -11,12 +10,25 @@
     
 }
 
+.form-container-inner {
+    border: 1px solid gray;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    a {
+        text-decoration: none;
+        color:gray;
+    }
+    .demo {
+        margin-bottom: 10px;
+    }
+}
+
 .session-form {
     width: 300px;
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid gray;
+    
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;

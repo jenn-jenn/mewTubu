@@ -81,6 +81,8 @@ button{
     height: 30px;
     width: 80px;
     padding: 2px;
+    position: fixed;
+    right: 20px;
 }
 .nav-btn > a {
     text-decoration: none;
@@ -88,15 +90,27 @@ button{
     padding: 5px;
 }
 
-.welcome {
+.right-nav {
+    width: 300px;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.welcome > span {
-    margin-right: 5px;
+.welcome {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
 }
 
+.welcome > span {
+    margin-right: 10px;
+}
+
+.upload-icon {
+    width: 7%;
+    margin: 10px;
+}
 
 .main-container {
     width: 300px;

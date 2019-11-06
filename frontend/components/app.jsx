@@ -11,7 +11,7 @@ const App = () => (
         <nav className="nav-header">
             <div className="logo">
                 <Link to="/">
-                    <img className="logo-img" src="/assets/mew.png" />
+                    <img className="logo-img" src="/assets/mew.png" alt="Home"/>
                     <h1 className="logo-name">MEWTUBU</h1>
                 </Link>
             </div>
