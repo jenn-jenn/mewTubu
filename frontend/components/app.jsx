@@ -5,19 +5,11 @@ import LoginFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';
 import { AuthRoute } from '../util/route_util';
 import Home from './home/home';
+import SideNav from './side_nav/side_nav';
 
 const App = () => (
     <div className="main-container">
-        <nav className="nav-header">
-            <div className="logo">
-                <Link to="/">
-                    <img className="logo-img" src="/assets/mew.png" alt="Home"/>
-                    <h1 className="logo-name">MEWTUBU</h1>
-                </Link>
-            </div>
-            <NavBarContainer />
-        </nav>
-
+        <NavBarContainer />
         <div className="content">
             <Route exact path="/" component={Home} />
             <AuthRoute path="/login" component={LoginFormContainer} />

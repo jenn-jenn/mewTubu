@@ -15,14 +15,18 @@ const NavBar = ({ currentUser, logout }) => {
         );
 
     return (
-        <div className="right-nav"> 
-            {/* <div className="upload-cntr"> */}
-                <img className="upload-icon" src="/assets/upload.png" alt="Upload a video" />
-            {/* </div> */}
-            
-            {display}
-        </div>
-
+        <nav>
+            <div className="logo">
+                <Link to="/">
+                    <img className="logo-img" src="/assets/mew.png" alt="Home" />
+                    <h1 className="logo-name">MEWTUBU</h1>
+                </Link>
+            </div>
+            <div className="right-nav"> 
+                <img className="upload-icon" src="/assets/upload.png" alt="Upload a video" />            
+                {display}
+            </div>
+        </nav>
 
     );
 };

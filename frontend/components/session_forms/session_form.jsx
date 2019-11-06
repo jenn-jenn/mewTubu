@@ -129,11 +129,9 @@ class SessionForm extends React.Component {
         }
 
         if(this.props.formType === "Login"){
-            debugger
             display = login;
             link = <Link to="/login" onClick={this.demo()}>Demo Login</Link>
         } else {
-            debugger
             display = signup;
             link = <Link to={demo}>Demo Login</Link>
         }
