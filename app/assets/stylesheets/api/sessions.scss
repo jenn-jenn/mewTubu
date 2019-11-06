@@ -22,19 +22,35 @@
     flex-direction: column;
     font-family: 'Quicksand', sans-serif;
 
-}
-
-.session-form > a {
-    text-decoration: none;
-    color:gray;
+    a {
+        text-decoration: none;
+        color:gray;
+    }
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
+    height: 50%;
+    width: 80%;
+    // border: 1px solid gray;
+    align-items: center;
+    
+    label {
+        margin-top: 15px;   
+        margin-bottom: 5px;
+    }
 }
 
-.input-group > label {
-    margin-top: 15px;
-    margin-bottom: 5px;
+.form-links {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    text-align: center;
+    align-items: center;
+}
+
+.form-btn {
+    width: 50%;
+    margin-bottom: 20px;
 }

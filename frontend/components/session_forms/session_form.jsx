@@ -46,24 +46,23 @@ class SessionForm extends React.Component {
                             type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
-                            className="form-input"
                         />
-                    
                     <label>Password:</label>
                         <input
                             type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
-                            lassName="form-input"
                         />
-                    
-                </div>    
-                <input
-                    className="form-btn"
-                    type="submit"
-                    value={this.props.formType}
-                />
-                <Link to="/signup">Create an Account</Link>
+                </div>   
+                    <div className="form-links">
+                        <input
+                            className="form-btn"
+                            type="submit"
+                            value={this.props.formType}
+                        />
+                        <Link to="/signup">Create an Account</Link>
+                    </div>
+                 
             </form>
         );
 
@@ -75,33 +74,29 @@ class SessionForm extends React.Component {
                             type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
-                            className="form-input"
                         />
-                    
                     <label>Username:</label>
                         <input
                             type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
-                            className="form-input"
                         />
-                    
                     <label>Password:</label>
                         <input
                             type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
-                            className="form-input"
                         />
-                    
                 </div>
-                <input
-                    className="form-btn"
-                    type="submit"
-                    value={this.props.formType}
-                    className="form-input"
-                />
-                <Link to="/login">Have an Account?</Link>
+                    <div className="form-links">
+                        <input
+                            className="form-btn"
+                            type="submit"
+                            value={this.props.formType}
+                        />
+                        <Link to="/login">Have an Account?</Link>
+                    </div>
+                
             </form>
         );
 
