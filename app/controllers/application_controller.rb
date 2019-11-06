@@ -8,11 +8,11 @@ class ApplicationController < ActionController::Base
     end
 
     def require_login
-        # redirect_to new_session_url unless logged_in?
+        redirect_to session_Url unless logged_in?
     end
 
     def login(user) 
-        user.reset_session_token!
+        @current_user = user
         session[:session_token] = user.session_token
     end
 

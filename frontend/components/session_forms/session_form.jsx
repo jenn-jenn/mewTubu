@@ -1,0 +1,128 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+class SessionForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: ''
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    update(field) {
+        return(e) => {
+            this.setState( {[field]: e.target.value} )
+        }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user).then( () => {
+            this.props.history.push("/");
+        })
+    }
+
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
+    render() {
+
+        const login = () => (
+            <form onSubmit={this.handleSubmit} className="session-form">
+                <div className="input-group">
+                    <label>Email:</label>
+                        <input
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.update('email')}
+                            className="form-input"
+                        />
+                    
+                    <label>Password:</label>
+                        <input
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            lassName="form-input"
+                        />
+                    
+                </div>    
+                <input
+                    className="form-btn"
+                    type="submit"
+                    value={this.props.formType}
+                />
+                <Link to="/signup">Create an Account</Link>
+            </form>
+        );
+
+        const signup = () => (
+            <form onSubmit={this.handleSubmit} className="session-form">
+                <div className="input-group">
+                    <label>Email:</label>
+                        <input
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.update('email')}
+                            className="form-input"
+                        />
+                    
+                    <label>Username:</label>
+                        <input
+                            type="text"
+                            value={this.state.username}
+                            onChange={this.update('username')}
+                            className="form-input"
+                        />
+                    
+                    <label>Password:</label>
+                        <input
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            className="form-input"
+                        />
+                    
+                </div>
+                <input
+                    className="form-btn"
+                    type="submit"
+                    value={this.props.formType}
+                    className="form-input"
+                />
+                <Link to="/login">Have an Account?</Link>
+            </form>
+        );
+
+        let display = () => (
+            <div>
+
+            </div>
+        );
+        if(this.props.formType === "Login"){
+            display = login;
+        } else {
+            display = signup;
+        }
+
+        return (
+            <div className="form-container-inner">
+                {this.renderErrors()}
+                {display()}
+            </div>
+        )
+    }
+};
+
+export default SessionForm;
