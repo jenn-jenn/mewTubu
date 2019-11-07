@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            email: '',
+            password: ''
+        };
+
         if (props.location.state){
             this.state = {
                 email: 'demo',
@@ -17,6 +22,9 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    componentDidMount(){ 
+        this.props.clearErrors();
+    }
 
     update(field) {
         return(e) => {
@@ -26,6 +34,7 @@ class SessionForm extends React.Component {
 
     demo() {
         return(e) => {
+            this.props.clearErrors();
             this.setState({
                 ['email']: 'demo',
                 ['password']: '123456'
@@ -36,14 +45,16 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then( () => {
+
+        this.props.processForm(user)
+        .then( () => {
             this.props.history.push("/");
         })
     }
 
     renderErrors() {
         return (
-            <ul>
+            <ul className="errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
@@ -70,15 +81,15 @@ class SessionForm extends React.Component {
                             onChange={this.update('password')}
                         />
                 </div>   
-                    <div className="form-links">
-                        <input
-                            className="form-btn"
-                            type="submit"
-                            value={this.props.formType}
-                        />
-                        <Link to="/signup">Create an Account</Link>
-                    </div>
-                 
+                <div className="form-links">
+                    <input
+                        className="form-btn"
+                        type="submit"
+                        value={this.props.formType}
+                    />
+                    <Link to="/signup">Create an Account</Link>
+                </div>
+                {this.renderErrors()}
             </form>
         );
 
@@ -104,18 +115,17 @@ class SessionForm extends React.Component {
                             onChange={this.update('password')}
                         />
                 </div>
-                    <div className="form-links">
-                        <input
-                            className="form-btn"
-                            type="submit"
-                            value={this.props.formType}
-                        />
-                        <Link to="/login">Have an Account?</Link>
-                    </div>
-                
+                <div className="form-links">
+                    <input
+                        className="form-btn"
+                        type="submit"
+                        value={this.props.formType}
+                    />
+                    <Link to="/login">Have an Account?</Link>
+                </div>
+                {this.renderErrors()}
             </form>
         );
-
 
         let display = () => (
             <div>
@@ -123,29 +133,20 @@ class SessionForm extends React.Component {
         );
         let link = null;
 
-        const demo = {
-            pathname: "/login",
-            state: true
-        }
-
         if(this.props.formType === "Login"){
             display = login;
             link = <Link to="/login" onClick={this.demo()}>Demo Login</Link>
         } else {
             display = signup;
-            link = <Link to={demo}>Demo Login</Link>
+            link = this.props.navLink
         }
-
-  
 
         return (
             <div className="form-container-inner">
-                {this.renderErrors()}
                 {display()}
                 <div className="demo">
                     {link}
                 </div>
-                
             </div>
         )
     }

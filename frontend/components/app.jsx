@@ -9,15 +9,33 @@ import SideNav from './side_nav/side_nav';
 
 const App = () => (
     <div className="main-container">
-        <NavBarContainer />
-        <SideNav />
+        {/* <NavBarContainer /> */}
+        {/* <SideNav /> */}
+        <Route path="/" component={NavBarContainer}/>
+        <Route path="/" component={SideNav}/>
         <div className="content">
             <Route exact path="/" component={Home} />
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
         </div>
-        
     </div>
+
+    
+    // <div>
+    //     {/* <NavBarContainer /> */}
+    //     {/* <SideNav /> */}
+    //     <Route path="/" component={NavBarContainer} />
+    //     <Route path="/" component={SideNav} />
+    //     {/* <div className="content"> */}
+    //         {/* <Route exact path="/" component={Home} /> */}
+    //         <AuthRoute path="/login" component={LoginFormContainer} />
+    //         <AuthRoute path="/signup" component={SignupFormContainer} />
+    //     {/* </div> */}
+    // </div>
+
+
+
+
 );
 
 export default App;

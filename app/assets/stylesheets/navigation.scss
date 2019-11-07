@@ -27,6 +27,7 @@ nav {
     text-decoration: none;
     color: white;
     padding: 5px;
+    font-size: 16px;
 }
 .logo {
     display: flex;
@@ -62,14 +63,11 @@ nav {
     display: flex;
     align-items: center;
     margin-left: 20px;
-}
-
-.welcome > span {
-    margin-right: 10px;
+    width: 260px;
 }
 
 .upload-icon {
-    width: 7%;
+    width: 20px;
     margin: 10px;
 }
 

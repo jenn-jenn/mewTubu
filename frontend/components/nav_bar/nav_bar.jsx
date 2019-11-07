@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = ({ currentUser, logout }) => {
+
     const display = currentUser ? (
         
         <div className="welcome">
             
-            <span>Welcome, {currentUser.username}</span>
+            <div>Welcome, {currentUser.username}</div>
             
             <button onClick={logout} className="nav-btn">Logout</button>
         </div>

@@ -4,6 +4,7 @@ import { Route, Redirect, withRouter } from 'react-router-dom';
 
 
 const Auth = ( {component: Component, path, loggedIn }) => {
+    debugger
     return (
         <Route path={path} render={(props) => (
             loggedIn ? (
@@ -17,7 +18,7 @@ const Auth = ( {component: Component, path, loggedIn }) => {
 }
 
 const msp = (state) => ({ 
-    loggedIn: Boolean(state.session.id) 
+    loggedIn: Boolean(state.session.currentUserId) 
 });
 
 export const AuthRoute = withRouter(connect(msp)(Auth));

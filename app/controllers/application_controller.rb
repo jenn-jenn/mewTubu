@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
     end
 
     def require_login
-        redirect_to session_Url unless logged_in?
+        unless current_user
+            render json: {base: ['Must login to proceed']}, status: 401
+        end
     end
 
     def login(user) 
