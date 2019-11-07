@@ -17,6 +17,11 @@
 * {
     font-family: 'Quicksand', sans-serif;
 }
+a {
+    color: gray;
+    font-size: 12px;
+    text-decoration: none;
+}
 
 body {
     display: flex;
@@ -26,20 +31,6 @@ body {
     /* font-family: 'Quicksand', sans-serif; */
 }
 
-nav {
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #282828;
-    color: white;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-}
 
 button{
     font-size: 16px;
@@ -54,63 +45,6 @@ button{
     justify-content: center;
 }
 
-.logo {
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    
-}
-.logo > a {
-    display: flex;
-    text-decoration: none;
-    color: white;
-}
-.logo-img {
-    height: 55px;
-    width: 55px;
-}
-
-.logo-name {
-    margin: auto;
-    font-size: 20px;
-}
-
-.nav-btn {
-    background-color: transparent;
-    border: 1px white solid;
-    height: 30px;
-    width: 80px;
-    padding: 2px;
-    position: fixed;
-    right: 20px;
-}
-.nav-btn > a {
-    text-decoration: none;
-    color: white;
-    padding: 5px;
-}
-
-.right-nav {
-    width: 300px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.welcome {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
-
-.welcome > span {
-    margin-right: 10px;
-}
-
-.upload-icon {
-    width: 7%;
-    margin: 10px;
-}
 
 .main-container {
     width: 300px;

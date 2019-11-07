@@ -10,6 +10,7 @@ import SideNav from './side_nav/side_nav';
 const App = () => (
     <div className="main-container">
         <NavBarContainer />
+        <SideNav />
         <div className="content">
             <Route exact path="/" component={Home} />
             <AuthRoute path="/login" component={LoginFormContainer} />

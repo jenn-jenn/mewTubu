@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 
 const SideNav = () => {
     const side = (
-        <section >
-            <Link to="/"><img src="/assets/home.png"alt="Home" /></Link>
+        <section class="side-section">
+            <div>
+                <Link to="/"><img className="side-icon" src="/assets/home.png" alt="Home" />Home</Link>
+            </div>
+            
         </section>
     )
     return(

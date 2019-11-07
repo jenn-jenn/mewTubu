@@ -22,6 +22,15 @@ const NavBar = ({ currentUser, logout }) => {
                     <h1 className="logo-name">MEWTUBU</h1>
                 </Link>
             </div>
+            
+            {/*Search Component here later */}
+            <form className="search-bar">
+                <label>
+                    <input type="text" placeholder="Search" ></input>
+                </label>
+                
+            </form>
+            
             <div className="right-nav"> 
                 <img className="upload-icon" src="/assets/upload.png" alt="Upload a video" />            
                 {display}
