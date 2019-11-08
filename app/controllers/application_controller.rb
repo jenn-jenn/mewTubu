@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+
+    protect_from_forgery with: :exception
     # CRLLL
     helper_method :current_user, :logged_in?, :require_login
 
