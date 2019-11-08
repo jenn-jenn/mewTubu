@@ -25,13 +25,16 @@ const NavBar = ({ currentUser, logout }) => {
             </div>
             
             {/*Search Component here later */}
-            <form className="search-bar">
-                <label>
-                    <input type="text" placeholder="Search" ></input>
-                </label>
-                
-            </form>
             
+            <div className="search-bar-container">        
+                <div className="search-input-div">
+                    <form className="search-form">
+                        <input type="search" placeholder="Search" />
+                        <input className="search-icon" type="submit" value=""/>
+                    </form>
+
+                </div>
+            </div>
             <div className="right-nav"> 
                 <div className="upload-icon"></div>
                 {display}
