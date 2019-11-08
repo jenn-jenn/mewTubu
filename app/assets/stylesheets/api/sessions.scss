@@ -68,12 +68,18 @@
     a {
         font-size: 17px;
     }
-
 }
 
 .form-btn {
     width: 50%;
     margin-bottom: 20px;
+    background-color: transparent;
+    border: 1px gray solid;
+    text-decoration: none;
+    color: white;
+    padding: 3px 5px 3px 5px;
+    font-size: 16px;
+    text-align: center;
 }
 
 .demo {
