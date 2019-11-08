@@ -33,14 +33,16 @@ nav {
     display: flex;
     justify-content: flex-start;
     align-content: center;
-    
 }
 .logo > a {
     display: flex;
     text-decoration: none;
     color: white;
+    width: 200px;
 }
-.logo-img {
+.logo-img{
+    background: image-url('mew.png') left no-repeat;
+    background-size: 60px 60px;
     height: 55px;
     width: 55px;
 }
@@ -67,8 +69,10 @@ nav {
 }
 
 .upload-icon {
-    width: 20px;
-    margin: 10px;
+    background: image-url('upload.png') center no-repeat;
+    background-size: 25px 25px;
+    width: 40px;
+    height: 40px;
 }
 
 .side-nav{
@@ -79,8 +83,6 @@ nav {
     position: fixed;
     width: 60px;
     background-color: #282828;
-    /* display: flex; */
-    /* flex-direction: column; */
     text-align: center;
 
     .side-section {
@@ -89,8 +91,13 @@ nav {
 }
 
 .side-icon {
-    width: 40%;
-    margin: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.home-icon {
+    background: image-url('home.png') center no-repeat;
+    background-size: 35px 35px;
 }
 
 .search-bar {

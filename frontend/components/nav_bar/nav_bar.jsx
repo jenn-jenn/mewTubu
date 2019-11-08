@@ -19,7 +19,7 @@ const NavBar = ({ currentUser, logout }) => {
         <nav>
             <div className="logo">
                 <Link to="/">
-                    <img className="logo-img" src="/assets/mew.png" alt="Home" />
+                    <div className="logo-img"></div>                   
                     <h1 className="logo-name">MEWTUBU</h1>
                 </Link>
             </div>
@@ -33,7 +33,7 @@ const NavBar = ({ currentUser, logout }) => {
             </form>
             
             <div className="right-nav"> 
-                <img className="upload-icon" src="/assets/upload.png" alt="Upload a video" />            
+                <div className="upload-icon"></div>
                 {display}
             </div>
         </nav>

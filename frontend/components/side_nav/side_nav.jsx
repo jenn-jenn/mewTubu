@@ -6,7 +6,10 @@ const SideNav = () => {
     const side = (
         <section className="side-section">
             <div>
-                <Link to="/"><img className="side-icon" src="/assets/home.png" alt="Home" />Home</Link>
+                <Link to="/">
+                    <div className="side-icon home-icon"></div>
+                    Home
+                </Link>
             </div>
             
         </section>
