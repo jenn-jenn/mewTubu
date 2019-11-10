@@ -4,6 +4,11 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6 }, allow_nil: true
 
     before_validation :ensure_session_token
+
+
+    # has_many :likes
+    # has_many :videos
+    # has_many :comments
     
     # SPIRE
     attr_reader :password
