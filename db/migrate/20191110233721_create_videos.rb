@@ -6,7 +6,6 @@ class CreateVideos < ActiveRecord::Migration[5.2]
       t.integer :author_id, null: false
       t.timestamps
     end
-
     add_index :videos, :author_id
   end
 end
