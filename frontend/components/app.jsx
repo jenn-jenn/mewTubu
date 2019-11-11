@@ -3,15 +3,20 @@ import {Route, Switch } from 'react-router-dom';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import LoginFormContainer from './session_forms/login_form_container';
 import SignupFormContainer from './session_forms/signup_form_container';
-import { AuthRoute } from '../util/route_util';
+import UploadContainer from './videos/upload_container';
+import SelectContainer from './videos/select_file_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Home from './home/home';
 import SideNav from './side_nav/side_nav';
 
-const HomePage = () => (
+const Dashboard = () => (
     <div className="content">
         <Route path="/" component={NavBarContainer} />
         <Route path="/" component={SideNav} />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Home} /> 
+        <ProtectedRoute path="/selectFiles" component={SelectContainer} />
+        <ProtectedRoute path="/upload" component={UploadContainer} />
+        
     </div>    
 );
 
@@ -32,7 +37,7 @@ const App = () => (
         <Switch>
             <AuthRoute exact path='/login' component={LoginPage} />
             <AuthRoute exact path='/signup' component={SignUpPage} />
-            <Route component={HomePage} />
+            <Route component={Dashboard} />
         </Switch>
     </div>                
 );

@@ -7,4 +7,6 @@ class Video < ApplicationRecord
         
     # has_many :likes
     # has_many :comments
+
+    has_one_attached :clip
 end

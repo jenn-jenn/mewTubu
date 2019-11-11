@@ -4,10 +4,11 @@
 
 .content {
     color: white;
-    width: 300px;
-    height: 400px;
-
-    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-container-inner {

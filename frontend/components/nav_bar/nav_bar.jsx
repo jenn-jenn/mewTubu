@@ -2,13 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = ({ currentUser, logout }) => {
-
     const display = currentUser ? (
-        
         <div className="welcome">
-            
             <div>Welcome, {currentUser.username}</div>
-            
             <button onClick={logout} className="nav-btn">Logout</button>
         </div>
     ) : (
@@ -32,15 +28,15 @@ const NavBar = ({ currentUser, logout }) => {
                         <input type="search" placeholder="Search" />
                         <input className="search-icon" type="submit" value=""/>
                     </form>
-
                 </div>
             </div>
             <div className="right-nav"> 
-                <div className="upload-icon"></div>
+                <Link to="/selectFiles">
+                    <div className="upload-icon"></div>  
+                </Link>
                 {display}
             </div>
         </nav>
-
     );
 };
 

@@ -6,9 +6,9 @@ import errorsReducer from './errors/errors_reducer';
 const RootReducer = combineReducers({
     session: sessionReducer,
     entities: entitiesReducer,
-    errors: errorsReducer
+    errors: errorsReducer,
 });
 
 export default RootReducer
 
-import { HashRouter } from 'react'
+

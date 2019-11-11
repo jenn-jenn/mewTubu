@@ -8,8 +8,8 @@ class Api::SessionsController < ApplicationController
             render json: ['Invalid user/password'], status: 401
         else
             login(@user)
-            # render '/api/users/show'
-            render '/api/videos/index'
+            render '/api/users/show'
+            # render '/api/videos/index'
         end
     end
 
