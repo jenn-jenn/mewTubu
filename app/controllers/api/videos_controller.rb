@@ -2,13 +2,15 @@ class Api::VideosController < ApplicationController
 
     before_action :require_login, only: [:new, :create]
 
-    def index # .includes(:user, comments, likes)
-        @videos = Video.all.includes(:user)
+    def index # .includes(:author, comments, likes)
+        @videos = Video.all.includes(:author)
         render :index
     end
 
     def create 
+        debugger
         @video = Video.new(vid_params)
+        
         if @video.save
             render :index
         else
@@ -16,11 +18,14 @@ class Api::VideosController < ApplicationController
         end
     end
 
-    def show # .includes(:user, comments, likes)
-        @video = Video.includes(:user).find_by(id: params[:id])
+    def show # .includes(:author, comments, likes)
+
+        @video = Video.includes(:author).find_by(id: params[:id])
         if @video
+            debugger
             render :show
         else
+            debugger
             render json: ['video is not found'], status: 422
         end
     end
@@ -28,6 +33,6 @@ class Api::VideosController < ApplicationController
     private
     
     def vid_params
-        params.require(:video).permit(:title, :description, :author_id)
+        params.require(:video).permit(:title, :description, :author_id, :clip)
     end
 end

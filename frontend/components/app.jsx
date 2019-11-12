@@ -16,6 +16,7 @@ const Dashboard = () => (
         <Route exact path="/" component={Home} /> 
         <ProtectedRoute path="/selectFiles" component={SelectContainer} />
         <ProtectedRoute path="/upload" component={UploadContainer} />
+        {/* <ProtectedRoute path="/videos" component={VideosContainer} /> */}
         
     </div>    
 );

@@ -1,8 +1,26 @@
 import React from 'react';
+import { ProtectedRoute } from '../../util/route_util';
+import UploadContainer from './upload_container';
 
 class SelectFile extends React.Component { 
     constructor(props) {
         super(props);
+
+        this.state = {
+            // clipFile: null
+        }
+
+        this.handleFile = this.handleFile.bind(this);
+    }
+
+    handleFile(e) {
+        debugger
+        const file = e.target.files[0];
+        this.props.history.push({
+            pathname: '/upload',
+            state: { file: file }
+        })
+        // <ProtectedRoute path="/upload" component={UploadContainer} file={file} />
     }
 
     render() {
@@ -11,7 +29,12 @@ class SelectFile extends React.Component {
                 <label htmlFor="file-input" className="paper-clip">
                     <img src="/assets/files.png" />
                 </label>
-                <input id="file-input" type="file" />
+                <input 
+                    id="file-input"
+                    type="file" 
+                    onChange={this.handleFile}
+                    accept="video/*"
+                />
             </div>
         );
 

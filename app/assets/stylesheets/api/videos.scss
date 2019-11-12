@@ -37,51 +37,7 @@
         font-size: 20px;
         flex-direction: column;
 
-        .done-btn-container {
-            width: 90%;
-            height: 50px;
-            // border: 1px rgb(209, 145, 251) dashed;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
 
-            .progress-bar-container {
-                position: relative;
-                // border: 1px solid red;
-                width: 75%;
-
-                .progress-bar {
-                    background-color: whiteSmoke;
-                    border-radius: 2px;
-                    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
-                    width: 250px;
-                    height: 20px;
-                    position: relative;
-                    display: block;
-                    
-                    span {
-                        background-color: rgb(252, 172, 255);
-                        border-radius: 2px;
-                        display: block;
-                        text-indent: -9999px;
-                    }
-                }
-
-                progress[value] {
-                    width: 99%;
-                }
-            }
-
-            .done-btn {
-                float: right;
-                background-color: transparent;
-                border: 1px gray solid;
-                height: 30px;
-                width: 80px;
-                margin-left: 10px;
-                color: darkgray;
-            }
-        }
 
         .upload-form-div {
             // border: rgb(231, 62, 113) 1px dashed;
@@ -98,6 +54,53 @@
                 flex-direction: column;
                 justify-content: flex-start;                
                 align-content: flex-start;
+                
+                .done-btn-container {
+                    width: 90%;
+                    height: 50px;
+                    // border: 1px rgb(209, 145, 251) dashed;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    .progress-bar-container {
+                        position: relative;
+                        // border: 1px solid red;
+                        width: 75%;
+
+                        .progress-bar {
+                            background-color: whiteSmoke;
+                            border-radius: 2px;
+                            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
+                            width: 250px;
+                            height: 20px;
+                            position: relative;
+                            display: block;
+                            
+                            span {
+                                background-color: rgb(252, 172, 255);
+                                border-radius: 2px;
+                                display: block;
+                                text-indent: -9999px;
+                            }
+                        }
+
+                        progress[value] {
+                            width: 99%;
+                        }
+                    }
+
+                    .done-btn {
+                        float: right;
+                        background-color: transparent;
+                        border: 1px gray solid;
+                        height: 30px;
+                        width: 80px;
+                        margin-left: 10px;
+                        color: darkgray;
+                        cursor: pointer;
+                    }
+                }
 
                 .clip-info-title {
                     // border: 1px rgb(123, 102, 245) dashed;

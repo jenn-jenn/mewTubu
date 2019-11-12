@@ -11,6 +11,7 @@ window.login = login;
 window.logout = logout;
 
 document.addEventListener("DOMContentLoaded", () => {
+    
     const root = document.getElementById("root");
     let store;
 

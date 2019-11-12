@@ -252,6 +252,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk-core
   aws-sdk-s3
   bcrypt (~> 3.1.7)
   better_errors
