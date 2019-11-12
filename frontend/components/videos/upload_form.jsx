@@ -3,18 +3,30 @@ import React from 'react';
 class UploadForm extends React.Component {
     // have access to file via this.props.location.state.file
     constructor(props) {
-        debugger
+        // debugger
         super(props);
         this.state = {
             title: '',
-            description:''
+            description:'',
+            clipFile: null,
+            clipUrl: null
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
-        // this.setState({['url']: this.props.location.state.file})
-
+        // debugger
+        const file = this.props.location.state.file;
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({ 
+                clipFile: file,
+                clipUrl: fileReader.result
+            });
+        }
+        if(file) {
+            fileReader.readAsDataURL(file);
+        }
     }
 
     update(field) {
@@ -24,7 +36,7 @@ class UploadForm extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
+        // debugger
         e.preventDefault();
         // this.setState({['clip_url']: this.props.location.state.file});
         const formData = new FormData();
@@ -40,6 +52,7 @@ class UploadForm extends React.Component {
     }
 
     render() {
+        console.log(this.state)
         const form = () => (
             <form onSubmit={this.handleSubmit} className="upload-form">
                 <div className="done-btn-container">

@@ -8,7 +8,7 @@ const receiveClips = (clips) => {
     return {
         type: RECEIVE_CLIPS,
         clips
-    };
+    }; 
 };
 
 const receiveClip = (clip) => {
@@ -27,9 +27,21 @@ const receiveClipErrors = (errors) => {
 
 // THUNK ACTION CREATORS
 export const createVideo = (clip) => (dispatch) => {
+    // debugger
     return VideoAPIUtil.createVideo(clip).then( (clip) => dispatch(receiveClip(clip)))
         .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
-}
+
+
+
+    // return VideoAPIUtil.createVideo(clip).then((clip) => {
+    //     debugger
+    //     return dispatch(receiveClip(clip))
+    //         .fail(err => {
+    //             debugger
+    //             dispatch(receiveClipErrors(err.responseJSON))
+    //         });
+    // })
+};
 
 export const fetchVideo = (clip) => (dispatch) => {
     return VideoAPIUtil.fetchVideo(clip).then( (clip) => dispatch(receiveClip(clip)))

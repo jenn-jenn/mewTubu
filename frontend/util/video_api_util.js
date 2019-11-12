@@ -1,6 +1,6 @@
 export const createVideo = (clip) => {
     const userId = clip.get('video[author_id]');
-    debugger
+    // debugger
     return $.ajax({
         url: `/api/users/${userId}/videos`,
         method: 'POST',

@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import UploadForm from './upload_form';
+import UploadForm from './upload_form'; 
 import { createVideo } from '../../actions/videos/video_actions';
 
 const msp = ( state ) => {
-    debugger
+    // debugger
     return {
         currentUserId: state.session.currentUserId,
         errors: state.errors.video

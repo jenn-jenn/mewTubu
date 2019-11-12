@@ -11,4 +11,4 @@ import { RECEIVE_CURRENT_USER } from "../../actions/sessions/session_actions";
      }
  };
 
- export default usersReducer;
+ export default usersReducer; 

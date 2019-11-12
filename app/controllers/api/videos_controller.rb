@@ -7,25 +7,23 @@ class Api::VideosController < ApplicationController
         render :index
     end
 
-    def create 
-        debugger
+    def create
         @video = Video.new(vid_params)
-        
         if @video.save
-            render :index
+            # debugger
+            render :show
         else
             render json: @video.errors.full_messages, status: 422
         end
     end
 
     def show # .includes(:author, comments, likes)
-
         @video = Video.includes(:author).find_by(id: params[:id])
         if @video
-            debugger
+            # debugger
             render :show
         else
-            debugger
+            # debugger
             render json: ['video is not found'], status: 422
         end
     end
