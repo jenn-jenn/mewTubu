@@ -1,7 +1,7 @@
 import { RECEIVE_CLIP, RECEIVE_CLIPS } from '../../actions/videos/video_actions';
 
 const videoReducer =( state = {}, action) => {
-    debugger
+    // debugger
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_CLIP:

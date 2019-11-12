@@ -32,7 +32,7 @@ class SessionForm extends React.Component {
         }
     }
 
-    demo() {
+    demo() { 
         return(e) => {
             this.props.clearErrors();
             this.setState({

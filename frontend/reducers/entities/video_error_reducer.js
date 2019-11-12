@@ -3,7 +3,7 @@ import { CLEAR_ERRORS } from '../../actions/errors_action';
 
 
 const videoErrorsReducer = (state = [], action) => {
-    debugger
+    // debugger
     Object.freeze(state);
 
     switch(action.type) {

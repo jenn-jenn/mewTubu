@@ -2,13 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = ({ currentUser, logout }) => {
+
+    const button = currentUser ? 
+        (<button onClick={logout} className="right-nav-btn">Logout</button> ) 
+      : (<button className="right-nav-btn"> <Link to="/login">Sign In</Link> </button> )
+
+
     const display = currentUser ? (
         <div className="welcome">
-            <div>Welcome, {currentUser.username}</div>
-            <button onClick={logout} className="nav-btn">Logout</button>
+            <div className="welcome-header">
+                <h2 >Welcome, {currentUser.username}</h2>
+            </div>
+            <div>
+                {button}
+            </div>
         </div>
     ) : (
-            <button className="nav-btn"> <Link to="/login">Sign In</Link> </button>
+            <div className="welcome">            
+            <div className="welcome-header">
+                <h2></h2>
+            </div>
+            <div>
+                {button}
+            </div>
+        </div>
         );
 
     return (
@@ -30,7 +47,7 @@ const NavBar = ({ currentUser, logout }) => {
                     </form>
                 </div>
             </div>
-            <div className="right-nav"> 
+            <div className="right-nav">                 
                 <Link to="/selectFiles">
                     <div className="upload-icon"></div>  
                 </Link>

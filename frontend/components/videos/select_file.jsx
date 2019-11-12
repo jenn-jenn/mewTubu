@@ -14,7 +14,7 @@ class SelectFile extends React.Component {
     }
 
     handleFile(e) {
-        debugger
+        // debugger
         const file = e.target.files[0];
         this.props.history.push({
             pathname: '/upload',
