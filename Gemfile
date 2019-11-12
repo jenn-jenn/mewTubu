@@ -31,6 +31,8 @@ gem 'jquery-rails'
 gem 'aws-sdk-core'
 gem 'aws-sdk-s3'
 
+gem 'carrierwave-video-thumbnailer'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

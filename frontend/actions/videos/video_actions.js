@@ -10,7 +10,7 @@ const receiveClips = (clips) => {
         clips
     }; 
 };
-
+    
 const receiveClip = (clip) => {
     return {
         type: RECEIVE_CLIP,
