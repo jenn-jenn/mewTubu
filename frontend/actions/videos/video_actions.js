@@ -13,7 +13,7 @@ const receiveClips = (clips) => {
     
 const receiveClip = (clip) => {
     return {
-        type: RECEIVE_CLIP,
+        type: RECEIVE_CLIP, 
         clip
     };
 };
@@ -30,8 +30,6 @@ export const createVideo = (clip) => (dispatch) => {
     // debugger
     return VideoAPIUtil.createVideo(clip).then( (clip) => dispatch(receiveClip(clip)))
         .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
-
-
 
     // return VideoAPIUtil.createVideo(clip).then((clip) => {
     //     debugger

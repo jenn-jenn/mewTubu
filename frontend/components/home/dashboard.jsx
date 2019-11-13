@@ -4,9 +4,12 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 import SideNav from '../side_nav/side_nav';
 import { ProtectedRoute } from '../../util/route_util';
 import SelectFileContainer from '../videos/select_file_container';
-import UploadContainer from '../videos/upload_container';
-import { NotFound } from '../not_found';
+import VideoFormContainer from '../videos/upload_container';
+import VideoIndexContainer from '../videos/video_index_container';
+import VideoShowContainer from '../videos/video_show_container';
 import Homepage from './home';
+import { NotFound } from '../not_found';
+
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -20,7 +23,9 @@ class Dashboard extends React.Component {
                 <Route path="/" component={SideNav}/>
                 <Switch>
                     <ProtectedRoute path="/selectFiles" component={SelectFileContainer} />
-                    <ProtectedRoute path="/upload" component={UploadContainer} />
+                    <ProtectedRoute path="/video/new" component={VideoFormContainer} />
+                    <Route path="/video" component={VideoIndexContainer} />
+                    <ProtectedRoute path="/video/:videoId" component={VideoShowContainer} />
                     <Route exact path="/" component={Homepage} />
                     <Route component={NotFound} />
                 </Switch>

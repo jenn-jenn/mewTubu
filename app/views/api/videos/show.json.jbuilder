@@ -1,2 +1,3 @@
 # debugger
-json.partial! 'video', video: @video
+# json.
+json.partial! 'video', video: @video 

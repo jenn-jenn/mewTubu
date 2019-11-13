@@ -8,6 +8,7 @@ class UploadForm extends React.Component {
         this.state = {
             title: '',
             description:'',
+            file: this.props.file,
             clipFile: null,
             clipUrl: null
         };
@@ -16,17 +17,21 @@ class UploadForm extends React.Component {
 
     componentDidMount() {
         // debugger
-        const file = this.props.location.state.file;
+        const file = this.state.file;
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
+            // debugger
             this.setState({ 
                 clipFile: file,
-                clipUrl: fileReader.result
+                // clipUrl: fileReader.result
+                clipUrl: URL.createObjectURL(file)
             });
         }
+        // debugger
         if(file) {
             fileReader.readAsDataURL(file);
         }
+        
     }
 
     update(field) {
@@ -38,17 +43,21 @@ class UploadForm extends React.Component {
     handleSubmit(e) {
         // debugger
         e.preventDefault();
-        // this.setState({['clip_url']: this.props.location.state.file});
         const formData = new FormData();
         formData.append('video[title]', this.state.title);
         formData.append('video[description]', this.state.description);
         formData.append('video[author_id]', this.props.currentUserId);
-        formData.append('video[clip]', this.props.location.state.file);
-        this.props.createVideo(formData)
-            // .then( 
-            //     (res) => console.log(res.messsage),
-            //     (res) => console.log(res.responseJSON)
-        // );
+        formData.append('video[clip]', this.props.file);
+        this.props.createVideo(formData); 
+            // .then( (clip) => {
+            //     debugger
+            //     console.log(clip)
+            //     this.props.history.push('/video');
+            //         pathname: '/video/',
+
+            //     })
+            // })
+        this.props.history.push('/video');
     }
 
     renderErrors() {
@@ -64,7 +73,6 @@ class UploadForm extends React.Component {
     }
 
     render() {
-        // console.log(this.state)
         const form = () => (
             <form onSubmit={this.handleSubmit} className="upload-form">
                 <div className="done-btn-container">
@@ -104,8 +112,11 @@ class UploadForm extends React.Component {
             <div className="upload-container">
                 <div className="clip-thumbnail-container">
                     <div className="clip-thumbnail">
-                        <video>
-                            <source src={this.state.clipUrl} />
+                        {/* <video className="video-thumbnail" controls> */}
+                        <video id="video-thumbnail" controls>
+                            {/* <source src="/assets/mocha.mp4" type="video/mp4" /> */}
+                            {/* <source id="video-src" src={this.state.clipUrl} type="video/mp4" /> */}
+                            <source src={this.state.clipUrl} type="video/mp4" />
                         </video>
                     </div>
                 </div>

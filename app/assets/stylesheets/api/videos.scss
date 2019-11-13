@@ -11,7 +11,6 @@
     display: flex;
 
     .clip-thumbnail-container {
-        // border: 1px gray solid;
         height: 45%;
         width: 40%;
         display: flex;
@@ -23,11 +22,17 @@
             border: 1px gray dashed;
             width: 80%;
             height: 70%;
+            display: flex;
+            align-items: center;
+
+            #video-thumbnail {
+                width: 100%;
+                height: 95%;
+            }
         }
     }
 
     .clip-info-container {
-        // border: 1px cyan solid;
         margin-top: 20px;
         height: 100%;
         width: 60%;
@@ -37,35 +42,27 @@
         font-size: 20px;
         flex-direction: column;
 
-
-
         .upload-form-div {
-            // border: rgb(231, 62, 113) 1px dashed;
             width: 90%;
             height: 87%;
             display: flex;
-            margin-top: 30px;
 
             .upload-form {
                 width: 100%;
-                // border: 1px white solid;
-                // background-color: beige;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;                
                 align-content: flex-start;
                 
                 .done-btn-container {
-                    width: 90%;
+                    width: 95%;
                     height: 50px;
-                    // border: 1px rgb(209, 145, 251) dashed;
                     display: flex;
-                    justify-content: space-around;
                     align-items: center;
+                    margin-bottom: 10px;
 
                     .progress-bar-container {
                         position: relative;
-                        // border: 1px solid red;
                         width: 75%;
 
                         .progress-bar {
@@ -91,22 +88,30 @@
                     }
 
                     .done-btn {
-                        float: right;
+                        font-size: 20px;
                         background-color: transparent;
-                        border: 1px gray solid;
+                        border: 1px #B9B9B9 solid;
+                        border-radius: 3px;
                         height: 30px;
                         width: 80px;
                         margin-left: 10px;
-                        color: darkgray;
+                        color: #B9B9B9;
                         cursor: pointer;
+                        transition: 0.40s;
+
+                        &:hover, 
+                        &:focus {
+                            color: black;
+                            border-color: rgb(224, 217, 217);
+                            background-color: rgb(224, 217, 217);
+                        }
+
                     }
                 }
 
                 .clip-info-title {
-                    // border: 1px rgb(123, 102, 245) dashed;
                     width: 90%;
                     height: 15%;
-                    // background-color: pink;
 
                     input[type="text"] {
                         width: 100%;
@@ -116,11 +121,8 @@
                 }
 
                 .clip-info-description {
-                    // border: 1px rgb(83, 221, 147) dashed;
-                    
                     width: 90%;
                     height: 40%;
-                    // background-color: red;
 
                     textarea {
                         width: 100%;

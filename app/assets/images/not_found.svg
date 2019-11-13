@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>help</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Shaded" transform="translate(-50.000000, -250.000000)">
+            <g id="help" transform="translate(50.000000, 250.000000)">
+                <path d="M13,18 C13,18.276 12.776,18.5 12.5,18.5 C12.224,18.5 12,18.276 12,18 C12,17.724 12.224,17.5 12.5,17.5 C12.776,17.5 13,17.724 13,18 Z" id="Fill-1" fill="#938CAA"></path>
+                <path d="M13,18 C13,18.276 12.776,18.5 12.5,18.5 C12.224,18.5 12,18.276 12,18 C12,17.724 12.224,17.5 12.5,17.5 C12.776,17.5 13,17.724 13,18 Z" id="Stroke-3" stroke="#938CAA" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M24.5,12.5 C24.5,19.127 19.127,24.5 12.5,24.5 C5.873,24.5 0.5,19.127 0.5,12.5 C0.5,5.873 5.873,0.5 12.5,0.5 C19.127,0.5 24.5,5.873 24.5,12.5 Z" id="Stroke-5" stroke="#938CAA" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M24.952,11.459 C24.931,11.2 24.714,11 24.453,11 C24.193,11 23.976,11.199 23.955,11.459 C23.748,13.976 22.754,16.295 21.077,18.166 C18.898,20.603 15.772,22 12.5,22 C9.227,22 6.101,20.603 3.922,18.166 C2.246,16.295 1.251,13.976 1.045,11.459 C1.023,11.199 0.806,11 0.546,11 C0.285,11 0.069,11.2 0.048,11.459 C0.02,11.802 0,12.148 0,12.5 C0,15.587 1.128,18.547 3.177,20.833 C5.545,23.481 8.943,25 12.5,25 C16.056,25 19.454,23.481 21.823,20.833 C23.871,18.547 25,15.587 25,12.5 C25,12.148 24.98,11.802 24.952,11.459" id="Fill-1" fill="#938CAA" opacity="0.239999995"></path>
+                <path d="M9.5,9.5 C9.5,7.665 11.147,6.215 13.044,6.548 C14.25,6.76 15.24,7.75 15.452,8.956 C15.69,10.311 15.018,11.539 13.946,12.129 C13.09,12.601 12.5,13.437 12.5,14.413 L12.5,14.5 L12.5,15.5" id="Stroke-7" stroke="#938CAA" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

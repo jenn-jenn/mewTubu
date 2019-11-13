@@ -17,5 +17,5 @@
 #####
 json.array! @videos do |video|
     json.partial! 'video', video: video
-    json.clipUrl url_for(video.clip)
+    json.clipUrl url_for(video.clip) 
 end

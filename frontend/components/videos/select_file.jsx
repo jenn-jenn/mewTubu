@@ -1,28 +1,23 @@
 import React from 'react';
-import { ProtectedRoute } from '../../util/route_util';
-import UploadContainer from './upload_container';
-import NavBar from '../nav_bar/nav_bar_container';
-import SideNav from '../side_nav/side_nav';
 
 class SelectFile extends React.Component { 
     constructor(props) {
         super(props);
-
         this.state = {
-            // clipFile: null
+            file: null
         }
-
         this.handleFile = this.handleFile.bind(this);
     }
 
     handleFile(e) {
         // debugger 
+        this.setState({file: e.target.files[0]})
         const file = e.target.files[0];
         this.props.history.push({
-            pathname: '/upload',
+            pathname: '/video/new',
             state: { file: file }
+            // state: { file: this.state.file }
         })
-        // <ProtectedRoute path="/upload" component={UploadContainer} file={file} />
     }
 
     render() {
@@ -35,7 +30,7 @@ class SelectFile extends React.Component {
                     id="file-input"
                     type="file" 
                     onChange={this.handleFile}
-                    accept="video/*"
+                    // accept="video/*"
                 />
             </div>
         );
