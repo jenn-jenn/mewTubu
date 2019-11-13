@@ -4,11 +4,11 @@ import { fetchVideos } from '../../actions/videos/video_actions';
 
 
 const msp = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         videos: Object.values(state.entities.videos)
     }
-};
+}; 
 
 const mdp = (dispatch) => ({
     fetchVideos: () => dispatch(fetchVideos()),

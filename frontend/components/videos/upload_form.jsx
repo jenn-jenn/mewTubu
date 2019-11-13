@@ -23,8 +23,8 @@ class UploadForm extends React.Component {
             // debugger
             this.setState({ 
                 clipFile: file,
-                // clipUrl: fileReader.result
-                clipUrl: URL.createObjectURL(file)
+                clipUrl: fileReader.result
+                // clipUrl: URL.createObjectURL(file)
             });
         }
         // debugger
@@ -49,15 +49,7 @@ class UploadForm extends React.Component {
         formData.append('video[author_id]', this.props.currentUserId);
         formData.append('video[clip]', this.props.file);
         this.props.createVideo(formData); 
-            // .then( (clip) => {
-            //     debugger
-            //     console.log(clip)
-            //     this.props.history.push('/video');
-            //         pathname: '/video/',
-
-            //     })
-            // })
-        this.props.history.push('/video');
+        this.props.history.push('/videos');
     }
 
     renderErrors() {
@@ -112,12 +104,7 @@ class UploadForm extends React.Component {
             <div className="upload-container">
                 <div className="clip-thumbnail-container">
                     <div className="clip-thumbnail">
-                        {/* <video className="video-thumbnail" controls> */}
-                        <video id="video-thumbnail" controls>
-                            {/* <source src="/assets/mocha.mp4" type="video/mp4" /> */}
-                            {/* <source id="video-src" src={this.state.clipUrl} type="video/mp4" /> */}
-                            <source src={this.state.clipUrl} type="video/mp4" />
-                        </video>
+                        <video id="video-thumbnail" src={this.state.clipUrl} />
                     </div>
                 </div>
                 <div className="clip-info-container">

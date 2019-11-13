@@ -7,7 +7,7 @@ const videoReducer =( state = {}, action) => {
             // debugger
             return Object.assign({}, state, { [action.clip.id]: action.clip});
         case RECEIVE_CLIPS:
-            debugger
+            // debugger
             return action.clips    
         default: 
             return state;

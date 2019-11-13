@@ -13,10 +13,10 @@ class SelectFile extends React.Component {
         // debugger 
         this.setState({file: e.target.files[0]})
         const file = e.target.files[0];
+        debugger
         this.props.history.push({
-            pathname: '/video/new',
+            pathname: '/videos/new',
             state: { file: file }
-            // state: { file: this.state.file }
         })
     }
 
@@ -30,7 +30,7 @@ class SelectFile extends React.Component {
                     id="file-input"
                     type="file" 
                     onChange={this.handleFile}
-                    // accept="video/*"
+                    accept="video/*"
                 />
             </div>
         );
