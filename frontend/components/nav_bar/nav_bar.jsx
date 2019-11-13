@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 const NavBar = ({ currentUser, logout }) => {
 
     const button = currentUser ? 
-        (<button onClick={logout} className="right-nav-btn">Logout</button> ) 
-      : (<button className="right-nav-btn"> <Link to="/login">Sign In</Link> </button> )
+    //     (<button onClick={logout} className="right-nav-btn">Logout</button> ) 
+    //   : (<button className="right-nav-btn"> <Link to="/login">Sign In</Link> </button> )
+        (<button onClick={logout} className="form-btn">Logout</button> ) 
+        : 
+        (<Link to="/login"><button className="form-btn"> Sign In</button></Link> )
 
 
     const display = currentUser ? (

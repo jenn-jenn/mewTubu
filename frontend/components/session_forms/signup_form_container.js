@@ -13,7 +13,7 @@ const demo = {
 const msp = ({errors}) => ({
     errors: errors.session,
     formType: "Sign Up",
-    navLink: <Link to={demo}>Demo Login</Link>
+    // navLink: <Link to={demo}>Demo Login</Link>
 });
 
 const mdp = (dispatch) => ({

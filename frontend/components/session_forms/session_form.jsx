@@ -68,25 +68,32 @@ class SessionForm extends React.Component {
         const login = () => (
             <form onSubmit={this.handleSubmit} className="session-form">
                 <div className="input-group">
-                    <label>Email:</label>
-                        <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                        />
-                    <label>Password:</label>
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                        />
+                    <ul>
+                        <li>
+                            <label>Email:</label>
+                            <input
+                                type="text"
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                            />
+                        </li>
+                        <li>
+                            <label>Password:</label>
+                            <input
+                                type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                            />
+                        </li>
+                    </ul>
                 </div>   
                 <div className="form-links">
-                    <input
+                    {/* <input
                         className="form-btn"
                         type="submit"
                         value={this.props.formType}
-                    />
+                    /> */}
+                    <button className="form-btn">{this.props.formType}</button>
                     <Link to="/signup">Create an Account</Link>
                 </div>
                 {this.renderErrors()}
@@ -96,31 +103,41 @@ class SessionForm extends React.Component {
         const signup = () => (
             <form onSubmit={this.handleSubmit} className="session-form">
                 <div className="input-group">
-                    <label>Email:</label>
-                        <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                        />
-                    <label>Username:</label>
-                        <input
-                            type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                        />
-                    <label>Password:</label>
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                        />
+                    <ul>
+                        <li>
+                            <label>Email:</label>
+                            <input
+                                type="text"
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                            />
+                        </li>
+                        <li>
+                            <label>Password:</label>
+                            <input
+                                type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                            />
+                        </li>
+                        <li>
+                            <label>Username:</label>
+                            <input
+                                type="text"
+                                value={this.state.username}
+                                onChange={this.update('username')}
+                            />
+                        </li>
+
+                    </ul>
                 </div>
                 <div className="form-links">
-                    <input
+                    {/* <input
                         className="form-btn"
                         type="submit"
                         value={this.props.formType}
-                    />
+                    /> */}
+                    <button className="form-btn">{this.props.formType}</button>
                     <Link to="/login">Have an Account?</Link>
                 </div>
                 {this.renderErrors()}
@@ -138,16 +155,25 @@ class SessionForm extends React.Component {
             link = <Link to="/login" onClick={this.demo()}>Demo Login</Link>
         } else {
             display = signup;
-            link = this.props.navLink
+            link = <a style={{visibility: 'hidden'}}>dummy</a>
         }
 
         return (
-            <div className="form-container-inner">
-                {display()}
-                <div className="demo">
-                    {link}
+            <div className="entry-pg">
+                <div className="logo">
+                    <Link to="/">
+                        <div className="logo-img"></div>
+                        <h1 className="logo-name">MEWTUBU</h1>
+                    </Link>
+                </div>
+                <div className="form-container-inner">
+                    {display()}
+                    <div className="demo">
+                        {link}
+                    </div>
                 </div>
             </div>
+
         )
     }
 };
