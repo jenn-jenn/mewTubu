@@ -51,6 +51,18 @@ class UploadForm extends React.Component {
         );
     }
 
+    renderErrors() {
+        return (
+            <ul className="errors">
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
     render() {
         console.log(this.state)
         const form = () => (
@@ -91,7 +103,11 @@ class UploadForm extends React.Component {
         return (
             <div className="upload-container">
                 <div className="clip-thumbnail-container">
-                    <div className="clip-thumbnail"></div>
+                    <div className="clip-thumbnail">
+                        <video>
+                            <source src={this.state.clipUrl} />
+                        </video>
+                    </div>
                 </div>
                 <div className="clip-info-container">
 
@@ -99,9 +115,10 @@ class UploadForm extends React.Component {
                         {form()}
                     </div> 
                 </div>
+                {this.renderErrors()}
             </div>
-        );
+        )
     }
-};
+}
 
 export default UploadForm;

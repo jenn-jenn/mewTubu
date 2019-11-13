@@ -1,6 +1,8 @@
 import React from 'react';
 import { ProtectedRoute } from '../../util/route_util';
 import UploadContainer from './upload_container';
+import NavBar from '../nav_bar/nav_bar_container';
+import SideNav from '../side_nav/side_nav';
 
 class SelectFile extends React.Component { 
     constructor(props) {
@@ -49,6 +51,7 @@ class SelectFile extends React.Component {
                 </div>
                 
             </div>
+        
         )
     }
 };

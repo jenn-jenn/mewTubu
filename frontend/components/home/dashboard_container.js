@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Home from './home';
+import Home from './dashboard';
 
 
 const msp = (state) => ({
