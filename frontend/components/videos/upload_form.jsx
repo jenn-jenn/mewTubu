@@ -45,10 +45,10 @@ class UploadForm extends React.Component {
         formData.append('video[author_id]', this.props.currentUserId);
         formData.append('video[clip]', this.props.location.state.file);
         this.props.createVideo(formData)
-            .then( 
-                (res) => console.log(res.messsage),
-                (res) => console.log(res.responseJSON)
-        );
+            // .then( 
+            //     (res) => console.log(res.messsage),
+            //     (res) => console.log(res.responseJSON)
+        // );
     }
 
     renderErrors() {
@@ -64,7 +64,7 @@ class UploadForm extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         const form = () => (
             <form onSubmit={this.handleSubmit} className="upload-form">
                 <div className="done-btn-container">

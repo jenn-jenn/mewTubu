@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // DEBUGGING PURPOSES
     let id = store.getState().session.currentUserId;
     if(id) {
-        console.log(store.getState().entities.users[id])
+        // console.log(store.getState().entities.users[id])
     }
 
     ReactDOM.render(<Root store={store} />, root);
