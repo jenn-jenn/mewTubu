@@ -3,8 +3,17 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-wrap: wrap; 
+
+    .no-videos {
+        margin-top: 50px;
+        font-size: 30px;
+        text-align: center;
+        p {
+            text-align: center;
+        }
+    }
 
     .clip-div {
         width: 30%;

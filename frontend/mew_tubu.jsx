@@ -6,10 +6,6 @@ import Root from './components/root';
 // DEBUGGING PURPOSES
 import {signup, login, logout} from './actions/sessions/session_actions'; 
 
-window.signup = signup;
-window.login = login;
-window.logout = logout;
-
 document.addEventListener("DOMContentLoaded", () => {
     
     const root = document.getElementById("root");

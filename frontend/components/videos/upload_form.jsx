@@ -65,17 +65,16 @@ class UploadForm extends React.Component {
     }
 
     render() {
-        console.log(this.state.clipUrl)
         const form = () => (
             <form onSubmit={this.handleSubmit} className="upload-form">
                 <div className="done-btn-container">
-                    <div className="progress-bar-container">
+                    {/* <div className="progress-bar-container">
                         <progress max="100" value="0">
                             <div className="progress-bar">
                                 <span>Progess: 0%</span>
                             </div>
-                        </progress>
-                    </div>
+                        </progress> */}
+                    {/* </div> */}
                     <input
                         type="submit"
                         value="Done"

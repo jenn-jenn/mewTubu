@@ -34,8 +34,7 @@ class VideoIndexItem extends React.Component {
                         <div className="clip-title">
                         <h3>
                             <Link to={{
-                                pathname: `/videos/${video.id}`,
-                                params:{author: username }
+                                pathname: `/videos/${video.id}`
                             }}>{video.title}</Link>
                         </h3>
                             <p>{username}</p>

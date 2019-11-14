@@ -14,25 +14,21 @@ User.create!(
     email: 'demo',
     password: '123456'
 )
-
 User.create!(
     username: 'user1',
     email: 'user1@gmail.com',
     password: '123456'
 )
-
 User.create!(
     username: 'user2',
     email: 'user2@gmail.com',
     password: '123456'
 )
-
 User.create!(
     username: 'user3',
     email: 'user3@gmail.com',
     password: '123456'
 )
-
 User.create!(
     username: 'user4',
     email: 'user4@gmail.com',

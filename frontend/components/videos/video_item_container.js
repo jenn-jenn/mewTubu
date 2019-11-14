@@ -2,14 +2,13 @@ import { connect } from 'react-redux';
 import VideoItem from "./video_item";
 import { fetchVideo, fetchVideos } from '../../actions/videos/video_actions';
 import { fetchAllUsers } from '../../actions/users/users_actions'
-
+ 
 
 const msp = (state, ownProps) => {
-    // debugger
+    debugger
     return {
         videoId: ownProps.match.params.videoId,
         video: state.entities.videos[ownProps.match.params.videoId],
-        author: ownProps.location.params.author
     }
 }
 

@@ -9,22 +9,38 @@ class VideoIndex extends React.Component {
         // debugger
         this.props.fetchAllUsers();
         this.props.fetchVideos();
-        
     }
 
     render() {
-        // debugger
+        let display = null;
+        if (this.props.videos.length === 0) {
+            display = (
+                <div className="no-videos"> 
+                    <h1>No Videos</h1>
+                    <p>Please upload some :D</p>
+                </div>
+                
+            )
+        } else {
+            display = ( 
+                <div className="video-index-content"> 
+                    {this.props.videos.map((video, id) => (
+                        <div className="clip-div" key={id}>
+                            <VideoIndexItemContainer
+                                key={id}
+                                video={video}
+                                authorId={video.authorId}
+                            />
+                        </div>
+                    ))}
+                </div> 
+            )
+        }
+
+        
         return (
             <div className="video-index-content">
-                {this.props.videos.map((video, id) => (
-                    <div className="clip-div" key={id}>
-                        <VideoIndexItemContainer
-                            key={id}
-                            video={video}
-                            authorId={video.authorId}
-                        />
-                    </div>
-                ))}
+                {display}
             </div>
         )
     }

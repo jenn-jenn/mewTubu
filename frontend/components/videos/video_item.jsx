@@ -10,16 +10,18 @@ class VideoItem extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllUsers();
         this.props.fetchVideos();
+        this.props.fetchAllUsers();
         this.props.fetchVideo(this.props.videoId);
     }
-    render() {
 
+    render() { 
+        if(this.props.video === undefined || this.props.videoId === undefined) {
+            return null
+        }
         const video = this.props.video;
-        let author = this.props.author;
+        let author = this.props.video.authorName
 
-        // debugger
         const display = video ? (
             <div className="video-display">
                 <div className="video"> 
