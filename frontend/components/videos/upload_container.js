@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import VideoFrom from './upload_form'; 
 import { createVideo, fetchVideo } from '../../actions/videos/video_actions';
 
+
 const msp = ( state, ownProps ) => {
     return {
         file: ownProps.location.state.file,

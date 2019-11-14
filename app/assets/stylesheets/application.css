@@ -59,4 +59,6 @@ button{
     align-content: center;
     position: absolute;
     font-family: 'Quicksand', sans-serif;
+    /* border: 1px dashed red; */
+
 }

@@ -12,7 +12,7 @@ class VideoIndexItem extends React.Component {
     }
     videoShowPage(e) {
         alert('clicked')
-        debugger
+        // debugger
         const id = this.props.video.id;
         this.props.history.push({
             pathname: `/videos/${id}`

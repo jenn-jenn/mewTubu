@@ -5,7 +5,7 @@ import { fetchAllUsers } from '../../actions/users/users_actions'
 
 
 const msp = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         videoId: ownProps.match.params.videoId,
         video: state.entities.videos[ownProps.match.params.videoId],

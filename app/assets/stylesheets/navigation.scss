@@ -12,6 +12,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    z-index: 100;
 }
 
 .logo {
@@ -95,6 +96,7 @@ nav {
     width: 60px;
     background-color: #282828;
     text-align: center;
+    z-index: 100;
 
     .side-section {
         margin-top: 20px;

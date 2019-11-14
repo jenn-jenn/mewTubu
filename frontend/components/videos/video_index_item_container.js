@@ -4,7 +4,7 @@ import { fetchAllUsers } from '../../actions/users/users_actions'
 import { fetchVideos } from '../../actions/videos/video_actions'
 
 const msp = (state, ownProps) => { 
-    debugger
+    // debugger
     return {
         username: state.entities.users[ownProps.authorId].username
     }

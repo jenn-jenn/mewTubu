@@ -1,16 +1,6 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-.content {
-    color: #B9B9B9;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Quicksand', sans-serif;
-}
 
 .entry-pg {
     display: flex;
@@ -23,7 +13,7 @@
     }
 }
 .form-container-inner {
-    border: 1px solid #B9B9B9;
+    // border: 1px solid #B9B9B9;
     text-align: center;
     border-radius: 7px;
     color: #B9B9B9;
@@ -74,7 +64,7 @@
         li {
             display: block;
             padding: 9px;
-            border:1px solid #B9B9B9;
+            // border:1px solid #B9B9B9;
             margin-bottom: 30px;
             border-radius: 3px;
             
@@ -130,14 +120,10 @@
 
 }
 
-
-
-
 .demo {
     a {
         font-size: 15px;
     }
-    
 }
 
 .form-btn {

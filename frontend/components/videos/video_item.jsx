@@ -19,7 +19,7 @@ class VideoItem extends React.Component {
         const video = this.props.video;
         let author = this.props.author;
 
-        debugger
+        // debugger
         const display = video ? (
             <div className="video-display">
                 <div className="video"> 
