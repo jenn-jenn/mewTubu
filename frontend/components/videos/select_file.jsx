@@ -13,7 +13,7 @@ class SelectFile extends React.Component {
         // debugger 
         this.setState({file: e.target.files[0]})
         const file = e.target.files[0];
-        debugger
+        // debugger
         this.props.history.push({
             pathname: '/videos/new',
             state: { file: file }

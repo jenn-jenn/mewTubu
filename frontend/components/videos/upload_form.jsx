@@ -65,6 +65,7 @@ class UploadForm extends React.Component {
     }
 
     render() {
+        console.log(this.state.clipUrl)
         const form = () => (
             <form onSubmit={this.handleSubmit} className="upload-form">
                 <div className="done-btn-container">

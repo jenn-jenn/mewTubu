@@ -6,8 +6,10 @@ import { ProtectedRoute } from '../../util/route_util';
 import SelectFileContainer from '../videos/select_file_container';
 import VideoFormContainer from '../videos/upload_container';
 import VideoIndexContainer from '../videos/video_index_container';
+import VideoItemContainer from '../videos/video_item_container';
 import Homepage from './home';
 import { NotFound } from '../not_found';
+
 
 
 class Dashboard extends React.Component {
@@ -23,7 +25,7 @@ class Dashboard extends React.Component {
                 <Switch>
                     <ProtectedRoute path="/selectFiles" component={SelectFileContainer} />
                     <ProtectedRoute path="/videos/new" component={VideoFormContainer} />
-                    {/* <ProtectedRoute path="/video/:videoId" component={VideoIndexContainer} /> */}
+                    <Route path="/videos/:videoId" component={VideoItemContainer} />
                     <Route path="/videos" component={VideoIndexContainer} />
                     <Route exact path="/" component={Homepage} />
                     <Route component={NotFound} />

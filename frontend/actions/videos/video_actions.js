@@ -41,8 +41,8 @@ export const createVideo = (clip) => (dispatch) => {
     // })
 };
 
-export const fetchVideo = (clip) => (dispatch) => {
-    return VideoAPIUtil.fetchVideo(clip).then( (clip) => dispatch(receiveClip(clip)))
+export const fetchVideo = (clipId) => (dispatch) => {
+    return VideoAPIUtil.fetchVideo(clipId).then( (clip) => dispatch(receiveClip(clip)))
         .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
 }
 
