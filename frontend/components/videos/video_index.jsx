@@ -6,7 +6,7 @@ class VideoIndex extends React.Component {
         super(props);
     }
     componentDidMount() { 
-        debugger
+        // debugger
         this.props.fetchAllUsers();
         this.props.fetchVideos();
         
