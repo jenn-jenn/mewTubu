@@ -1,1 +1,1 @@
-json.extract! current_user, :username, :email, :id
+json.extract! user, :username, :email, :id

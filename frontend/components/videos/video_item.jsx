@@ -3,24 +3,34 @@ import React from 'react';
 class VideoItem extends React.Component {
     constructor(props) {
         super(props);
+        
+        this.state = {
+            video: this.props.video
+        }
     }
+
     componentDidMount() {
-        this.props.fetchVideo(this.props.videoId)
+        this.props.fetchAllUsers();
+        this.props.fetchVideos();
+        this.props.fetchVideo(this.props.videoId);
     }
     render() {
 
         const video = this.props.video;
+        let author = this.props.author;
+
+        debugger
         const display = video ? (
-            
             <div className="video-display">
                 <div className="video"> 
                     <video controls src={video.clipUrl} />
                 </div>
                 {video.title}
-                {video.authorId}
+                <br></br>
+                {author}
             </div>
         ) : (null);
-        debugger
+        
         return (
             <div className="video-show-div">     
                 {display}

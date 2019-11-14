@@ -2,11 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class VideoIndexItem extends React.Component {
-    constructor(props) {
+    constructor(props) { 
         super(props);
-        // this.videoShowPage = this.videoShowPage.bind(this);
-    }
+     }
 
+    componentDidMount() {
+        this.props.fetchAllUsers();
+        this.props.fetchVideos();
+    }
     videoShowPage(e) {
         alert('clicked')
         debugger
@@ -29,7 +32,12 @@ class VideoIndexItem extends React.Component {
                             <img src="/assets/user.png" />
                         </div>
                         <div className="clip-title">
-                        <h3><Link to={`/videos/${video.id}`}>{video.title}</Link></h3>
+                        <h3>
+                            <Link to={{
+                                pathname: `/videos/${video.id}`,
+                                params:{author: username }
+                            }}>{video.title}</Link>
+                        </h3>
                             <p>{username}</p>
                         </div>
                     </div>
