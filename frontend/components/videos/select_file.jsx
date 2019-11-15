@@ -25,7 +25,7 @@ class SelectFile extends React.Component {
         const selectForm = () => (
             <div className="select-file-div">
                 <label htmlFor="file-input" className="paper-clip">
-                    <img src="/assets/files.png" />
+                    <img src={window.filespng}/>
                 </label>
                 <input 
                     id="file-input"
