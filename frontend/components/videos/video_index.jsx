@@ -6,7 +6,6 @@ class VideoIndex extends React.Component {
         super(props);
     }
     componentDidMount() { 
-        // debugger
         this.props.fetchAllUsers();
         this.props.fetchVideos();
     }
@@ -15,15 +14,11 @@ class VideoIndex extends React.Component {
         let display = null;
         if (this.props.videos.length === 0) {
             display = (
-                <div className="no-videos"> 
-                    <h1>No Videos</h1>
-                    <p>Please upload some :D</p>
-                </div>
-                
+                null
             )
         } else {
             display = ( 
-                <div className="video-index-content"> 
+                <>
                     {this.props.videos.map((video, id) => (
                         <div className="clip-div" key={id}>
                             <VideoIndexItemContainer
@@ -33,7 +28,7 @@ class VideoIndex extends React.Component {
                             />
                         </div>
                     ))}
-                </div> 
+                </>
             )
         }
 

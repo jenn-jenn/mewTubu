@@ -2,63 +2,62 @@
     // border: 1px solid palevioletred;
     width: 100%;
     height: 100%;
+    padding-left: 60px;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap; 
-
-    .no-videos {
-        margin-top: 50px;
-        font-size: 30px;
-        text-align: center;
-        p {
-            text-align: center;
-        }
-    }
+    min-width: 1300px;
 
     .clip-div {
         width: 30%;
         height: 300px;
-        min-width: 400px;
+        // min-width: 400px;
+        // min-width: 20vw;
         margin: 10px;
-        border: 2px dashed green;
+        // border: 2px dashed green;
         display: flex;
         justify-content: center;
+        align-items: center;
+    }
+}
 
-        .clip-content {
-            margin: 10px;
-            border: 1px solid paleturquoise;
-            width: 380px;
-            height: 250px;
-            border: 1px solid yellow;
 
-            video {
-                border: 1px solid lightpink;
-                width: 100%;
-                height: 75%;
+.clip-content {
+    margin: 10px;
+    // border: 1px solid paleturquoise;
+    width: 380px;
+    height: 280px;
+    font-size: 30px;
+
+    video {
+        // background-color: #4C4C4C;
+        // border: 1px solid lightpink;
+        width: 100%;
+        height: 75%;
+    }
+    .clip-desc{
+        width: 100%;
+        height: 20%;
+        padding: 2px 0px;
+        // border: 1px dashed blue;
+        display: flex;
+        justify-content: flex-start;
+        color: #B9B9B9;
+        
+        img {
+            margin: 5px 5px 0px 5px;
+            width: 70%;
+        }
+        .clip-title {
+            width: 75%;
+
+            a {
+                font-size: 25px;
             }
-            .clip-desc{
-                width: 100%;
-                height: 20%;
-                padding: 2px 0px;
-                border: 1px dashed blue;
-                display: flex;
-                justify-content: space-between;
-                color: #B9B9B9;
 
-                img {
-                    margin-left: 5px;
-                    margin-right: 5px;
-                    border: 1px red solid;
-                }
-                .clip-title {
-                    width: 75%;
-                    font-size: 25px;
-
-                    p {
-                        margin-top: 10px;
-                        font-size: 12px;
-                    }
-                }
+            p {
+                margin-top: 10px;
+                font-size: 12px;
             }
         }
     }

@@ -8,6 +8,7 @@ const msp = (state, ownProps) => {
     return {
         videoId: ownProps.match.params.videoId,
         video: state.entities.videos[ownProps.match.params.videoId],
+        videos: Object.values(state.entities.videos)
     }
 }
 

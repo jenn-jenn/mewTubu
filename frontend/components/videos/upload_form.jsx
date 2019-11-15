@@ -3,7 +3,6 @@ import React from 'react';
 class UploadForm extends React.Component {
     // have access to file via this.props.location.state.file
     constructor(props) {
-        // debugger
         super(props);
         this.state = {
             title: '',
@@ -16,18 +15,14 @@ class UploadForm extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         const file = this.state.file;
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            // debugger
             this.setState({ 
                 clipFile: file,
                 clipUrl: fileReader.result
-                // clipUrl: URL.createObjectURL(file)
             });
         }
-        // debugger
         if(file) {
             fileReader.readAsDataURL(file);
         }
@@ -41,7 +36,6 @@ class UploadForm extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
         const formData = new FormData();
         formData.append('video[title]', this.state.title);

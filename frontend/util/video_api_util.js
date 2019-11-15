@@ -17,7 +17,6 @@ export const fetchVideos = () => {
 }
 
 export const fetchVideo = (clipId) => {
-    // debugger
     return $.ajax({
         url: `/api/videos/${clipId}`,
         method: 'GET'

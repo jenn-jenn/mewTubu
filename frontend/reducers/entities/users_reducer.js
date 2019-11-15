@@ -9,7 +9,6 @@ import { RECEIVE_ALL_USERS } from "../../actions/users/users_actions";
              let user = action.user;
             return Object.assign({}, state, { [user.id]: user} );
          case RECEIVE_ALL_USERS:
-            //  debugger
              return action.users
         default:
             return state;

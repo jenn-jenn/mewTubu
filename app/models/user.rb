@@ -1,10 +1,12 @@
+require 'aws-sdk-s3'
+
 class User < ApplicationRecord
     validates :username, :email, :pw_digest, presence: true
     validates :email, :username, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
 
     before_validation :ensure_session_token
-
+    Aws.use_bundled_cert!
 
     # has_many :likes
     # has_many :videos

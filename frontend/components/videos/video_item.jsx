@@ -1,4 +1,5 @@
 import React from 'react';
+import VideoIndexItemContainer from './video_index_item_container';
 
 class VideoItem extends React.Component {
     constructor(props) {
@@ -27,16 +28,51 @@ class VideoItem extends React.Component {
                 <div className="video"> 
                     <video controls src={video.clipUrl} />
                 </div>
-                {video.title}
-                <br></br>
-                {author}
+                
+                <div className="video-desc-box">
+                    <h1> 
+                        {video.title}
+                    </h1>
+                    <div className="desc">
+                        <div className="desc-icon">
+                            <img src="/assets/user.png" />
+                        </div>
+                        <div className="desc-text">
+                            <p id="author">
+                                {author}
+                            </p>
+                            <p id="description">
+                                {video.description}
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                
             </div>
         ) : (null);
-        
+        const vidId = video.id;
         return (
-            <div className="video-show-div">     
-                {display}
-            </div>
+            <>
+                <div className="video-show-div">     
+                    {display}    
+                </div>
+                <div className="side-videos">
+                    {this.props.videos.map((v, id) => {
+                        if (v.id !== vidId) {
+                            return (
+                                <div className="clip-div" key={id}>
+                                    <VideoIndexItemContainer
+                                        key={id}
+                                        video={v}
+                                        authorId={v.authorId}
+                                    />
+                                </div>
+                            )
+                        }
+                    })}
+                </div>  
+            </>
         )
     }
 }

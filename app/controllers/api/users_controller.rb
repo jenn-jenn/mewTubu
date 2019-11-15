@@ -1,9 +1,7 @@
 class Api::UsersController < ApplicationController
     
     def index
-        # debugger
         @users = User.all 
-        
         render :index
     end
     def create
@@ -11,7 +9,6 @@ class Api::UsersController < ApplicationController
         if @user.save
             login(@user)
             render 'api/users/show'
-            # render 'api/videos/index'
         else
             render json: @user.errors.full_messages, status: 422
         end
