@@ -11,6 +11,10 @@ const SideNav = () => {
                     Home
                 </Link>
             </div>
+            <div>              
+                <a href="https://github.com/jenn-jenn/mewTubu"><div className="side-icon github-icon"></div>Github</a>
+            </div>
+
             
         </section>
     )
