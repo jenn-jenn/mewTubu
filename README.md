@@ -22,7 +22,7 @@ Users are able to either sign up/login through this page. Actual passwords are n
 #### Upload Page
 This page allows user to upload videos, which then redirects to another page that allows for title and description input.
 
-![alt text](https://github.com/jenn-jenn/mewTubu/blob/master/app/assets/images/select2.png "Upload Page")
+![alt text](https://github.com/jenn-jenn/mewTubu/blob/master/app/assets/images/select.png "Upload Page")
 
 #### Index/Show Pages
 Videos are shown on these pages and each is a link to their individual show page.
