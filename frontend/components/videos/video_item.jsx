@@ -35,7 +35,7 @@ class VideoItem extends React.Component {
                     </h1>
                     <div className="desc">
                         <div className="desc-icon">
-                            <img src="/assets/user.png" />
+                            <img src={window.userpng} />
                         </div>
                         <div className="desc-text">
                             <p id="author">

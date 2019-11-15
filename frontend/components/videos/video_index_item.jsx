@@ -22,7 +22,7 @@ class VideoIndexItem extends React.Component {
                     
                 <div className="clip-desc">
                     <div className="user-icon">
-                        <img src="/assets/user.png" />
+                        <img src={window.userpng} />
                     </div>
                     <div className="clip-title">
                         <Link to={{pathname: `/videos/${video.id}`}}>
