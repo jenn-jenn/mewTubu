@@ -6,11 +6,6 @@ class VideoIndexItem extends React.Component {
         super(props);
      }
 
-    componentDidMount() {
-        this.props.fetchAllUsers();
-        this.props.fetchVideos();
-    }
-
     render() {
         const video = this.props.video;
         const username = this.props.username;
@@ -19,7 +14,6 @@ class VideoIndexItem extends React.Component {
                 <Link to={{pathname: `/videos/${video.id}`}}>
                     <video className="clip" src={video.clipUrl} /> 
                 </Link>
-                    
                 <div className="clip-desc">
                     <div className="user-icon">
                         <img src={window.userpng} />

@@ -4,31 +4,26 @@ import VideoIndexItemContainer from './video_index_item_container';
 class VideoItem extends React.Component {
     constructor(props) {
         super(props);
-        
-        this.state = {
-            video: this.props.video
-        }
+
     }
 
     componentDidMount() {
         this.props.fetchVideos();
         this.props.fetchAllUsers();
-        this.props.fetchVideo(this.props.videoId);
     }
 
     render() { 
-        if(this.props.video === undefined || this.props.videoId === undefined) {
+        const video = this.props.videos[this.props.videoId];
+        if(video === undefined || this.props.videoId === undefined) {
             return null
         }
-        const video = this.props.video;
-        let author = this.props.video.authorName
 
-        const display = video ? (
+        let author = video.authorName
+        const display = video ? (   
             <div className="video-display">
                 <div className="video"> 
                     <video controls src={video.clipUrl} />
                 </div>
-                
                 <div className="video-desc-box">
                     <h1> 
                         {video.title}
@@ -52,13 +47,14 @@ class VideoItem extends React.Component {
             </div>
         ) : (null);
         const vidId = video.id;
+        const videoArray = Object.values(this.props.videos)
         return (
             <>
                 <div className="video-show-div">     
                     {display}    
                 </div>
                 <div className="side-videos">
-                    {this.props.videos.map((v, id) => {
+                    {videoArray.map((v, id) => {
                         if (v.id !== vidId) {
                             return (
                                 <div className="clip-div" key={id}>
