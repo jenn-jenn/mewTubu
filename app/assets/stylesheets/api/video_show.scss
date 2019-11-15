@@ -1,8 +1,13 @@
 .video-show-div {
     border: 2px red solid;
-    
-    video {
-        width: 500px;
-        height: 500px;
+    width: 600px;
+    height: 600px;
+
+    .video {
+        video {
+            width: 500px;
+            height: 500px;
+        }
     }
+    
 }
