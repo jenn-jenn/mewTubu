@@ -8,7 +8,7 @@ const SideNav = () => {
             <div>
                 <Link to="/">
                     <div className="side-icon home-icon"></div>
-                    Home
+                    <i class="fas fa-home">Home</i>
                 </Link>
             </div>
             <div>              
@@ -19,9 +19,9 @@ const SideNav = () => {
         </section>
     )
     return(
-        <div className="side-nav">
+        <nav className="side-nav">
             {side}
-        </div>
+        </nav>
         
     )
 }
