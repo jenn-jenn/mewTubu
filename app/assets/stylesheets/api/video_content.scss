@@ -1,24 +1,27 @@
 .video-index-content {
     // border: 1px solid palevioletred;
     // height: 100%;
-    // width: 100%;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
+    top: 55px;
+    left: 60px;
     flex-wrap: wrap; 
     // min-width: 1300px;
-    padding-left: 5%;
+    // padding-left: 3%;
     position: fixed;
     // margin: auto;
 
     .clip-div {
         width: 30%;
         height: 300px;
-        margin: 10px;
+        margin: 10px 10px 0 10px;
         // border: 2px dashed green;
         display: flex;
         justify-content: center;
-        align-items: center;
+        // align-items: center;
         min-width: 300px;
+        
     }
 }
 
