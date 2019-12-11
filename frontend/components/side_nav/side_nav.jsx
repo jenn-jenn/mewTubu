@@ -6,16 +6,15 @@ const SideNav = () => {
     const side = (
         <section className="side-section">
             <div>
-                <Link to="/">
-                    <div className="side-icon home-icon"></div>
-                    <i class="fas fa-home">Home</i>
-                </Link>
+                <a href="/"><i className="fas fa-home" />Home</a>
             </div>
             <div>              
-                <a href="https://github.com/jenn-jenn/mewTubu"><div className="side-icon github-icon"></div>Github</a>
+                <a href="https://github.com/jenn-jenn/mewTubu"><i className="fab fa-github"></i>Github</a>
             </div>
-
-            
+            <div>
+                <a href=""><i className="fab fa-linkedin"></i>LinkedIn</a>
+            </div>
+                            
         </section>
     )
     return(

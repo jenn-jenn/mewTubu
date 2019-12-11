@@ -60,6 +60,11 @@ button{
     /* align-items: center; */
     position: fixed;
     font-family: 'Quicksand', sans-serif;
-    border: 1px dashed red; 
+    /* border: 1px dashed darkblue; */
+}
 
+.main {
+    /* border: 2px dashed orange; */
+    width: 100%;
+    height: 100%;
 }
