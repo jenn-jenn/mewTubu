@@ -32,7 +32,7 @@ const NavBar = ({ currentUser, logout }) => {
         );
 
     return (
-        <nav>
+        <nav className="top-nav">
             <div className="logo">
                 <Link to="/">
                     <div className="logo-img"></div>                   
@@ -50,7 +50,7 @@ const NavBar = ({ currentUser, logout }) => {
                     </form>
                 </div>
             </div>
-            <div className="right-nav">                 
+            <div className="top-right-nav">                 
                 <Link to="/selectFiles">
                     <div className="upload-icon"></div>  
                 </Link>

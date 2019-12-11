@@ -19,18 +19,20 @@ class Dashboard extends React.Component {
     
     render() {
         return (
-            <div className="content">
+            <div className="main">    
                 <Route path="/" component={NavBarContainer}/>
                 <Route path="/" component={SideNav}/>
-                <Switch>
-                    <ProtectedRoute path="/selectFiles" component={SelectFileContainer} />
-                    <ProtectedRoute path="/videos/new" component={VideoFormContainer} />
-                    <Route path="/videos/:videoId" component={VideoItemContainer} />
-                    <Route path="/videos" component={VideoIndexContainer} />
-                    <Route exact path="/" component={VideoIndexContainer} />
-                    <Route component={NotFound} />
-                </Switch>
-            </div> 
+                <div className="content">
+                    <Switch>
+                        <ProtectedRoute path="/selectFiles" component={SelectFileContainer} />
+                        <ProtectedRoute path="/videos/new" component={VideoFormContainer} />
+                        <Route path="/videos/:videoId" component={VideoItemContainer} />
+                        <Route path="/videos" component={VideoIndexContainer} />
+                        <Route exact path="/" component={VideoIndexContainer} />
+                        <Route component={NotFound} />
+                    </Switch>
+                </div> 
+            </div>
         )
     }
 }

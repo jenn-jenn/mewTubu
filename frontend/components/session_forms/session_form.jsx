@@ -38,6 +38,12 @@ class SessionForm extends React.Component {
             this.setState({
                 ['email']: 'demo',
                 ['password']: '123456'
+            }, () => {
+                const user = Object.assign({}, this.state);
+                this.props.processForm(user)
+                    .then( () => {
+                        this.props.history.push("/");
+                    })
             })
         }
     }
