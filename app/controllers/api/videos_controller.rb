@@ -17,7 +17,7 @@ class Api::VideosController < ApplicationController
     end
 
     def show # .includes(:author, comments, likes)
-        @video = Video.includes(:author).find_by(id: params[:id])
+        @video = Video.includes(:author).includes(:comments).find_by(id: params[:id])
         if @video
             render :show
         else

@@ -1,10 +1,10 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
     before_action :require_login
 
     def create 
         @comment = Comment.new(comments_params)
         if @comment.save
-            render :show
+            render '/api/comments/show'
         else
             render json: @comment.errors.full_messages, status: 422
         end
@@ -12,9 +12,9 @@ class CommentsController < ApplicationController
     end
 
     def show
-        @comment = Comment.includes(:author).find_by(id: params[:id])
+        @comment = Comment.includes(:author).includes(:video).find_by(id: params[:id])
         if @comment
-            render :show
+            render '/api/comments/show'
         else
             render json: ['Comment not found'], status: 422
         end

@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
     # has_many :likes
     # has_many :videos
-    # has_many :comments
+    has_many :comments
     
     # SPIRE
     attr_reader :password
