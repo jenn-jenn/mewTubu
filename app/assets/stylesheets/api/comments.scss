@@ -1,3 +1,63 @@
 // Place all the styles related to the api/Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment-form-container {
+    // border: 1px red solid;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    // align-items: center;
+    // justify-content: end;
+    .fa-user-circle {
+        margin: 10px 10px 0 10px;
+        // border: 1px solid pink;
+        // font-size: 100px;
+        font-weight: lighter;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 10px;
+        // border: 1px yellow solid;
+        width: 98%;
+        // height: 170px;
+        input {
+            // border: 1px blue solid;
+            border: none;
+            border-bottom: 1px black solid;
+            width: inherit;
+            height: 30px;
+            padding: 5px 10px 5px 10px;
+            caret-color: gray;
+            background-color: #1E1E1E;
+            color: gray;
+            font-size: 20px;
+        }
+        .comment-form-btns {
+            display:flex;
+            justify-content: space-evenly;
+
+            button {
+                margin: 20px 10px 0 10px;
+                background-color: transparent;
+                border: 1px gray solid;
+                width: 100px;
+                height: 50px;
+                
+                font-size: 22px;
+            }
+
+            button:first-child {
+                border: none;
+
+            }
+            button:hover {
+                cursor: pointer;
+            }
+            
+        }   
+    }   
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoIndexItemContainer from './video_index_item_container';
+import CommentFormContainer from '../comments/comment_form_container';
 
 class VideoItem extends React.Component {
     constructor(props) {
@@ -29,8 +30,11 @@ class VideoItem extends React.Component {
                         {video.title}
                     </h1>
                     <div className="desc">
-                        <div className="desc-icon">
+                        {/* <div className="desc-icon">
                             <img src={window.userpng} />
+                        </div> */}
+                        <div>
+                            <i className="far fa-user-circle fa-4x"></i>
                         </div>
                         <div className="desc-text">
                             <p id="author">
@@ -47,11 +51,13 @@ class VideoItem extends React.Component {
             </div>
         ) : (null);
         const vidId = video.id;
+        
         const videoArray = Object.values(this.props.videos)
         return (
             <>
                 <div className="video-show-div">     
                     {display}    
+                    <CommentFormContainer />
                 </div>
                 <div className="side-videos">
                     {videoArray.map((v, id) => {

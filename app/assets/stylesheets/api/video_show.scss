@@ -26,10 +26,13 @@
 
         .video-desc-box {
             // border: 2px solid yellow;
-            margin-left: 20px;
             margin-right: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 50px;
             display: flex;
             flex-direction: column;
+
+            border-bottom: 1px solid #B9B9B9;
             
             h1 {
                 font-size: 40px;
@@ -41,15 +44,15 @@
             }
 
             .desc {
+                // border: 1px solid blue;
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-end;
                 min-width: 750px;
 
-                .desc-icon {
-                    margin-top: 10px;
-                    width: 100px;
-                    height: 50px;
+                .fa-user-circle {
+                    // border: 1px solid pink;
+                    margin-right: 20px;
                 }
 
                 .desc-text {
