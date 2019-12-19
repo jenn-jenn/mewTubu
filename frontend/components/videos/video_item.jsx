@@ -58,7 +58,7 @@ class VideoItem extends React.Component {
                         <CommentFormContainer videoId={this.props.videoId} userId={this.props.currenUserId} />
                     </section>
                     <section className="comments-section">
-                        <CommentsContainer />
+                        <CommentsContainer videoId={this.props.videoId}/>
                     </section>
                 </>
                 <section className="side-videos">

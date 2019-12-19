@@ -37,8 +37,8 @@ export const createComment = (comment) => (dispatch) => {
         .fail( (err) => dispatch(receiveCommentErrors(err.responseJSON)));
 }
 
-export const fetchAllComments = () => (dispatch) => {
-    return CommentAPIUtil.fetchComments()
+export const fetchAllComments = (videoId) => (dispatch) => {
+    return CommentAPIUtil.fetchComments(videoId)
         .then( (comments) => dispatch(receiveAllComments(comments)))
         .fail( (err) => dispatch(receiveCommentErrors(err.responseJSON)))
 }
