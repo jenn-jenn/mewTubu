@@ -7,3 +7,11 @@ export const createComment = (comment) => {
         data: { comment }
     })
 }
+
+export const fetchComments = () => {
+    const videoId = comment.video_id
+    return $.ajax({
+        url: `/api/videos/${videoId}/comments`,
+        method: 'GET',
+    })
+}

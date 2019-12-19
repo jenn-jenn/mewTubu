@@ -7,7 +7,8 @@ import { fetchAllUsers } from '../../actions/users/users_actions'
 const msp = (state, ownProps) => {
     return {
         videoId: ownProps.match.params.videoId,
-        videos: state.entities.videos
+        videos: state.entities.videos,
+        currentUserId: state.session.currentUserId
     }
 }
 

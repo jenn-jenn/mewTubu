@@ -11,6 +11,15 @@ class Api::CommentsController < ApplicationController
 
     end
 
+    def index 
+        @comments = Comment.includes(:author).where(video_id: params[:video_id])
+        if @comments
+            render 'api/comments/index'
+        else
+            render json: ['Videos do not have comments'], status: 422
+        end
+    end
+
     def show
         @comment = Comment.includes(:author).includes(:video).find_by(id: params[:id])
         if @comment

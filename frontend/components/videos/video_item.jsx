@@ -1,11 +1,11 @@
 import React from 'react';
 import VideoIndexItemContainer from './video_index_item_container';
 import CommentFormContainer from '../comments/comment_form_container';
+import CommentsContainer from '../comments/comment_container';
 
 class VideoItem extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     componentDidMount() {
@@ -30,9 +30,6 @@ class VideoItem extends React.Component {
                         {video.title}
                     </h1>
                     <div className="desc">
-                        {/* <div className="desc-icon">
-                            <img src={window.userpng} />
-                        </div> */}
                         <div>
                             <i className="far fa-user-circle fa-4x"></i>
                         </div>
@@ -45,22 +42,27 @@ class VideoItem extends React.Component {
                             </p>
                         </div>
                     </div>
-
                 </div>
                 
             </div>
         ) : (null);
+
         const vidId = video.id;
-        
         const videoArray = Object.values(this.props.videos)
+        
         return (
             <>
-                <div className="video-show-div">     
-                    {display}    
-                    <CommentFormContainer />
-                </div>
-                <div className="side-videos">
-                    {videoArray.map((v, id) => {
+                <>
+                    <section className="video-show-div">     
+                        {display}    
+                        <CommentFormContainer videoId={this.props.videoId} userId={this.props.currenUserId} />
+                    </section>
+                    <section className="comments-section">
+                        <CommentsContainer />
+                    </section>
+                </>
+                <section className="side-videos">
+                    section{videoArray.map((v, id) => {
                         if (v.id !== vidId) {
                             return (
                                 <div className="clip-div" key={id}>
@@ -73,7 +75,7 @@ class VideoItem extends React.Component {
                             )
                         }
                     })}
-                </div>  
+                </section>  
             </>
         )
     }
