@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const CommentForm = (props) => {
+    const txt = document.getElementsByTagName('textarea')[0];
     const { createComment, videoId, userId } = props;
-    const [body, setBody] = useState('')
+    const [body, setBody] = useState('');
 
     const handleBodyChange = (e) => {
         setBody(e.target.value);
@@ -17,18 +18,24 @@ const CommentForm = (props) => {
         }
         createComment(comment).then( () => {
             setBody("");
+            txt.style.height = "34px";
         })
     }
 
     const handleResize = (e) => {
-        debugger
-        let scroll_height = e.target.scrollHeight;
-        e.target.style.height = scroll_height;
+        if(e.target.value === "") {
+            txt.style.height = "34px";
+        } else {
+            txt.style.height = e.target.scrollHeight + 'px';
+        }
+        
+        
     }
 
     const handleCancel = (e) => {
         e.stopPropagation();
         setBody("");
+        txt.style.height = "34px";
     }
 
     return (

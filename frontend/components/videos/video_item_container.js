@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
 import VideoItem from "./video_item";
-import { fetchVideo, fetchVideos } from '../../actions/videos/video_actions';
+import { fetchVideos } from '../../actions/videos/video_actions';
 import { fetchAllUsers } from '../../actions/users/users_actions'
  
 
 const msp = (state, ownProps) => {
-    debugger
     return {
         videoId: ownProps.match.params.videoId,
         videos: state.entities.videos,
@@ -16,7 +15,6 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => ({
     fetchVideos: () => dispatch(fetchVideos()),
     fetchAllUsers: () => dispatch(fetchAllUsers()),
-    // fetchVideo: (clip) => dispatch(fetchVideo(clip))
 
 });
 

@@ -3,10 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .comment-form-container {
-    border: 1px red solid;
+    // border: 1px red solid;
     box-sizing: border-box;
     width: 100%;
-    // height: auto;
+    // height: 700px;
     display: flex;
 
     .fa-user-circle {
@@ -30,6 +30,7 @@
             border: none;
             border-bottom: 1px black solid;
             width: inherit;
+            height: 34px;
             padding: 5px 10px 5px 10px;
             caret-color: gray;
             background-color: #1E1E1E;
@@ -37,7 +38,6 @@
             font-size: 20px;
             overflow: hidden;
             resize: none;
-            // height: inherit;
         }
 
         .comment-form-btns {
@@ -67,14 +67,14 @@
 }
 
 .comment {
-    border: 1px pink solid; 
+    // border: 1px pink solid; 
     display: flex;
     margin: 30px 10px;
     width: 96%;
     
 
     .comment-icon {
-        border: 1px orange solid;
+        // border: 1px orange solid;
         margin-right: 10px;
         
         .fa-user-circle {
@@ -83,7 +83,7 @@
     }
      
     .comment-body {
-        border: 1px red solid;
+        // border: 1px red solid;
         
         h6 {
             font-weight: bold;

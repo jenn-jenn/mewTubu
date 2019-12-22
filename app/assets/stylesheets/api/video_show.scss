@@ -1,5 +1,5 @@
 .video-show-div {
-    border: 5px purple solid;
+    // border: 5px purple solid;
     width: 100%;
     height: 100%;
     display: flex;
@@ -10,7 +10,7 @@
 
     .video-display {
         margin-bottom: 15px;
-        margin-top: 10px;
+        margin-top: 19px;
 
         .video {
             width: 100%;
@@ -19,7 +19,7 @@
 
             video {
                 width: 100%;
-                height: 555px;
+                // height: 555px;
                 min-width: 750px;
             }
         }
