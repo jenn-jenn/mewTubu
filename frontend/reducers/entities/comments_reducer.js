@@ -6,8 +6,7 @@ const commentReducer = (state = {}, action) => {
     switch(action.type) {
         case RECEIVE_A_COMMENT:
             let comment = action.comment
-            newState[comment.video_id] = comment;
-            debugger
+            newState[comment.id] = comment;
             return newState;
         case RECEIVE_ALL_COMMENTS:
             return action.comments

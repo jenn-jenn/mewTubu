@@ -15,7 +15,9 @@ const CommentForm = (props) => {
             author_id: userId,
             video_id: videoId
         }
-        createComment(comment);
+        createComment(comment).then( () => {
+            setBody("");
+        })
     }
 
     // const handleResize = (e) => {
