@@ -6,6 +6,7 @@ export const RECEIVE_COMMENT_ERRORS = "RECEIVE_COMMENT_ERRORS"
 export const CLEAR_COMMENT_ERRORS = "CLEAR_COMMENT_ERRORS"
 
 const receiveAComment = (comment) => {
+    debugger
     return {
         type: RECEIVE_A_COMMENT,
         comment
@@ -13,6 +14,7 @@ const receiveAComment = (comment) => {
 }
 
 const receiveAllComments = (comments) => {
+        debugger
     return {
         type: RECEIVE_ALL_COMMENTS,
         comments
@@ -33,13 +35,17 @@ const receiveClearCommentErrors = () => {
 
 export const createComment = (comment) => (dispatch) => {
     return CommentAPIUtil.createComment(comment)
-        .then( (comment) => dispatch(receiveAComment(comment)))
+        .then( (comment) => {
+            return dispatch(receiveAComment(comment))
+        })
         .fail( (err) => dispatch(receiveCommentErrors(err.responseJSON)));
 }
 
 export const fetchAllComments = (videoId) => (dispatch) => {
     return CommentAPIUtil.fetchComments(videoId)
-        .then( (comments) => dispatch(receiveAllComments(comments)))
+        .then( (comments) => {
+            return dispatch(receiveAllComments(comments))
+        })
         .fail( (err) => dispatch(receiveCommentErrors(err.responseJSON)))
 }
 

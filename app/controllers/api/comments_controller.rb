@@ -3,6 +3,7 @@ class Api::CommentsController < ApplicationController
 
     def create 
         @comment = Comment.new(comments_params)
+        
         if @comment.save
             render '/api/comments/show'
         else

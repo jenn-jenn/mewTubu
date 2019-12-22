@@ -1,5 +1,6 @@
 @comments.each do |comment|
-    json.set! comment.id do 
-        json.extract! json.extract! :id, :body, :author_id, :video_id
+    json.set! comment.id do
+        json.partial! 'comment', comment: comment
+        json.authorName comment.author.username
     end
 end

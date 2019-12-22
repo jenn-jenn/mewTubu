@@ -55,11 +55,12 @@ class VideoItem extends React.Component {
                 <>
                     <section className="video-show-div">     
                         {display}    
-                        <CommentFormContainer videoId={this.props.videoId} userId={this.props.currenUserId} />
+                        <CommentFormContainer videoId={this.props.videoId} userId={this.props.currentUserId} />
+                        <div className="comments-section">
+                            <CommentsContainer videoId={this.props.videoId} />
+                        </div>
                     </section>
-                    <section className="comments-section">
-                        <CommentsContainer videoId={this.props.videoId}/>
-                    </section>
+                    
                 </>
                 <section className="side-videos">
                     section{videoArray.map((v, id) => {

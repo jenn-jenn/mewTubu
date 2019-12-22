@@ -3,39 +3,43 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .comment-form-container {
-    // border: 1px red solid;
+    border: 1px red solid;
     box-sizing: border-box;
     width: 100%;
+    // height: auto;
     display: flex;
-    // align-items: center;
-    // justify-content: end;
+
     .fa-user-circle {
         margin: 10px 10px 0 10px;
-        // border: 1px solid pink;
-        // font-size: 100px;
         font-weight: lighter;
     }
+
     form {
+        // border: 1px yellow solid;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         justify-content: flex-end;
         padding: 10px;
-        // border: 1px yellow solid;
         width: 98%;
-        // height: 170px;
-        input {
+        // height: auto;
+
+        textarea {
             // border: 1px blue solid;
+            box-sizing: border-box;
             border: none;
             border-bottom: 1px black solid;
             width: inherit;
-            height: 30px;
             padding: 5px 10px 5px 10px;
             caret-color: gray;
             background-color: #1E1E1E;
             color: gray;
             font-size: 20px;
+            overflow: hidden;
+            resize: none;
+            // height: inherit;
         }
+
         .comment-form-btns {
             display:flex;
             justify-content: space-evenly;
@@ -52,12 +56,40 @@
 
             button:first-child {
                 border: none;
-
             }
+
             button:hover {
                 cursor: pointer;
             }
             
         }   
     }   
+}
+
+.comment {
+    border: 1px pink solid; 
+    display: flex;
+    margin: 30px 10px;
+    width: 96%;
+    
+
+    .comment-icon {
+        border: 1px orange solid;
+        margin-right: 10px;
+        
+        .fa-user-circle {
+            font-size: 40px;
+        }
+    }
+     
+    .comment-body {
+        border: 1px red solid;
+        
+        h6 {
+            font-weight: bold;
+        }
+        p {
+            margin: 5px 0;
+        }
+    }
 }

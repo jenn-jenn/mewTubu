@@ -18,20 +18,31 @@ const CommentForm = (props) => {
         createComment(comment);
     }
 
+    // const handleResize = (e) => {
+    //     debugger
+    //     let scroll_height = e.target.scrollHeight;
+    //     e.target.style.height = scroll_height;
+    // }
+
+    const handleCancel = (e) => {
+        e.stopPropagation();
+        setBody("");
+    }
+
     return (
         <div className="comment-form-container">
             <div>
                 <i className="far fa-user-circle fa-3x"></i>
             </div>
             <form onSubmit={handleSubmit}>
-                <input 
+                <textarea 
                     type="text"
                     value={body}
                     onChange={handleBodyChange}
                     placeholder="Add a public comment..."
                 />
                 <div className="comment-form-btns">
-                    <button>Cancel</button>
+                    <button onClick={handleCancel}>Cancel</button>
                     <button>Submit</button>
                 </div>
                 

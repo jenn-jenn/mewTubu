@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from 'react';
 
 const Comments = (props) => {
-    debugger
-    const { fetchComments, videoId } = props
-    const [comments, setComments] = useState([])
+    const { fetchComments, videoId, comments } = props
 
     useEffect(() => {
-        setComments(fetchComments(videoId)) 
-    }, [])
+        fetchComments(videoId)
+        
+    }, [fetchComments])
+
+
     return(
         <>
-            {/* {comments.map((comment, id) => (
+            {comments.map((comment, id) => (
                 <div className="comment" key={id}>
-                    <div>
-                        <i className="far fa-user-circle fa-4x"></i>
+                    <div className="comment-icon">
+                        <i className="far fa-user-circle"></i>
                     </div>
-                    <div>
-                        <h6>Author</h6>
-                        <p>{comment}</p>
+                    <div className="comment-body">
+                        <h6>{comment.authorName}</h6>
+                        <p>{comment.body}</p>
                     </div>
                 </div>
-            ))} */}
+            ))}
         </>
     )
 };

@@ -27,7 +27,6 @@ const receiveClipErrors = (errors) => {
 
 // THUNK ACTION CREATORS
 export const createVideo = (clip) => (dispatch) => {
-    // debugger
     return VideoAPIUtil.createVideo(clip).then( (clip) => dispatch(receiveClip(clip)))
         .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
 
