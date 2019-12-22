@@ -1,30 +1,38 @@
 .video-show-div {
-    // border: 2px pink solid;
-    width: inherit;
+    // border: 5px purple solid;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
+    align-self: flex-start;
+    // top: 100px;
+    // left: 700px;
 
     .video-display {
-        // margin-bottom: 15px;
-        margin-top: 30px;
-        
+        margin-bottom: 15px;
+        margin-top: 19px;
+
         .video {
             width: 100%;
+            height: 100%;
             // border: 2px solid yellow;
+
             video {
                 width: 100%;
-                height: 500px;
+                // height: 555px;
                 min-width: 750px;
             }
         }
 
         .video-desc-box {
-            margin-left: 20px;
+            // border: 2px solid yellow;
             margin-right: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 50px;
             display: flex;
             flex-direction: column;
+
+            border-bottom: 1px solid #B9B9B9;
             
             h1 {
                 font-size: 40px;
@@ -36,15 +44,15 @@
             }
 
             .desc {
+                // border: 1px solid blue;
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-end;
                 min-width: 750px;
 
-                .desc-icon {
-                    margin-top: 10px;
-                    width: 100px;
-                    height: 50px;
+                .fa-user-circle {
+                    // border: 1px solid pink;
+                    margin-right: 20px;
                 }
 
                 .desc-text {
@@ -62,51 +70,41 @@
                         font-size: 16px;
                     }
                 }
-                
             }
-            
-
         }
     }
-    
- 
-    
 }
 
 .side-videos {
-    // border: 3px solid green;
+    // border: 3px solid blue;
     width: 60%;
-    height: 100%;
     margin-left: 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 
     .clip-div {
-            border: 1px solid pink;
-            margin: 15px 10px 0px 10px;
-            // box-sizing: content-box;
-            width: 100%;
-            height: 30%;
+            // border: 1px solid pink;
+            width: 99%;
+            
+
         .clip-content {
             // border: 1px solid green;
-            // height: 100%;
             width: inherit;
+            height: 100%;
             display: flex;
             justify-content: flex-start;
             padding: 0;
-            // box-sizing: content-box;
-            video {
-                margin-top: 3px;
-                // border: 1px solid red;
-                width: 100%;
-                // height: 100%;
 
+            video {
+                margin: 5px;
+                // border: 1px solid red;
+                min-width: 390px;
+                height: 90%;
             }
             .clip-desc {
                 // border: 1px solid yellow;
                 margin-left: 10px;
-                width: 70%;
 
                 .user-icon {
                     display: none;
@@ -117,10 +115,7 @@
                         font-size: 20px;
                     }
                 }
-
             }
-            
         }
     }
-    
 }

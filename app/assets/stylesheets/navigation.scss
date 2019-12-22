@@ -1,164 +1,164 @@
 nav {
-    box-sizing: border-box;
+    display:block;
     position: fixed;
-    top: 0;
-    left: 0;
     background-color: #282828;
     color: #B9B9B9;
-    width: 100%;
-    height: 50px;
+    z-index: 100;
+}
+
+.top-nav {
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
-    z-index: 100;
-}
-
-.logo {
-    display: flex;
-    align-content: center;
-    width: 200px;
-
-    a {
-        display: flex;
-        text-decoration: none;
-        color: #B9B9B9;
-    }
-}
-
-.logo-img{
-    background: image-url('mew.png') left no-repeat;
-    background-size: 60px 60px;
-    height: 55px;
-    width: 55px;
-}
-
-.logo-name {
-    margin: auto;
-    margin-right: 10px;
-    margin-left: 10px;
-    font-size: 20px;
-}
-.search-bar-container {
-    width: 550px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
     
-    .search-input-div {
-        flex: 1;
-        
-    }
-    .search-form {
+    width: 100%;
+    height: 50px;
+    .logo {
         display: flex;
-        align-items: center;
-    }
-    input[type="search"] {
-        width: 100%;
-        caret-color: gray;
-        font-size: 17px;
-        background-color: black;
-        border: none;
-        height: 30px;
-        padding: 10px 7px 10px 7px;
-        color: gray;
-    }
-    
-    input[type="search"]::-webkit-search-decoration,
-    input[type="search"]::-webkit-search-cancel-button,
-    input[type="search"]::-webkit-search-results-button,
-    input[type="search"]::-webkit-search-results-decoration {
-    -webkit-appearance:none;
+        align-content: center;
+        width: 200px;
+
+        a {
+            display: flex;
+            text-decoration: none;
+            color: #B9B9B9;
+        }
     }
 
-    input[type="submit"] {
-        background: image-url('search.png') center no-repeat;
-        background-color: #4C4C4C;
-        background-size: 20px 20px;
-        box-sizing: content-box;
-        border: none;
-        opacity: 0.9;
-        width: 39px;
-        height: 27px;
+    .logo-img{
+        background: image-url('mew.png') left no-repeat;
+        background-size: 60px 60px;
+        height: 55px;
+        width: 55px;
     }
 
-    .search-icon:hover {
-        cursor: pointer;
-    }
-
-}
-
-.top-right-nav {
-    width: 300px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-
-    .upload-icon {
-        background: image-url('upload.png') center no-repeat;
-        background-size: 25px 25px;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-
-    .welcome {
-        display: flex;
-        align-items: center;
+    .logo-name {
+        margin: auto;
+        margin-right: 10px;
         margin-left: 10px;
-        width: 260px;
+        font-size: 20px;
+    }
+    .search-bar-container {
+        width: 550px;
+        display: flex;
         flex-direction: row;
-
-        .welcome-header {
-            width: 55%;
-            margin-right: 10px;
+        align-items: center;
+        padding: 10px;
+        
+        .search-input-div {
+            flex: 1;
+            
+        }
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+        input[type="search"] {
+            width: 100%;
+            caret-color: gray;
+            font-size: 17px;
+            background-color: black;
+            border: none;
+            height: 30px;
+            padding: 10px 7px 10px 7px;
+            color: gray;
         }
         
-        .right-nav-btn {
-            background-color: transparent;
-            border: 1px gray solid;
-            height: 30px;
-            width: 80px;
-            padding: 2px;
-            right: 20px;
-            cursor: pointer;
+        input[type="search"]::-webkit-search-decoration,
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-results-button,
+        input[type="search"]::-webkit-search-results-decoration {
+            -webkit-appearance:none;
+        }
 
-            a {
-                text-decoration: none;
-                color: white;
-                padding: 5px;
-                font-size: 16px;
+        input[type="submit"] {
+            background: image-url('search.png') center no-repeat;
+            background-color: #4C4C4C;
+            background-size: 20px 20px;
+            box-sizing: content-box;
+            border: none;
+            opacity: 0.9;
+            width: 39px;
+            height: 27px;
+        }
+
+        .search-icon:hover {
+            cursor: pointer;
+        }
+
+    }
+
+    .top-right-nav {
+        width: 300px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+
+        .upload-icon {
+            background: image-url('upload.png') center no-repeat;
+            background-size: 25px 25px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .welcome {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            width: 260px;
+            flex-direction: row;
+
+            .welcome-header {
+                width: 55%;
+                margin-right: 10px;
+            }
+            
+            .right-nav-btn {
+                background-color: transparent;
+                border: 1px gray solid;
+                height: 30px;
+                width: 80px;
+                padding: 2px;
+                right: 20px;
+                cursor: pointer;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    padding: 5px;
+                    font-size: 16px;
+                }
             }
         }
     }
 }
 
+
+
 .side-nav{
-    display: flex;
-    flex-direction: column;
+    // border: 2px solid red;
     left: 0;
-    top: 50px;
+    top: 60px;
     height: 100%;
     width: 60px;
     text-align: center;
-
     .side-section {
-        margin-top: 30px;
         // border: 1px rgb(136, 136, 219) solid;
+        margin-top: 30px;
         width: 100%;
         height: 100%;
-        
         display: flex;
         flex-direction: column;
-        
-
+    
         div {
             margin: 20px 0 20px 0;
             display:flex;
             justify-content: center;
-
         }
 
     }

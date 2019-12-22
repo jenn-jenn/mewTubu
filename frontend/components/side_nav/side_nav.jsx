@@ -14,8 +14,8 @@ const SideNav = () => {
             <div>
                 <a href=""><i className="fab fa-linkedin"></i>LinkedIn</a>
             </div>
-                            
         </section>
+
     )
     return(
         <nav className="side-nav">
