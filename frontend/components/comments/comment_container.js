@@ -5,7 +5,7 @@ import Comments from './comment';
 const msp = (state) => {
     return {    
         comments: Object.values(state.entities.comments),
-        users: state.entities.users
+        users: state.entities.users,
     }
 };
 

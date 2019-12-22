@@ -5,6 +5,7 @@ import { fetchAllUsers } from '../../actions/users/users_actions'
  
 
 const msp = (state, ownProps) => {
+    debugger
     return {
         videoId: ownProps.match.params.videoId,
         videos: state.entities.videos,
@@ -15,7 +16,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => ({
     fetchVideos: () => dispatch(fetchVideos()),
     fetchAllUsers: () => dispatch(fetchAllUsers()),
-    fetchVideo: (clip) => dispatch(fetchVideo(clip))
+    // fetchVideo: (clip) => dispatch(fetchVideo(clip))
 
 });
 

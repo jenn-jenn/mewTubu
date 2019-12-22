@@ -6,7 +6,6 @@ export const RECEIVE_COMMENT_ERRORS = "RECEIVE_COMMENT_ERRORS"
 export const CLEAR_COMMENT_ERRORS = "CLEAR_COMMENT_ERRORS"
 
 const receiveAComment = (comment) => {
-    debugger
     return {
         type: RECEIVE_A_COMMENT,
         comment
@@ -14,7 +13,6 @@ const receiveAComment = (comment) => {
 }
 
 const receiveAllComments = (comments) => {
-        debugger
     return {
         type: RECEIVE_ALL_COMMENTS,
         comments

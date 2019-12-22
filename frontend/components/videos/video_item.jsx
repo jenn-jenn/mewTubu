@@ -6,12 +6,16 @@ import CommentsContainer from '../comments/comment_container';
 class VideoItem extends React.Component {
     constructor(props) {
         super(props);
+
     }
 
     componentDidMount() {
         this.props.fetchVideos();
         this.props.fetchAllUsers();
+        
     }
+
+ 
 
     render() { 
         const video = this.props.videos[this.props.videoId];
@@ -63,7 +67,7 @@ class VideoItem extends React.Component {
                     
                 </>
                 <section className="side-videos">
-                    section{videoArray.map((v, id) => {
+                    {videoArray.map((v, id) => {
                         if (v.id !== vidId) {
                             return (
                                 <div className="clip-div" key={id}>

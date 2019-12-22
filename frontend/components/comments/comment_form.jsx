@@ -20,11 +20,11 @@ const CommentForm = (props) => {
         })
     }
 
-    // const handleResize = (e) => {
-    //     debugger
-    //     let scroll_height = e.target.scrollHeight;
-    //     e.target.style.height = scroll_height;
-    // }
+    const handleResize = (e) => {
+        debugger
+        let scroll_height = e.target.scrollHeight;
+        e.target.style.height = scroll_height;
+    }
 
     const handleCancel = (e) => {
         e.stopPropagation();
@@ -41,6 +41,7 @@ const CommentForm = (props) => {
                     type="text"
                     value={body}
                     onChange={handleBodyChange}
+                    onInput={handleResize}
                     placeholder="Add a public comment..."
                 />
                 <div className="comment-form-btns">

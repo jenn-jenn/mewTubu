@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 const Comments = (props) => {
     const { fetchComments, videoId, comments } = props
-
     useEffect(() => {
         fetchComments(videoId)
         
-    }, [fetchComments])
+    }, [fetchComments, videoId])
 
 
     return(
