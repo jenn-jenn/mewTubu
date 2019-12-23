@@ -1,16 +1,11 @@
 .video-index-content {
     // border: 1px solid palevioletred;
-    // height: 100%;
     width: 100%;
     display: flex;
     justify-content: flex-start;
     top: 55px;
     left: 60px;
     flex-wrap: wrap; 
-    // min-width: 1300px;
-    // padding-left: 3%;
-    position: fixed;
-    // margin: auto;
 
     .clip-div {
         width: 30%;
@@ -19,12 +14,9 @@
         // border: 2px dashed green;
         display: flex;
         justify-content: center;
-        // align-items: center;
         min-width: 300px;
-        
     }
 }
-
 
 .clip-content {
     margin: 10px;
@@ -34,7 +26,6 @@
     font-size: 30px;
 
     video {
-        // background-color: #4C4C4C;
         // border: 1px solid lightpink;
         width: 100%;
         height: 75%;

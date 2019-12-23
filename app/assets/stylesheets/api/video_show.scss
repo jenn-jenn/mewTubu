@@ -31,17 +31,24 @@
             padding-bottom: 50px;
             display: flex;
             flex-direction: column;
-
             border-bottom: 1px solid #B9B9B9;
             
-            h1 {
-                font-size: 40px;
-                border-bottom: 1px solid #B9B9B9;
-                padding-bottom: 20px;
-                margin-bottom: 15px;
-                margin-top: 10px;
-                min-width: 750px;
+            .header-div{
+                border: 1px solid blue;
+                display: flex;
+                justify-content: space-between;
+                h1 {
+                    border: 1px solid green;
+                    font-size: 40px;
+                    // border-bottom: 1px solid #B9B9B9;
+                    padding-bottom: 20px;
+                    // margin-bottom: 15px;
+                    // margin-top: 10px;
+                    min-width: 750px;
+                    margin: 5px;
+                }
             }
+
 
             .desc {
                 // border: 1px solid blue;

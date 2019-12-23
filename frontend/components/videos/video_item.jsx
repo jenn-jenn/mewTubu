@@ -6,6 +6,7 @@ import CommentsContainer from '../comments/comment_container';
 class VideoItem extends React.Component {
     constructor(props) {
         super(props);
+        this.handleLike = this.handleLike.bind(this);
 
     }
 
@@ -15,6 +16,11 @@ class VideoItem extends React.Component {
         
     }
 
+    handleLike(e) {
+        e.stopPropagation();
+        console.log("likeinggg");
+        this.props.likeVideo(this.props.videoId);
+    }
  
 
     render() { 
@@ -30,9 +36,17 @@ class VideoItem extends React.Component {
                     <video controls src={video.clipUrl} />
                 </div>
                 <div className="video-desc-box">
-                    <h1> 
-                        {video.title}
-                    </h1>
+                    <div className="header-div">
+                        <div>
+                            <h1> 
+                                {video.title}
+                            </h1>
+                        </div>
+                        <div className="thumbs">
+                            <i className="fas fa-thumbs-up" title="Like" onClick={this.handleLike}>{video.likes}</i>
+                            <i className="fas fa-thumbs-down" title="Dislike"></i>
+                        </div>
+                    </div>
                     <div className="desc">
                         <div>
                             <i className="far fa-user-circle fa-4x"></i>

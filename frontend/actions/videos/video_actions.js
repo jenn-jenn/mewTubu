@@ -19,6 +19,7 @@ const receiveClip = (clip) => {
 };
 
 const receiveClipErrors = (errors) => {
+    debugger
     return {
         type: CLIP_ERRORS,
         errors
@@ -47,5 +48,17 @@ export const fetchVideo = (clipId) => (dispatch) => {
 
 export const fetchVideos = () => (dispatch) => {
     return VideoAPIUtil.fetchVideos().then( (clips) => dispatch(receiveClips(clips)))
+        .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
+}
+
+export const likeVideo = (videoId) => (dispatch) => {
+    return VideoAPIUtil.likeVideo(videoId).then( (clip) => {
+        return dispatch(receiveClip(clip))
+    })
+        .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
+}
+
+export const removeLikeVideo = (videoId) => (dispatch) => {
+    return VideoAPIUtil.removeLikeVideo(videoId).then((clip) => dispatch(receiveClip(clip)))
         .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
 }

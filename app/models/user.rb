@@ -8,7 +8,7 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
     Aws.use_bundled_cert!
 
-    # has_many :likes
+    has_many :likes
     # has_many :videos
     has_many :comments
     

@@ -22,3 +22,17 @@ export const fetchVideo = (clipId) => {
         method: 'GET'
     })
 }
+
+export const likeVideo = (videoId) => {
+    return $.ajax({
+        url: `/api/videos/${videoId}/likes`,
+        method: 'POST'        
+    })
+}
+
+export const removeLikeVideo = (videoId) => {
+    return $.ajax({
+        url: `/api/videos/${videoId}/likes`,
+        method: 'DELETE',
+    })
+}

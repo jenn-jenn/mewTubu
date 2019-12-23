@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import VideoItem from "./video_item";
-import { fetchVideos } from '../../actions/videos/video_actions';
+import { fetchVideos, likeVideo } from '../../actions/videos/video_actions';
 import { fetchAllUsers } from '../../actions/users/users_actions'
  
 
@@ -15,6 +15,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => ({
     fetchVideos: () => dispatch(fetchVideos()),
     fetchAllUsers: () => dispatch(fetchAllUsers()),
+    likeVideo: (videoId) => dispatch(likeVideo(videoId)),
 
 });
 

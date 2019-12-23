@@ -1,0 +1,21 @@
+// Place all the styles related to the api/Likes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.thumbs {
+    // box-sizing: border-box;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    
+    .fa-thumbs-up, .fa-thumbs-down {
+        border: 1px yellow solid;
+        font-size: 25px;
+        // padding: 10px;
+        margin: 0 15px;
+    }
+    .fa-thumbs-up:hover, .fa-thumbs-down:hover {
+        cursor: pointer;
+    }
+}
