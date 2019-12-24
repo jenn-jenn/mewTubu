@@ -43,8 +43,13 @@ class VideoItem extends React.Component {
                             </h1>
                         </div>
                         <div className="thumbs">
-                            <i className="fas fa-thumbs-up" title="Like" onClick={this.handleLike}>{video.likes}</i>
+                            <div className="likes-count">
+                                <i className="fas fa-thumbs-up" title="Like" onClick={this.handleLike}></i>
+                                <span>{video.likes}</span>
+                            </div>
+                            
                             <i className="fas fa-thumbs-down" title="Dislike"></i>
+                            {/* <span>{video.dislikes}</span> */}
                         </div>
                     </div>
                     <div className="desc">
