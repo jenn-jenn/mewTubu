@@ -30,9 +30,9 @@ export const likeVideo = (videoId) => {
     })
 }
 
-export const removeLikeVideo = (videoId) => {
+export const dislikeVideo = (videoId) => {
     return $.ajax({
-        url: `/api/videos/${videoId}/likes`,
-        method: 'DELETE',
+        url: `/api/videos/${videoId}/dislikes`,
+        method: 'POST',
     })
 }

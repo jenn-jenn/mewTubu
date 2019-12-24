@@ -7,6 +7,7 @@ class VideoItem extends React.Component {
     constructor(props) {
         super(props);
         this.handleLike = this.handleLike.bind(this);
+        this.handleDislike = this.handleDislike.bind(this);
 
     }
 
@@ -20,6 +21,12 @@ class VideoItem extends React.Component {
         e.stopPropagation();
         console.log("likeinggg");
         this.props.likeVideo(this.props.videoId);
+    }
+
+    handleDislike(e) {
+        e.stopPropagation();
+        console.log("dislikinggg");
+        this.props.dislikeVideo(this.props.videoId);
     }
  
 
@@ -47,9 +54,11 @@ class VideoItem extends React.Component {
                                 <i className="fas fa-thumbs-up" title="Like" onClick={this.handleLike}></i>
                                 <span>{video.likes}</span>
                             </div>
+                            <div className="dislikes-count">
+                                <i className="fas fa-thumbs-down" title="Dislike" onClick={this.handleDislike}></i>
+                                <span>{video.dislikes}</span>
+                            </div>
                             
-                            <i className="fas fa-thumbs-down" title="Dislike"></i>
-                            {/* <span>{video.dislikes}</span> */}
                         </div>
                     </div>
                     <div className="desc">

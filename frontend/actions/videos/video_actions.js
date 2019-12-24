@@ -58,7 +58,7 @@ export const likeVideo = (videoId) => (dispatch) => {
         .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
 }
 
-export const removeLikeVideo = (videoId) => (dispatch) => {
-    return VideoAPIUtil.removeLikeVideo(videoId).then((clip) => dispatch(receiveClip(clip)))
+export const dislikeVideo = (videoId) => (dispatch) => {
+    return VideoAPIUtil.dislikeVideo(videoId).then((clip) => dispatch(receiveClip(clip)))
         .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
 }
