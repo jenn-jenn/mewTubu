@@ -78,6 +78,24 @@ button{
     display: flex;
     font-family: 'Quicksand', sans-serif;
     position: relative;
+    min-width: 800px;        
     overflow: hidden;
     
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    .content {
+        /* border: 2px dashed green; */
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    /* .video-show-div { width: 100%;} */
+    .side-videos {
+        width: 100%;
+        overflow: hidden;
+    }
 }

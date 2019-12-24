@@ -2,27 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .thumbs {
-    // box-sizing: border-box;
-    border: 1px solid red;
+    // border: 1px solid red;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 5px;
     font-family: 'Quicksand', sans-serif;
-    width: 100%;
-    
 
-    .likes-count {
-        border: 1px orange solid;
+    .likes-count, .dislikes-count {
+        // border: 1px orange solid;
         display: flex;
-        flex-direction: column;
         align-items: center;
+        justify-content: center;
 
         .fa-thumbs-up, .fa-thumbs-down {
-            border: 1px yellow solid;
+            // border: 1px yellow solid;
             font-size: 25px;
-            // padding: 10px;
-            margin: 0 20px;
+            margin: 0 10px;
+            padding-right: 5px;
         }
     }
 

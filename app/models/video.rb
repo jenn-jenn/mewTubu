@@ -11,6 +11,7 @@ class Video < ApplicationRecord
         class_name: :User
         
     has_many :likes
+    has_many :dislikes
     has_many :comments
 
     has_one_attached :clip
