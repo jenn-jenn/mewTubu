@@ -74,7 +74,7 @@ nav {
             -webkit-appearance:none;
         }
 
-        input[type="submit"] {
+        input[type="submit"]{
             background: image-url('search.png') center no-repeat;
             background-color: #4C4C4C;
             background-size: 20px 20px;
@@ -83,11 +83,13 @@ nav {
             opacity: 0.9;
             width: 39px;
             height: 27px;
+            font-size: 20px;
         }
 
         .search-icon:hover {
             cursor: pointer;
         }
+
 
     }
 

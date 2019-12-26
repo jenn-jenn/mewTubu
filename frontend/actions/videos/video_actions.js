@@ -46,9 +46,15 @@ export const fetchVideo = (clipId) => (dispatch) => {
         .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
 }
 
-export const fetchVideos = () => (dispatch) => {
-    return VideoAPIUtil.fetchVideos().then( (clips) => dispatch(receiveClips(clips)))
-        .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
+export const fetchVideos = (query) => (dispatch) => {
+    if(query){
+        return VideoAPIUtil.fetchVideos(query).then( (clips) => dispatch(receiveClips(clips)))
+            .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
+    } else {
+        return VideoAPIUtil.fetchVideos().then( (clips) => dispatch(receiveClips(clips)))
+            .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
+    }
+    
 }
 
 export const likeVideo = (videoId) => (dispatch) => {
