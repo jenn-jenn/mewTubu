@@ -3,8 +3,14 @@ class Api::VideosController < ApplicationController
     before_action :require_login, only: [:new, :create]
 
     def index # .includes(:author, comments, likes)
-        @videos = Video.all.includes(:author)
-        render :index
+        if(params[:query])
+            @videos = Video.includes(:author).where("lower(title) LIKE lower(?)", "%#{params[:query]}%")
+            render :index
+        else
+            @videos = Video.all.includes(:author)
+            render :index
+        end
+        
     end
 
     def create

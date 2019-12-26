@@ -6,8 +6,8 @@ class VideoIndex extends React.Component {
         super(props);
     }
     componentDidMount() { 
-        this.props.fetchAllUsers();
         this.props.fetchVideos();
+        
     }
 
     render() {
@@ -31,7 +31,7 @@ class VideoIndex extends React.Component {
                 </>
             )
         }
-
+        console.log(this.props.videos);
         
         return (
             <div className="video-index-content">

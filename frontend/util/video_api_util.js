@@ -9,10 +9,11 @@ export const createVideo = (clip) => {
     })
 }
 
-export const fetchVideos = () => {
+export const fetchVideos = (query) => {
     return $.ajax({
         url: `/api/videos`,
-        method: 'GET'
+        method: 'GET',
+        data: { query }
     })
 }
 
