@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 const Searchbar = (props) => {
-    const { fetchVideosQuery } = props;
+    const { fetchVideosQuery, setSearchWord } = props;
     let history = useHistory();
     let location = useLocation();
 
@@ -14,16 +14,16 @@ const Searchbar = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // if(location.pathname === "/") {
-        fetchVideosQuery(query).then(() => {
-            setQuery('')
-        })
-        // } else {
-
-        //     fetchVideosQuery(query).then(() => {
-        //         setQuery('');
-        //     })
-        // }     
+        if(location.pathname === "/" || location.pathname === "/search") {
+            fetchVideosQuery(query).then(() => {
+                setQuery('')
+            })
+            history.push('/search');
+        } else {            
+            setSearchWord(query);
+            setQuery('');
+            history.push('/search');
+        }     
     }
 
     return (

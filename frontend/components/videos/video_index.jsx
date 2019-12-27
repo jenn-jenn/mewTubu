@@ -4,20 +4,31 @@ import VideoIndexItemContainer from './video_index_item_container';
 class VideoIndex extends React.Component {
     constructor(props){
         super(props);
+        debugger
+        this.state = {
+            isArray: Array.isArray(this.props.videos)
+        }
     }
     componentDidMount() { 
-        this.props.fetchVideos();
-        
+        if(Array.isArray(this.props.videos)) {
+            this.props.fetchVideos().then(() => {
+                this.setState({ isArray: Array.isArray(this.props.videos)})
+            })
+        } else {
+            this.props.fetchVideosWithQuery(this.props.videos).then(() => {
+                this.setState({ isArray: Array.isArray(this.props.videos) })
+            })
+        }
     }
 
     render() {
         let display = null;
-        if (this.props.videos.length === 0) {
+        if(!this.state.isArray || (this.state.isArray && this.props.videos.length === 0)){
             display = (
                 null
             )
-        } else {
-            display = ( 
+        } else if(this.state.isArray){
+            display = (
                 <>
                     {this.props.videos.map((video, id) => (
                         <div className="clip-div" key={id}>
@@ -31,7 +42,6 @@ class VideoIndex extends React.Component {
                 </>
             )
         }
-        console.log(this.props.videos);
         
         return (
             <div className="video-index-content">
