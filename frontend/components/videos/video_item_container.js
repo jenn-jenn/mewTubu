@@ -14,10 +14,8 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => ({
     fetchVideos: () => dispatch(fetchVideos()),
-    fetchAllUsers: () => dispatch(fetchAllUsers()),
     likeVideo: (videoId) => dispatch(likeVideo(videoId)),
     dislikeVideo: (videoId) => dispatch(dislikeVideo(videoId))
-
 });
 
 export default connect(msp, mdp)(VideoItem);

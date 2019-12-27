@@ -8,27 +8,22 @@ class VideoItem extends React.Component {
         super(props);
         this.handleLike = this.handleLike.bind(this);
         this.handleDislike = this.handleDislike.bind(this);
-
     }
 
     componentDidMount() {
         this.props.fetchVideos();
-        this.props.fetchAllUsers();
-        
     }
 
     handleLike(e) {
         e.stopPropagation();
-        console.log("likeinggg");
         this.props.likeVideo(this.props.videoId);
     }
 
     handleDislike(e) {
         e.stopPropagation();
-        console.log("dislikinggg");
         this.props.dislikeVideo(this.props.videoId);
     }
- 
+
 
     render() { 
         const video = this.props.videos[this.props.videoId];

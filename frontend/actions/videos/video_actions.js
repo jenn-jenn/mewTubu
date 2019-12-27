@@ -3,6 +3,7 @@ import * as VideoAPIUtil from '../../util/video_api_util';
 export const RECEIVE_CLIP= "RECEIVE_CLIP";
 export const RECEIVE_CLIPS = "RECEIVE_CLIPS";
 export const CLIP_ERRORS = "CLIP_ERRORS";
+export const RECEIVE_QUERY = "RECEIVE_QUERY";
 
 const receiveClips = (clips) => {
     return {
@@ -25,6 +26,13 @@ const receiveClipErrors = (errors) => {
         errors
     };
 };
+
+export const receiveQuery = (query) => {
+    return {
+        type: RECEIVE_QUERY,
+        query
+    }
+}
 
 // THUNK ACTION CREATORS
 export const createVideo = (clip) => (dispatch) => {
