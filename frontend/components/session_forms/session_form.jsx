@@ -21,6 +21,7 @@ class SessionForm extends React.Component {
             };
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEnter = this.handleEnter.bind(this);
     }
     componentDidMount(){ 
         this.props.clearErrors();
@@ -51,12 +52,18 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-
+    
         this.props.processForm(user)
-        .then( () => {
-            // this.props.history.push("/");
-            return <Redirect to="/"/>
-        });
+            .then( () => {
+                // this.props.history.push("/");
+                return <Redirect to="/"/>
+            });
+        
+    }
+    handleEnter(e) {
+        if(e.keyCode === 13) {
+            this.handleSubmit(e);
+        }
     }
 
     renderErrors() {
@@ -73,7 +80,7 @@ class SessionForm extends React.Component {
 
     render() {
         const login = () => (
-            <form onSubmit={this.handleSubmit} className="session-form">
+            <form onSubmit={this.handleSubmit} onKeyDown={this.handleEnter} className="session-form">
                 <div className="input-group">
                     <ul>
                         <li>
@@ -108,7 +115,7 @@ class SessionForm extends React.Component {
         );
 
         const signup = () => (
-            <form onSubmit={this.handleSubmit} className="session-form">
+            <form onSubmit={this.handleSubmit} onKeyDown={this.handleEnter}className="session-form">
                 <div className="input-group">
                     <ul>
                         <li>
