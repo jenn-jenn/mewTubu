@@ -7,13 +7,10 @@ User.delete_all
 Video.delete_all
 
 User.create!( username: 'demo', email: 'demo', password: '123456')
-User.create!( username: 'Pixabay', email: 'user1@gmail.com', password: '123456')
-User.create!( username: 'Ruvim Miksanskiy', email: 'user2@gmail.com', password: '123456')
-User.create!( username: 'Jake Heinemann', email: 'user3@gmail.com', password: '123456')
-User.create!( username: 'Peter Fowler', email: 'user4@gmail.com', password: '123456')
-User.create!( username: 'Engin Akyurt', email: 'user5@gmail.com', password: '123456')
-User.create!( username: 'Pressmaster', email: 'user6@gmail.com', password: '123456')
-User.create!( username: 'Taryn Elliott', email: 'user7@gmail.com', password: '123456')
+User.create!( username: 'solar', email: 'solar@gmail.com', password: '123456')
+User.create!( username: 'cyrus', email: 'cyrus@gmail.com', password: '123456')
+User.create!( username: 'mochalatte', email: 'mochalatte@gmail.com', password: '123456')
+User.create!( username: 'gem', email: 'gem@gmail.com', password: '123456')
 
 # demo = User.find_by(email: 'demo')
 # pixabay = User.find_by(email: 'user1@gmail.com')
