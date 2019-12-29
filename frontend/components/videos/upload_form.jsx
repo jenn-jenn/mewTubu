@@ -98,19 +98,26 @@ class UploadForm extends React.Component {
             </form>
         )
         return (
-            <div className="upload-container">
-                <div className="clip-thumbnail-container">
-                    <div className="clip-thumbnail">
-                        <video id="video-thumbnail" src={this.state.clipUrl} />
+            <div className="upload-outer-container">    
+                <div className="upload-container">
+                    <div className="clip-thumbnail-container">
+                        <div className="clip-thumbnail">
+                            <video id="video-thumbnail" src={this.state.clipUrl} />
+                        </div>
                     </div>
-                </div>
-                <div className="clip-info-container">
+                    <div className="clip-info-container">
 
-                    <div className="upload-form-div">
-                        {form()}
-                    </div> 
+                        <div className="upload-form-div">
+                            {form()}
+                            <div className="upload-errors">
+                                {this.renderErrors()}
+                            </div>
+                            
+                        </div> 
+                        
+                    </div>
+                    
                 </div>
-                {this.renderErrors()}
             </div>
         )
     }

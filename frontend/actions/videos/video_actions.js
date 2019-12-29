@@ -20,7 +20,6 @@ const receiveClip = (clip) => {
 };
 
 const receiveClipErrors = (errors) => {
-    debugger
     return {
         type: CLIP_ERRORS,
         errors
@@ -28,6 +27,7 @@ const receiveClipErrors = (errors) => {
 };
 
 export const receiveQuery = (query) => {
+    console.log(`query = ${query}`)
     return {
         type: RECEIVE_QUERY,
         query
@@ -62,7 +62,6 @@ export const fetchVideos = (query) => (dispatch) => {
         return VideoAPIUtil.fetchVideos().then( (clips) => dispatch(receiveClips(clips)))
             .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
     }
-    
 }
 
 export const likeVideo = (videoId) => (dispatch) => {

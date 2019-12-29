@@ -37,17 +37,18 @@ class SelectFile extends React.Component {
         );
 
         return (
-            <div className="select-container"> 
-                <div className="select-file-header">
-                    <h2>Upload Video</h2>
+            <div className="select-outer-container">    
+                <div className="select-container"> 
+                    <div className="select-file-header">
+                        <h2>Upload Video</h2>
+                    </div>
+                    <div className="select-file-form">
+                        {selectForm()}
+                        <h1>Select File to Upload</h1>
+                    </div>
+                    
                 </div>
-                <div className="select-file-form">
-                    {selectForm()}
-                    <h1>Select File to Upload</h1>
-                </div>
-                
             </div>
-        
         )
     }
 };

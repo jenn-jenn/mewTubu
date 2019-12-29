@@ -27,9 +27,7 @@ const CommentForm = (props) => {
             txt.style.height = "34px";
         } else {
             txt.style.height = e.target.scrollHeight + 'px';
-        }
-        
-        
+        }  
     }
 
     const handleCancel = (e) => {

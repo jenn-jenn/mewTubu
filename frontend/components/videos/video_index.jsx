@@ -24,7 +24,7 @@ class VideoIndex extends React.Component {
     render() {
         let display = null;
         let searchResult = null;
-        if(!this.state.isArray || (this.state.isArray && this.props.videos.length === 0)){
+        if(!this.state.isArray){
             display = (
                 null
             )

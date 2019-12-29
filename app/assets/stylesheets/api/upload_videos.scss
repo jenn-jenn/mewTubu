@@ -3,217 +3,251 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
-.upload-container {
-    width: 50%;
-    height: 70%;
-    min-width: 500px;
-    min-height: 500px;
-    border: 2px rgb(102, 102, 102) solid;
-    border-radius: 3px;
+.upload-outer-container {
+    margin-top: 5%;
+    // border: 1px red solid;
+    width: 100%;
     display: flex;
+    justify-content: center;
 
-    .clip-thumbnail-container {
-        height: 45%;
-        width: 40%;
+    .upload-container {
+        width: 30%;
+        height: 70%;
+        min-width: 500px;
+        min-height: 500px;
+        border: 2px rgb(102, 102, 102) solid;
+        border-radius: 3px;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
 
-        .clip-thumbnail {
-            border: 1px gray dashed;
-            width: 80%;
-            height: 70%;
-            display: flex;
-            align-items: center;
-
-            #video-thumbnail {
-                width: 100%;
-                height: 95%;
-            }
-        }
-    }
-
-    .clip-info-container {
-        margin-top: 20px;
-        height: 100%;
-        width: 60%;
-        display: flex;
-        align-items: center;
-        color: black;
-        font-size: 20px;
-        flex-direction: column;
-
-        .upload-form-div {
-            width: 90%;
-            height: 87%;
-            display: flex;
-
-            .upload-form {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;                
-                align-content: flex-start;
-                
-                .done-btn-container {
-                    width: 95%;
-                    height: 50px;
-                    display: flex;
-                    align-items: center;
-                    margin-bottom: 10px;
-
-                    .progress-bar-container {
-                        position: relative;
-                        width: 75%;
-
-                        .progress-bar {
-                            background-color: whiteSmoke;
-                            border-radius: 2px;
-                            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
-                            width: 250px;
-                            height: 20px;
-                            position: relative;
-                            display: block;
-                            
-                            span {
-                                background-color: rgb(252, 172, 255);
-                                border-radius: 2px;
-                                display: block;
-                                text-indent: -9999px;
-                            }
-                        }
-
-                        progress[value] {
-                            width: 99%;
-                        }
-                    }
-
-                    .done-btn {
-                        font-size: 20px;
-                        background-color: transparent;
-                        border: 1px #B9B9B9 solid;
-                        border-radius: 3px;
-                        height: 30px;
-                        width: 80px;
-                        margin-left: 2px;
-                        color: #B9B9B9;
-                        cursor: pointer;
-                        transition: 0.40s;
-
-                        &:hover, 
-                        &:focus {
-                            color: black;
-                            border-color: rgb(224, 217, 217);
-                            background-color: rgb(224, 217, 217);
-                        }
-
-                    }
-                }
-
-                .clip-info-title {
-                    width: 90%;
-                    height: 15%;
-
-                    input[type="text"] {
-                        width: 100%;
-                        padding: 2px 5px 2px 5px;
-                        font-size: 16px;
-                    }
-                }
-
-                .clip-info-description {
-                    width: 90%;
-                    height: 40%;
-
-                    textarea {
-                        width: 100%;
-                        height: 80%;
-                        padding: 2px 5px 2px 5px;
-                        font-size: 16px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-.select-container {
-    width: 50%;
-    height: 70%;
-    min-width: 500px;
-    min-height: 500px;
-    border: 2px rgb(102, 102, 102) solid;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    justify-content: flex-start;
-    font-family: 'Quicksand', sans-serif;
-    
-
-    .select-file-header {
-        // border: 1px solid red;
-        border-bottom: solid;
-        border-bottom-width: 2px;
-        border-bottom-color: rgb(102, 102, 102);
-        display: flex;
-        height: 10%;
-        overflow: hidden;
-        padding: 10px 20px 10px 20px;
-        align-items: center;
-        font-size: 22px;
-        position: relative;
-    }
-
-    .select-file-form {
-        width: 70%;
-        height: 50%;
-        display: flex;
-        justify-content: flex-end;
-        align-self: center;
-        // border: 1px red solid;
-        text-align: center;
-        flex-direction: column;
-
-        h1 {
-            font-size: 22px;
-            // border: 1px red solid;
-        }
-
-        .select-file-div {
+        .clip-thumbnail-container {
             
-            height: 60%;
-            width: 99.5%;
-            font-size: 20px;
+            height: 45%;
+            width: 40%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: white;
-            cursor: pointer;
+            justify-content: center;
 
-            .paper-clip {
-                width: 60%;
-                height: 100%;
-                cursor: pointer;
-                padding-top: 30px;
-                padding-bottom: 30px;
-                // border: 1px cyan solid;
-        
-                img {
-                    width: 30%;
-                    cursor: pointer;
+            .clip-thumbnail {
+                border: 1px gray dashed;
+                width: 80%;
+                height: 70%;
+                display: flex;
+                align-items: center;
+
+                #video-thumbnail {
+                    width: 100%;
+                    height: 95%;
                 }
             }
-            input {
-                display: none;
+        }
+
+        .clip-info-container {
+            // border: 1px red solid;
+            margin-top: 20px;
+            height: 100%;
+            width: 60%;
+            display: flex;
+            // justify-content: flex-start;
+            align-items: center;
+            color: black;
+            font-size: 20px;
+            flex-direction: column;
+
+            .upload-form-div {
+                width: 90%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                // border: 1px pink solid;
+
+                .upload-form {
+                    // border: 1px yellow solid;
+                    width: 100%;
+                    height: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;                
+                    align-content: flex-start;
+
+                    .done-btn-container {
+                        width: 95%;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 10px;
+
+                        .progress-bar-container {
+                            position: relative;
+                            width: 75%;
+
+                            .progress-bar {
+                                background-color: whiteSmoke;
+                                border-radius: 2px;
+                                box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
+                                width: 250px;
+                                height: 20px;
+                                position: relative;
+                                display: block;
+                                
+                                span {
+                                    background-color: rgb(252, 172, 255);
+                                    border-radius: 2px;
+                                    display: block;
+                                    text-indent: -9999px;
+                                }
+                            }
+
+                            progress[value] {
+                                width: 99%;
+                            }
+                        }
+
+                        .done-btn {
+                            font-size: 20px;
+                            background-color: transparent;
+                            border: 1px #B9B9B9 solid;
+                            border-radius: 3px;
+                            height: 30px;
+                            width: 80px;
+                            margin-left: 2px;
+                            color: #B9B9B9;
+                            cursor: pointer;
+                            transition: 0.40s;
+
+                            &:hover, 
+                            &:focus {
+                                color: black;
+                                border-color: rgb(224, 217, 217);
+                                background-color: rgb(224, 217, 217);
+                            }
+
+                        }
+                    }
+
+                    .clip-info-title {
+                        width: 90%;
+                        height: 15%;
+
+                        input[type="text"] {
+                            width: 100%;
+                            padding: 2px 5px 2px 5px;
+                            font-size: 16px;
+                        }
+                    }
+
+                    .clip-info-description {
+                        width: 90%;
+                        height: 40%;
+
+                        textarea {
+                            width: 100%;
+                            height: 80%;
+                            padding: 2px 5px 2px 5px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .upload-errors {
+                    // border: 1px blue solid;
+                    color: white;
+                    margin-top: -150px;
+                    display: flex;
+                    align-self: center;
+
+                    li {
+                        list-style-type: disc;
+                    }
+                }
             }
-           
+
         }
     }
-
 }
+.select-outer-container {
+    margin-top: 5%;
+    border: 1px red solid;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .select-container {
+        // border: 1px red solid;
+        width: 20%;
+        min-width: 500px;
+        min-height: 500px;
+        border: 2px rgb(102, 102, 102) solid;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: flex-start;
+        font-family: 'Quicksand', sans-serif;
+        
+
+        .select-file-header {
+            // border: 1px solid red;
+            border-bottom: solid;
+            border-bottom-width: 2px;
+            border-bottom-color: rgb(102, 102, 102);
+            display: flex;
+            height: 10%;
+            overflow: hidden;
+            padding: 10px 20px 10px 20px;
+            align-items: center;
+            font-size: 22px;
+            position: relative;
+        }
+
+        .select-file-form {
+            width: 70%;
+            height: 50%;
+            display: flex;
+            justify-content: flex-end;
+            align-self: center;
+            // border: 1px red solid;
+            text-align: center;
+            flex-direction: column;
+
+            h1 {
+                font-size: 22px;
+                // border: 1px red solid;
+            }
+
+            .select-file-div {
+                
+                height: 60%;
+                width: 99.5%;
+                font-size: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: white;
+                cursor: pointer;
+
+                .paper-clip {
+                    width: 60%;
+                    height: 100%;
+                    cursor: pointer;
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                    // border: 1px cyan solid;
+            
+                    img {
+                        width: 30%;
+                        cursor: pointer;
+                    }
+                }
+                input {
+                    display: none;
+                }
+            
+            }
+        }
+
+    }
+}
+
 
 

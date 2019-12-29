@@ -83,19 +83,25 @@ button{
     
 }
 
+.main-container {
+    /* border: 1px red solid; */
+    display: flex;
+    justify-content: center;
+}
 
 
-@media only screen and (max-width: 900px) {
-    .content {
+
+/* @media only screen and (max-width: 900px) { */
+    /* .content { */
         /* border: 2px dashed green; */
-        display: flex;
+        /* display: flex;
         flex-direction: column;
-        overflow: hidden;
-    }
+        overflow: hidden; */
+    /* } */
 
     /* .video-show-div { width: 100%;} */
-    .side-videos {
+    /* .side-videos {
         width: 100%;
         overflow: hidden;
     }
-}
+} */
