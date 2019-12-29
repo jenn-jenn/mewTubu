@@ -17,6 +17,9 @@ class UploadForm extends React.Component {
     componentDidMount() {
         this.props.clearErrors();
         const file = this.state.file;
+        if(!file) {
+            this.props.history.push('/');
+        }
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
             this.setState({ 
@@ -39,15 +42,21 @@ class UploadForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('video[title]', this.state.title);
-        formData.append('video[description]', this.state.description);
-        formData.append('video[author_id]', this.props.currentUserId);
-        formData.append('video[clip]', this.props.file);
+    
+        if(this.state.title === "" || this.state.description === "") {
+            formData.append('video[title]', this.state.title);
+            formData.append('video[description]', this.state.description);
+            formData.append('video[author_id]', this.props.currentUserId);
+        } else {
+            formData.append('video[title]', this.state.title);
+            formData.append('video[description]', this.state.description);
+            formData.append('video[author_id]', this.props.currentUserId);
+            formData.append('video[clip]', this.props.file);
+        }
         this.props.createVideo(formData)
-            .then( () => {
+            .then( (err) => {
                 this.props.history.push('/videos');
-            }) 
-        
+            })    
     }
 
     renderErrors() {

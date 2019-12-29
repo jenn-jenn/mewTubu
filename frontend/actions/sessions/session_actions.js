@@ -35,10 +35,6 @@ export const signup = (user) => (dispatch) => {
 export const login = (user) => (dispatch) => {
     return SessionAPIUtil.login(user).then( (user) => dispatch(receiveCurrentUser(user)))
         .fail(err => dispatch(receiveErrors(err.responseJSON)));
-        // .fail( err => {
-        //     debugger
-        //     console.log(err.responseJSON)
-        // })
 };
 
 export const logout = () => (dispatch) => {

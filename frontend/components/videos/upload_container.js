@@ -5,9 +5,18 @@ import { clearErrors } from '../../actions/errors_action';
 
 
 const msp = ( state, ownProps ) => {
+    let file, fileType;
+    debugger
+    if (ownProps.location.state) {
+        file = ownProps.location.state.file;
+        fileType = ownProps.location.state.file.type;
+    } else {
+        file = null;
+        fileType = null;
+    }
     return {
-        file: ownProps.location.state.file,
-        fileType: ownProps.location.state.file.type,
+        file,
+        fileType,
         currentUserId: state.session.currentUserId,
         errors: state.errors.video
     }

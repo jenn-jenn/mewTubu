@@ -27,7 +27,6 @@ const receiveClipErrors = (errors) => {
 };
 
 export const receiveQuery = (query) => {
-    console.log(`query = ${query}`)
     return {
         type: RECEIVE_QUERY,
         query
@@ -38,15 +37,6 @@ export const receiveQuery = (query) => {
 export const createVideo = (clip) => (dispatch) => {
     return VideoAPIUtil.createVideo(clip).then( (clip) => dispatch(receiveClip(clip)))
         .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
-
-    // return VideoAPIUtil.createVideo(clip).then((clip) => {
-    //     debugger
-    //     return dispatch(receiveClip(clip))
-    //         .fail(err => {
-    //             debugger
-    //             dispatch(receiveClipErrors(err.responseJSON))
-    //         });
-    // })
 };
 
 export const fetchVideo = (clipId) => (dispatch) => {

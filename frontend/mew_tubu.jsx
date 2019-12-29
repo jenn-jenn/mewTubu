@@ -28,14 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
 
-    window.getState = store.getState;
-    // window.dispatch = store.dispatch;
+    // window.getState = store.getState;
 
-    // DEBUGGING PURPOSES
-    // let id = store.getState().session.currentUserId;
-    // if(id) {
-        // console.log(store.getState().entities.users[id])
-    // }
 
     ReactDOM.render(<Root store={store} />, root);
 });
