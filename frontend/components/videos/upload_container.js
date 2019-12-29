@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import VideoFrom from './upload_form'; 
 import { createVideo, fetchVideo } from '../../actions/videos/video_actions';
+import { clearErrors } from '../../actions/errors_action';
 
 
 const msp = ( state, ownProps ) => {
@@ -14,7 +15,8 @@ const msp = ( state, ownProps ) => {
 
 const mdp = (dispatch) => ({
     createVideo: (clip) => dispatch(createVideo(clip)),
-    fetchVideo: (clip) => dispatch(fetchVideo(clip))
+    fetchVideo: (clip) => dispatch(fetchVideo(clip)),
+    clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(msp, mdp)(VideoFrom);

@@ -15,6 +15,7 @@ class UploadForm extends React.Component {
     }
 
     componentDidMount() {
+        this.props.clearErrors();
         const file = this.state.file;
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
