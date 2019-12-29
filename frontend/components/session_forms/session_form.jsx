@@ -61,6 +61,7 @@ class SessionForm extends React.Component {
         
     }
     handleEnter(e) {
+        // e.preventDefault();
         if(e.keyCode === 13) {
             this.handleSubmit(e);
         }
