@@ -2,15 +2,19 @@ import React, { useState, useEffect } from 'react';
 
 const CommentForm = (props) => {
     const txt = document.getElementsByTagName('textarea')[0];
-    const { createComment, videoId, userId } = props;
+    const { createComment, videoId, userId, users, fetchAllUsers } = props;
     const [body, setBody] = useState('');
+
+    useEffect(() => {
+        fetchAllUsers()
+    }, [])
 
     const handleBodyChange = (e) => {
         setBody(e.target.value);
     }
 
     const handleSubmit = (e) => {
-        e.stopPropagation();
+        e.preventDefault();
         const comment = {
             body: body,
             author_id: userId,
