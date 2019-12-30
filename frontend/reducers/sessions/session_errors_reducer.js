@@ -11,6 +11,8 @@ const sessionErrorsReducer = (state = [], action) => {
         case RECEIVE_SESSION_ERRORS:
             return action.errors;
         case CLEAR_ERRORS:
+            let newState = Object.assign({}, state);
+            delete newState.errors;
             return [];
         default:
             return state;
