@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { fetchAllUsers } from '../../actions/users/users_actions';
 
 const Comments = (props) => {
-    const { fetchComments, videoId, comments } = props
+    const { fetchComments, videoId, comments, users } = props
+    
     useEffect(() => {
         fetchComments(videoId)
-        
     }, [fetchComments, videoId])
+
+    useEffect(() => {
+        fetchAllUsers()
+    }, [fetchAllUsers, users])
 
 
     return(
