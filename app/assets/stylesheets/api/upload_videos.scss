@@ -122,7 +122,9 @@
                                 border-color: rgb(224, 217, 217);
                                 background-color: rgb(224, 217, 217);
                             }
-
+                        }
+                        .done-btn:disabled {
+                            cursor: wait;
                         }
                     }
 

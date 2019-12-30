@@ -15,6 +15,7 @@ class UploadForm extends React.Component {
     }
 
     componentDidMount() {
+        this.done_btn = document.getElementById("upload-done");
         this.props.clearErrors();
         const file = this.state.file;
         if(!file) {
@@ -38,9 +39,18 @@ class UploadForm extends React.Component {
             this.setState( {[field]: e.target.value} )
         }
     }
+    toggleDisable() {
+        if(this.done_btn.disabled === "disabled") {
+            this.done_btn.disabled = ""
+        } else {
+            this.done_btn.disabled = "disabled"
+        }
+    }
 
     handleSubmit(e) {
         e.preventDefault();
+        this.toggleDisable();
+        debugger
         const formData = new FormData();
     
         if(this.state.title === "" || this.state.description === "") {
@@ -55,6 +65,7 @@ class UploadForm extends React.Component {
         }
         this.props.createVideo(formData)
             .then( (err) => {
+                this.toggleDisable();
                 this.props.history.push('/videos');
             })    
     }
@@ -82,11 +93,13 @@ class UploadForm extends React.Component {
                             </div>
                         </progress> */}
                     {/* </div> */}
-                    <input
+                    {/* <input
                         type="submit"
                         value="Done"
                         className="done-btn"
-                    />
+                        id="upload-done"
+                    /> */}
+                    <button className="done-btn" id="upload-done">Done</button>
                 </div>
                 <div className="clip-info-title">
                     <input 

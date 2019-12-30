@@ -25,6 +25,7 @@ class SessionForm extends React.Component {
     }
     componentDidMount(){ 
         this.props.clearErrors();
+        this.submit_btn= document.getElementById("session-submit");
     }
 
     update(field) {
@@ -52,24 +53,32 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-    
+        this.toggleDisable();
+        debugger
         this.props.processForm(user)
             .then( () => {
+                // this.toggleDisable();
                 // this.props.history.push("/");
-                return <Redirect to="/"/>
             });
         
     }
     handleEnter(e) {
-        // e.preventDefault();
         if(e.keyCode === 13) {
             this.handleSubmit(e);
         }
     }
 
+    toggleDisable() {
+        if (this.submit_btn.disabled === "disabled") {
+            this.submit_btn.disabled = ""
+        } else {
+            this.submit_btn.disabled = "disabled"
+        }
+    }
+
     renderErrors() {
         return (
-            <ul className="errors">
+            <ul className="errors" id="session-errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
@@ -108,7 +117,7 @@ class SessionForm extends React.Component {
                         type="submit"
                         value={this.props.formType}
                     /> */}
-                    <button className="form-btn">{this.props.formType}</button>
+                    <button className="form-btn" id="session-submit">{this.props.formType}</button>
                     <Link to="/signup">Create an Account</Link>
                 </div>
                 {this.renderErrors()}
@@ -152,7 +161,7 @@ class SessionForm extends React.Component {
                         type="submit"
                         value={this.props.formType}
                     /> */}
-                    <button className="form-btn">{this.props.formType}</button>
+                    <button className="form-btn" id="session-submit">{this.props.formType}</button>
                     <Link to="/login">Have an Account?</Link>
                 </div>
                 {this.renderErrors()}
