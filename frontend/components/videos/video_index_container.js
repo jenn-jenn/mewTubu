@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import VideoIndex from './video_index';
 import { fetchVideos } from '../../actions/videos/video_actions';
+import { fetchAllUsers } from '../../actions/users/users_actions';
 
 const msp = (state) => {
     
@@ -11,7 +12,8 @@ const msp = (state) => {
         videos = Object.values(state.entities.videos)
     }
     return {
-        videos
+        videos,
+        users: state.entities.users
     }
     
 }; 
@@ -19,6 +21,7 @@ const msp = (state) => {
 const mdp = (dispatch) => ({
     fetchVideos: () => dispatch(fetchVideos()),
     fetchVideosWithQuery: (query) => dispatch(fetchVideos(query)),
+    fetchAllUsers: () => dispatch(fetchAllUsers())
 });
 
 export default connect(msp, mdp)(VideoIndex);

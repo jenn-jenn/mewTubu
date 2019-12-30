@@ -6,8 +6,8 @@ const SideNav = () => {
     const side = (
         <section className="side-section">
             <div>
-                {/* <a href="/"><i className="fas fa-home" />Home</a> */}
-                <Link to="/"><i className="fas fa-home" />Home</Link>
+                <a href="/"><i className="fas fa-home" />Home</a>
+                {/* <Link to="/"><i className="fas fa-home" />Home</Link> */}
             </div>
             <div>              
                 <a href="https://github.com/jenn-jenn/mewTubu"><i className="fab fa-github"></i>Github</a>

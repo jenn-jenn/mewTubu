@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const CommentForm = (props) => {
     const txt = document.getElementsByTagName('textarea')[0];
-    const { createComment, videoId, userId, users, fetchAllUsers } = props;
+    const { createComment, videoId, userId, users, fetchAllUsers, currentUser } = props;
     const [body, setBody] = useState('');
+    let history = useHistory();
+    let location = useLocation();
 
     useEffect(() => {
         fetchAllUsers()
@@ -15,6 +18,9 @@ const CommentForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(!currentUser){
+            history.push('/login')
+        }
         const comment = {
             body: body,
             author_id: userId,

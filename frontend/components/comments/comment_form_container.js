@@ -5,7 +5,8 @@ import { fetchAllUsers } from '../../actions/users/users_actions';
 
 const msp = (state) => {
     return {
-        users: state.entities.users   
+        users: state.entities.users,
+        currentUser: state.entities.users[state.session.currentUserId] 
     }
 };
 
