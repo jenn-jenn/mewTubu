@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const root = document.getElementById("root");
     let store;
-
+    
     if(window.currentUser) {
         const preloadedState = {
             entities: {
@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         store = configureStore(preloadedState);
         delete window.currentUser;
-    } else {
+    }
+    else {
         store = configureStore();
     }
 

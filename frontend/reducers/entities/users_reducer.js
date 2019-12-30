@@ -9,6 +9,7 @@ import { RECEIVE_ALL_USERS } from "../../actions/users/users_actions";
              let user = action.user;
              let newState = Object.assign({}, state);
              newState[user.id] = user;
+            //  localStorage.setItem('users', JSON.stringify(newState));
             return newState;
          case RECEIVE_ALL_USERS:
              return action.users

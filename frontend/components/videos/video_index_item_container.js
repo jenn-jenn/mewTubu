@@ -5,7 +5,10 @@ import { fetchVideos } from '../../actions/videos/video_actions'
 
 const msp = (state, ownProps) => { 
     return {
-        username: state.entities.users[ownProps.authorId].username
+        // users: JSON.parse(localStorage.getItem("users")),
+        authorId: ownProps.authorId,
+        username: state.entities.users[ownProps.authorId].username,
+
     }
 };
 
