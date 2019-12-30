@@ -29,9 +29,8 @@ class VideoItem extends React.Component {
         if (!this.props.currentUserId) {
             this.props.history.push('/login');
         } else {
-            this.props.likeVideo(this.props.videoId);
+            this.props.dislikeVideo(this.props.videoId);
         }
-        this.props.dislikeVideo(this.props.videoId);
     }
 
 
