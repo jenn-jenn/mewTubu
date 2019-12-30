@@ -7,7 +7,9 @@ import { RECEIVE_ALL_USERS } from "../../actions/users/users_actions";
      switch(action.type) {
         case RECEIVE_CURRENT_USER:
              let user = action.user;
-            return Object.assign({}, state, { [user.id]: user} );
+             let newState = Object.assign({}, state);
+             newState[user.id] = user;
+            return newState;
          case RECEIVE_ALL_USERS:
              return action.users
         default:

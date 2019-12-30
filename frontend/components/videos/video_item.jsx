@@ -16,11 +16,21 @@ class VideoItem extends React.Component {
 
     handleLike(e) {
         e.stopPropagation();
-        this.props.likeVideo(this.props.videoId);
+        if(!this.props.currentUserId) {
+            this.props.history.push('/login');
+        } else {
+            this.props.likeVideo(this.props.videoId);
+        }
+        
     }
 
     handleDislike(e) {
         e.stopPropagation();
+        if (!this.props.currentUserId) {
+            this.props.history.push('/login');
+        } else {
+            this.props.likeVideo(this.props.videoId);
+        }
         this.props.dislikeVideo(this.props.videoId);
     }
 

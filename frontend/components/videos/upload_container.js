@@ -6,7 +6,6 @@ import { clearErrors } from '../../actions/errors_action';
 
 const msp = ( state, ownProps ) => {
     let file, fileType;
-    // debugger
     if (ownProps.location.state) {
         file = ownProps.location.state.file;
         fileType = ownProps.location.state.file.type;

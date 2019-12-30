@@ -50,7 +50,6 @@ class UploadForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.toggleDisable();
-        debugger
         const formData = new FormData();
     
         if(this.state.title === "" || this.state.description === "") {
