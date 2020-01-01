@@ -27,11 +27,39 @@ This page allows user to upload videos, which then redirects to another page tha
 #### Index/Show Pages
 Videos are shown on these pages and each is a link to their individual show page.
 
-![alt text](https://github.com/jenn-jenn/mewTubu/blob/master/app/assets/images/index2.png "Index Page")
-![alt text](https://github.com/jenn-jenn/mewTubu/blob/master/app/assets/images/show.png "Show Page")
+![alt text](https://user-images.githubusercontent.com/16752858/71639300-e0336500-2c28-11ea-9800-bc5feb68c3a8.png "Index Page")
+![alt text](https://user-images.githubusercontent.com/16752858/71639322-53d57200-2c29-11ea-876f-4f30e5a56f73.png "Show Page")
 
 ### Challenges
 Toughest part was trying to get the project to work with WSL (Windows Subsystem Linux) on a Windows 10. Using S3 from AWS required that I use their ca certificate bundle, so I had to make sure to insert the `Aws.use_bundled_cert!` method in the correct place. Another related problem is that I need to set my SSL's environment variables in order to use Ruby's `open-uri`.
+
+### Code Snippets
+For `likes` and `dislikes`, I included a check to see if the `current_user` had already liked the video or not. This allows me to remove a like when the user clicks on the like button again. The same goes for dislikes.
+
+``` ruby
+    def already_liked?
+        Like.where(user_id: current_user.id, video_id: params[:video_id]).exists?
+    end
+```
+
+Depending on whether there's a query or just showing the index page, I checked for the type of the videos. If the videos is an Array, then it contains videos, otherwise it is the query. From there, I will do an API call to the backend to retrieve the videos with titles that include that keyword.
+
+```react
+    componentDidMount() { 
+        this.props.fetchAllUsers();
+        
+        if(Array.isArray(this.props.videos)) {
+            this.props.fetchVideos().then(() => {
+                this.setState({ isArray: Array.isArray(this.props.videos)})
+            })
+        } else {
+            this.word = this.props.videos;
+            this.props.fetchVideosWithQuery(this.props.videos).then(() => {
+                this.setState({ isArray: Array.isArray(this.props.videos) })
+            })
+        }
+    }
+```
 
 #### Future Goal
 + Be able to upload using a modal popup instead
