@@ -2,7 +2,7 @@
 
 ## MewTubu
 
-Live application: [MewTubu](https://mewtubu.herokuapp.com/#/)
+Live application: [MewTubu](https://mew-tubu.herokuapp.com/#/)
 
 ### Overview
 MewTubu is a Youtube clone that includes user authentication, index/show pages for videos, and upload page. Users are able to login/signup, upload and play videos.
