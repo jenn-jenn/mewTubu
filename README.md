@@ -44,7 +44,7 @@ For `likes` and `dislikes`, I included a check to see if the `current_user` had 
 
 Depending on whether there's a query or just showing the index page, I checked for the type of the videos. If the videos is an Array, then it contains videos, otherwise it is the query. From there, I will do an API call to the backend to retrieve the videos with titles that include that keyword.
 
-```react
+```javascript
     componentDidMount() { 
         this.props.fetchAllUsers();
         
