@@ -10,10 +10,10 @@ const SideNav = () => {
                 {/* <Link to="/"><i className="fas fa-home" />Home</Link> */}
             </div>
             <div>              
-                <a href="https://github.com/jenn-jenn/mewTubu"><i className="fab fa-github"></i>Github</a>
+                <a href="https://github.com/jenn-jenn/mewTubu" target="_blank"><i className="fab fa-github"></i>Github</a>
             </div>
             <div>
-                <a href="https://www.linkedin.com/in/jennifer-wong-295132103/"><i className="fab fa-linkedin"></i>LinkedIn</a>
+                <a href="https://www.linkedin.com/in/jennifer-wong-295132103/" target="_blank"><i className="fab fa-linkedin"></i>LinkedIn</a>
             </div>
         </section>
 
