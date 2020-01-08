@@ -10,7 +10,6 @@ class VideoIndex extends React.Component {
     }
     componentDidMount() { 
         this.props.fetchAllUsers();
-        debugger
         if(Array.isArray(this.props.videos)) {
             this.props.fetchVideos().then(() => {
                 this.setState({ isArray: Array.isArray(this.props.videos)})
