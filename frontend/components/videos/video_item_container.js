@@ -8,7 +8,7 @@ const msp = (state, ownProps) => {
     return {
         videoId: ownProps.match.params.videoId,
         videos: state.entities.videos,
-        currentUserId: state.session.currentUserId
+        currentUserId: state.session.currentUserId,
     }
 }
 

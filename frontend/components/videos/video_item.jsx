@@ -6,12 +6,54 @@ import CommentsContainer from '../comments/comment_container';
 class VideoItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            videoId: this.props.videoId
+        }
         this.handleLike = this.handleLike.bind(this);
         this.handleDislike = this.handleDislike.bind(this);
+        this.checkThumbscolor = this.checkThumbscolor.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchVideos();
+        this.checkThumbscolor();
+    }
+    componentDidUpdate() {
+        this.checkThumbscolor();
+    }
+
+    checkThumbscolor() {
+        const video = this.props.videos[this.props.videoId];
+        const likes = video.likes // array
+        const dislikes = video.dislikes // array
+        const upThumb = document.getElementById("up");
+        const downThumb = document.getElementById("down");
+        
+        let didLiked = false;
+        likes.forEach((like) => {
+            if(like.user_id === this.props.currentUserId) {
+                didLiked = true;
+            }
+        })
+
+        let didDisliked = false;
+        dislikes.forEach((like) => {
+            if (like.user_id === this.props.currentUserId) {
+                didDisliked = true;
+            }
+        })
+
+        if(didLiked) {
+            upThumb.style.color = "rgb(185, 149, 243)";
+        } else {
+            upThumb.style.color = "";
+        }
+
+        if(didDisliked) {
+            downThumb.style.color = "rgb(185, 149, 243)";
+        } else {
+            downThumb.style.color = "";
+        }
     }
 
     handleLike(e) {
@@ -19,7 +61,9 @@ class VideoItem extends React.Component {
         if(!this.props.currentUserId) {
             this.props.history.push('/login');
         } else {
-            this.props.likeVideo(this.props.videoId);
+            this.props.likeVideo(this.props.videoId).then(() => {
+                this.checkThumbscolor();
+            });
         }
         
     }
@@ -29,9 +73,13 @@ class VideoItem extends React.Component {
         if (!this.props.currentUserId) {
             this.props.history.push('/login');
         } else {
-            this.props.dislikeVideo(this.props.videoId);
+            this.props.dislikeVideo(this.props.videoId).then(() => {
+                this.checkThumbscolor();
+            });
         }
     }
+
+
 
 
     render() { 
@@ -55,12 +103,12 @@ class VideoItem extends React.Component {
                         </div>
                         <div className="thumbs">
                             <div className="likes-count">
-                                <i className="fas fa-thumbs-up" title="Like" onClick={this.handleLike}></i>
-                                <span>{video.likes}</span>
+                                <i className="fas fa-thumbs-up" id="up" title="Like" onClick={this.handleLike}></i>
+                                <span>{video.likes.length}</span>
                             </div>
                             <div className="dislikes-count">
-                                <i className="fas fa-thumbs-down" title="Dislike" onClick={this.handleDislike}></i>
-                                <span>{video.dislikes}</span>
+                                <i className="fas fa-thumbs-down" id="down" title="Dislike" onClick={this.handleDislike}></i>
+                                <span>{video.dislikes.length}</span>
                             </div>
                             
                         </div>
