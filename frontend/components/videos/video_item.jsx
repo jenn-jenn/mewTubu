@@ -23,7 +23,6 @@ class VideoItem extends React.Component {
     }
 
     checkThumbscolor() {
-        console.log('checking for color...?');
         const video = this.props.videos[this.props.videoId];
         const likes = video.likes // array
         const dislikes = video.dislikes // array
@@ -55,7 +54,6 @@ class VideoItem extends React.Component {
         } else {
             downThumb.style.color = "";
         }
-        debugger
     }
 
     handleLike(e) {
