@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import VideoIndexItemContainer from './video_index_item_container';
 import CommentFormContainer from '../comments/comment_form_container';
 import CommentsContainer from '../comments/comment_container';
@@ -33,6 +34,7 @@ class VideoItem extends React.Component {
         likes.forEach((like) => {
             if(like.user_id === this.props.currentUserId) {
                 didLiked = true;
+                didDisliked = false;
             }
         })
 
@@ -40,6 +42,7 @@ class VideoItem extends React.Component {
         dislikes.forEach((like) => {
             if (like.user_id === this.props.currentUserId) {
                 didDisliked = true;
+                didLiked = false;
             }
         })
 
@@ -59,7 +62,10 @@ class VideoItem extends React.Component {
     handleLike(e) {
         e.stopPropagation();
         if(!this.props.currentUserId) {
-            this.props.history.push('/login');
+            this.props.history.push({
+                pathname: "/login",
+                state: { from: this.props.location.pathname }
+            }); 
         } else {
             this.props.likeVideo(this.props.videoId).then(() => {
                 this.checkThumbscolor();
@@ -71,7 +77,10 @@ class VideoItem extends React.Component {
     handleDislike(e) {
         e.stopPropagation();
         if (!this.props.currentUserId) {
-            this.props.history.push('/login');
+            this.props.history.push({
+                pathname: '/login',
+                state: { from: this.props.location.pathname }
+            }); 
         } else {
             this.props.dislikeVideo(this.props.videoId).then(() => {
                 this.checkThumbscolor();

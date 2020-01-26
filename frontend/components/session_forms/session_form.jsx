@@ -4,22 +4,25 @@ import { Link, Redirect} from 'react-router-dom';
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
+        debugger
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            // prev: this.props.location.state || { from: {pathname: '/'}}
         };
 
-        if (props.location.state){
-            this.state = {
-                email: 'demo',
-                password: '123456'
-            };
-        } else {
-            this.state = {
-                email: '',
-                password: ''
-            };
-        };
+        // if (props.location.state){
+        //     this.state = {
+        //         email: 'demo',
+        //         password: '123456'
+        //     };
+        // } else {
+        //     this.state = {
+        //         email: '',
+        //         password: ''
+        //     };
+        // };
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEnter = this.handleEnter.bind(this);
     }
@@ -37,6 +40,10 @@ class SessionForm extends React.Component {
     demo() { 
         return(e) => {
             this.props.clearErrors();
+            const { from } = this.props.location.state || {
+              from: { pathname: "/" }
+            };
+            debugger
             this.setState({
                 ['email']: 'demo',
                 ['password']: '123456'
@@ -44,7 +51,7 @@ class SessionForm extends React.Component {
                 const user = Object.assign({}, this.state);
                 this.props.processForm(user)
                     .then( () => {
-                        this.props.history.push("/");
+                        this.props.history.push(from);
                     })
             })
         }
@@ -53,12 +60,22 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
+        const { from } = this.props.location.state || {
+          from: { pathname: "/" }
+        };
+        debugger
         this.toggleDisable();
         this.props.processForm(user)
             .then( () => {
                 // this.toggleDisable();
-                // this.props.history.push("/");
-            });
+                this.props.history.push(from);
+            })
+            // .then( () => {
+            //     this.state = {
+            //       email: "",
+            //       password: ""
+            //     };
+            // })
         
     }
     handleEnter(e) {

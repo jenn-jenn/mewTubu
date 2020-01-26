@@ -1,5 +1,5 @@
 class Api::CommentsController < ApplicationController
-    before_action :require_login
+    before_action :require_login, only: [:create, :destroy]
 
     def create 
         @comment = Comment.new(comments_params)
