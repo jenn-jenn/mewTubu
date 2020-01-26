@@ -175,11 +175,11 @@
     justify-content: center;
 
     .select-container {
-        // border: 1px red solid;
+        // border: 1px red solid;   
         width: 20%;
         min-width: 500px;
         min-height: 500px;
-        border: 2px rgb(102, 102, 102) solid;
+        // border: 2px rgb(102, 102, 102) solid;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
@@ -190,9 +190,9 @@
 
         .select-file-header {
             // border: 1px solid red;
-            border-bottom: solid;
-            border-bottom-width: 2px;
-            border-bottom-color: rgb(102, 102, 102);
+            // border-bottom: solid;
+            // border-bottom-width: 2px;
+            // border-bottom-color: rgb(102, 102, 102);
             display: flex;
             height: 10%;
             overflow: hidden;
@@ -200,25 +200,25 @@
             align-items: center;
             font-size: 22px;
             position: relative;
+            justify-content: center;
         }
 
         .select-file-form {
-            width: 70%;
+            width: 90%;
             height: 50%;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             align-self: center;
-            // border: 1px red solid;
+            border: 4px gray dashed;
             text-align: center;
             flex-direction: column;
-
             h1 {
                 font-size: 22px;
                 // border: 1px red solid;
             }
 
             .select-file-div {
-                
+                // border: 1px dashed white;
                 height: 60%;
                 width: 99.5%;
                 font-size: 20px;

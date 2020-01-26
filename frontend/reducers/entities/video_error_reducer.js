@@ -7,6 +7,7 @@ const videoErrorsReducer = (state = [], action) => {
 
     switch(action.type) {
         case CLIP_ERRORS:
+            debugger
             return action.errors;
         case CLEAR_ERRORS:
             return [];
