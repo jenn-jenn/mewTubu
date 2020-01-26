@@ -4,7 +4,6 @@ class UploadForm extends React.Component {
     // have access to file via this.props.location.state.file
     constructor(props) {
         super(props);
-        debugger
         this.state = {
             title: '',
             description:'',
@@ -16,7 +15,6 @@ class UploadForm extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.done_btn = document.getElementById("upload-done");
         this.props.clearErrors();
         const file = this.state.file;
@@ -66,7 +64,6 @@ class UploadForm extends React.Component {
         }
         this.props.createVideo(formData)
             .then( (err) => {
-                debugger
                 this.toggleDisable();
                 this.props.history.push('/videos');
             })    
