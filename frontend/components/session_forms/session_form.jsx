@@ -7,8 +7,7 @@ class SessionForm extends React.Component {
         debugger
         this.state = {
             email: '',
-            password: '',
-            // prev: this.props.location.state || { from: {pathname: '/'}}
+            password: ''
         };
 
         // if (props.location.state){
@@ -70,13 +69,6 @@ class SessionForm extends React.Component {
                 // this.toggleDisable();
                 this.props.history.push(from);
             })
-            // .then( () => {
-            //     this.state = {
-            //       email: "",
-            //       password: ""
-            //     };
-            // })
-        
     }
     handleEnter(e) {
         if(e.keyCode === 13) {

@@ -19,7 +19,7 @@ class Dashboard extends React.Component {
     
     render() {
         return (
-            <div className="main">    
+            <div className="main">
                 <Route path="/" component={NavBarContainer}/>
                 <Route path="/" component={SideNav}/>
                 <div className="content">
