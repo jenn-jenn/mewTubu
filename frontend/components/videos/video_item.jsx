@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import VideoIndexItemContainer from './video_index_item_container';
 import CommentFormContainer from '../comments/comment_form_container';
 import CommentsContainer from '../comments/comment_container';
@@ -6,8 +7,9 @@ import CommentsContainer from '../comments/comment_container';
 class VideoItem extends React.Component {
     constructor(props) {
         super(props);
+        debugger
         this.state = {
-            videoId: this.props.videoId
+            videoId: this.props.videoId,
         }
         this.handleLike = this.handleLike.bind(this);
         this.handleDislike = this.handleDislike.bind(this);
@@ -23,33 +25,17 @@ class VideoItem extends React.Component {
     }
 
     checkThumbscolor() {
-        const video = this.props.videos[this.props.videoId];
-        const likes = video.likes // array
-        const dislikes = video.dislikes // array
+        let { likes, dislikes, currentUserId } = this.props;
         const upThumb = document.getElementById("up");
         const downThumb = document.getElementById("down");
         
-        let didLiked = false;
-        likes.forEach((like) => {
-            if(like.user_id === this.props.currentUserId) {
-                didLiked = true;
-            }
-        })
-
-        let didDisliked = false;
-        dislikes.forEach((like) => {
-            if (like.user_id === this.props.currentUserId) {
-                didDisliked = true;
-            }
-        })
-
-        if(didLiked) {
+        if(likes.includes(currentUserId)) {
             upThumb.style.color = "rgb(185, 149, 243)";
         } else {
             upThumb.style.color = "";
         }
 
-        if(didDisliked) {
+        if(dislikes.includes(currentUserId)) {
             downThumb.style.color = "rgb(185, 149, 243)";
         } else {
             downThumb.style.color = "";
@@ -58,31 +44,69 @@ class VideoItem extends React.Component {
 
     handleLike(e) {
         e.stopPropagation();
-        if(!this.props.currentUserId) {
-            this.props.history.push('/login');
+        let { currentUserId, likeVideo, dislikeVideo, videoId, dislikes } = this.props;
+
+        if(!currentUserId) {
+            this.props.history.push({
+                pathname: "/login",
+                state: { from: this.props.location.pathname }
+            }); 
         } else {
-            this.props.likeVideo(this.props.videoId).then(() => {
-                this.checkThumbscolor();
+            /*
+                1. if userId is in dislike, remove dislike
+                2. like
+            */
+            if(dislikes.includes(currentUserId)) {
+                dislikeVideo(videoId).then((res) => {
+                    let dislikes = res.clip.dislikes.map((dislike) => {
+                        return dislike.userId;
+                    })
+                    this.setState({dislikes});
+                });
+            }
+            likeVideo(videoId).then((res) => {
+                let likes = res.clip.likes.map((like) => {
+                    return like.userId;
+                })
+                this.setState({ likes });
             });
         }
-        
     }
 
     handleDislike(e) {
         e.stopPropagation();
+        let { currentUserId, likeVideo, dislikeVideo, videoId, likes } = this.props;
+
         if (!this.props.currentUserId) {
-            this.props.history.push('/login');
+            this.props.history.push({
+                pathname: '/login',
+                state: { from: this.props.location.pathname }
+            }); 
         } else {
-            this.props.dislikeVideo(this.props.videoId).then(() => {
-                this.checkThumbscolor();
+            /*
+                1. if userId is in likes && not in dislikes, remove likes
+                2. dislike
+            */
+            if(likes.includes(currentUserId)){
+                likeVideo(videoId).then((res) => {
+                    let likes = res.clip.likes.map((like) => {
+                        return like.userId;
+                    })
+                    this.setState({likes});
+                })
+            }
+            dislikeVideo(videoId).then((res) => {
+                let dislikes = res.clip.dislikes.map((dislike) => {
+                    return dislike.userId;
+                })
+                this.setState({dislikes});
             });
         }
     }
 
-
-
-
     render() { 
+        debugger
+        const { likes, dislikes } = this.props;
         const video = this.props.videos[this.props.videoId];
         if(video === undefined || this.props.videoId === undefined) {
             return null
@@ -104,11 +128,11 @@ class VideoItem extends React.Component {
                         <div className="thumbs">
                             <div className="likes-count">
                                 <i className="fas fa-thumbs-up" id="up" title="Like" onClick={this.handleLike}></i>
-                                <span>{video.likes.length}</span>
+                                <span>{likes.length}</span>
                             </div>
                             <div className="dislikes-count">
                                 <i className="fas fa-thumbs-down" id="down" title="Dislike" onClick={this.handleDislike}></i>
-                                <span>{video.dislikes.length}</span>
+                                <span>{dislikes.length}</span>
                             </div>
                             
                         </div>

@@ -11,8 +11,7 @@ class VideoIndexItem extends React.Component {
     }
 
     render() {
-        const video = this.props.video;
-        const username = this.props.username;
+        const {video, username} = this.props;
 
         return(
             <div className="clip-content" >
