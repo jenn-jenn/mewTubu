@@ -20,6 +20,7 @@ class VideoItem extends React.Component {
         this.props.fetchVideos();
         this.checkThumbscolor();
     }
+
     componentDidUpdate() {
         this.checkThumbscolor();
     }
@@ -61,14 +62,12 @@ class VideoItem extends React.Component {
                     let dislikes = res.clip.dislikes.map((dislike) => {
                         return dislike.userId;
                     })
-                    this.setState({dislikes});
                 });
             }
             likeVideo(videoId).then((res) => {
                 let likes = res.clip.likes.map((like) => {
                     return like.userId;
                 })
-                this.setState({ likes });
             });
         }
     }
@@ -92,14 +91,12 @@ class VideoItem extends React.Component {
                     let likes = res.clip.likes.map((like) => {
                         return like.userId;
                     })
-                    this.setState({likes});
                 })
             }
             dislikeVideo(videoId).then((res) => {
                 let dislikes = res.clip.dislikes.map((dislike) => {
                     return dislike.userId;
                 })
-                this.setState({dislikes});
             });
         }
     }
