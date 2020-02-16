@@ -4,7 +4,6 @@ import { Link, Redirect} from 'react-router-dom';
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
-        debugger
         this.state = {
             email: '',
             password: ''
@@ -42,7 +41,6 @@ class SessionForm extends React.Component {
             const { from } = this.props.location.state || {
               from: { pathname: "/" }
             };
-            debugger
             this.setState({
                 ['email']: 'demo',
                 ['password']: '123456'
@@ -62,7 +60,6 @@ class SessionForm extends React.Component {
         const { from } = this.props.location.state || {
           from: { pathname: "/" }
         };
-        debugger
         this.toggleDisable();
         this.props.processForm(user)
             .then( () => {

@@ -7,7 +7,6 @@ import CommentsContainer from '../comments/comment_container';
 class VideoItem extends React.Component {
     constructor(props) {
         super(props);
-        debugger
         this.state = {
             videoId: this.props.videoId,
         }
@@ -88,13 +87,13 @@ class VideoItem extends React.Component {
             */
             if(likes.includes(currentUserId)){
                 likeVideo(videoId).then((res) => {
-                    let likes = res.clip.likes.map((like) => {
+                    res.clip.likes.map((like) => {
                         return like.userId;
                     })
                 })
             }
             dislikeVideo(videoId).then((res) => {
-                let dislikes = res.clip.dislikes.map((dislike) => {
+                res.clip.dislikes.map((dislike) => {
                     return dislike.userId;
                 })
             });
@@ -102,7 +101,6 @@ class VideoItem extends React.Component {
     }
 
     render() { 
-        debugger
         const { likes, dislikes } = this.props;
         const video = this.props.videos[this.props.videoId];
         if(video === undefined || this.props.videoId === undefined) {

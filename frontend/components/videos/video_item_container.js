@@ -12,7 +12,6 @@ const msp = (state, ownProps) => {
     let dislikes = state.entities.videos[ownProps.match.params.videoId].dislikes.map((dislike) => {
         return dislike.userId;
     })
-    debugger
     return {
         videoId: ownProps.match.params.videoId,
         videos: state.entities.videos,
