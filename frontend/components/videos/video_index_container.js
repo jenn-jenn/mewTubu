@@ -15,7 +15,6 @@ const msp = (state) => {
         videos,
         users: state.entities.users
     }
-    
 }; 
 
 const mdp = (dispatch) => ({
