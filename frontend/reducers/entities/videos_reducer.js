@@ -1,4 +1,4 @@
-import { RECEIVE_CLIP, RECEIVE_CLIPS, RECEIVE_QUERY } from '../../actions/videos/video_actions';
+import { RECEIVE_CLIP, RECEIVE_CLIPS, RECEIVE_QUERY, RECEIVE_CURRENT_CLIP } from '../../actions/videos/video_actions';
 
 const videoReducer =( state = {}, action) => {
     Object.freeze(state);

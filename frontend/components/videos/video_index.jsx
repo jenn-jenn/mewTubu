@@ -24,7 +24,6 @@ class VideoIndex extends React.Component {
 
     render() {
         let display = null;
-        let searchResult = null;
         if(!this.state.isArray){
             display = (
                 null
@@ -36,11 +35,6 @@ class VideoIndex extends React.Component {
                 </header>
             )
         } else if(this.state.isArray){
-            // if(this.word) {
-            //     searchResult = (
-            //         <h2>Search results for "{this.word}"</h2>
-            //     )
-            // }
             
             display = (
                 <>  
@@ -59,9 +53,6 @@ class VideoIndex extends React.Component {
         
         return (
             <div className="video-index-content">
-                {/* <div>
-                    {searchResult}    
-                </div> */}
                 {display}
             </div>
         )

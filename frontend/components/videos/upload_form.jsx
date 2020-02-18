@@ -1,7 +1,6 @@
 import React from 'react';
 
 class UploadForm extends React.Component {
-    // have access to file via this.props.location.state.file
     constructor(props) {
         super(props);
         this.state = {
