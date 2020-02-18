@@ -75,7 +75,7 @@
 }
 
 .side-videos {
-    border: 3px solid blue;
+    // border: 3px solid blue;
     width: 40%;
     margin-left: 30px;
     display: flex;
@@ -83,11 +83,11 @@
     justify-content: flex-start;
 
     .clip-div {
-            border: 1px solid pink;
+            // border: 1px solid pink;
             width: 99%;
 
         .clip-content {
-            border: 1px solid green;
+            // border: 1px solid green;
             width: 90%;
             height: 100%;
             display: flex;
@@ -95,13 +95,13 @@
             padding: 0;
 
             video {
-                border: 1px solid red;
+                // border: 1px solid red;
                 margin: 5px;
                 height: 90%;
             }
 
             .clip-desc {
-                border: 1px solid yellow;
+                // border: 1px solid yellow;
                 margin-left: 25px;
 
                 .user-icon {
