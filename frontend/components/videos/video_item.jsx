@@ -7,12 +7,6 @@ import CommentsContainer from '../comments/comment_container';
 class VideoItem extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            videoId: this.props.videoId,
-            video: this.props.video,
-            likes: [],
-            dislikes: []
-        }
         this.handleLike = this.handleLike.bind(this);
         this.handleDislike = this.handleDislike.bind(this);
         this.checkThumbscolor = this.checkThumbscolor.bind(this);
@@ -20,14 +14,6 @@ class VideoItem extends React.Component {
 
     componentDidMount() {
         this.props.fetchVideo(this.props.videoId).then((res) => {
-            this.setState({
-                likes: res.clip.likes.map((like) => {
-                    return like.userId;
-                }),
-                dislikes: res.clip.dislikes.map((dislike) => {
-                    return dislike.userId;
-                })
-            })
             this.props.fetchVideos();
             this.checkThumbscolor();
         })
@@ -39,17 +25,17 @@ class VideoItem extends React.Component {
     }
 
     checkThumbscolor() {
-        let { currentUserId } = this.props;
+        let { currentUserId, likes, dislikes} = this.props;
         const upThumb = document.getElementById("up");
         const downThumb = document.getElementById("down");
         
-        if(this.state.likes.includes(currentUserId)) {
+        if(likes.includes(currentUserId)) {
             upThumb.style.color = "rgb(185, 149, 243)";
         } else {
             upThumb.style.color = "";
         }
 
-        if(this.state.dislikes.includes(currentUserId)) {
+        if(dislikes.includes(currentUserId)) {
             downThumb.style.color = "rgb(185, 149, 243)";
         } else {
             downThumb.style.color = "";
@@ -58,7 +44,7 @@ class VideoItem extends React.Component {
 
     handleLike(e) {
         e.stopPropagation();
-        let { currentUserId, likeVideo, dislikeVideo, videoId } = this.props;
+        let { currentUserId, likeVideo, dislikeVideo, videoId, dislikes } = this.props;
 
         if(!currentUserId) {
             this.props.history.push({
@@ -70,24 +56,26 @@ class VideoItem extends React.Component {
                 1. if userId is in dislike, remove dislike
                 2. like
             */
-            if(this.state.dislikes.includes(currentUserId)) {
-                dislikeVideo(videoId).then((res) => {
-                    let dislikes = res.clip.dislikes.map((dislike) => {
-                        return dislike.userId;
-                    })
-                });
+            if(dislikes.includes(currentUserId)) {
+                // dislikeVideo(videoId).then((res) => {
+                //     let dislikes = res.clip.dislikes.map((dislike) => {
+                //         return dislike.userId;
+                //     })
+                // });
+                dislikeVideo(videoId);
             }
-            likeVideo(videoId).then((res) => {
-                let likes = res.clip.likes.map((like) => {
-                    return like.userId;
-                })
-            });
+            likeVideo(videoId);
+            // likeVideo(videoId).then((res) => {
+            //     let likes = res.clip.likes.map((like) => {
+            //         return like.userId;
+            //     })
+            // });
         }
     }
 
     handleDislike(e) {
         e.stopPropagation();
-        let { currentUserId, likeVideo, dislikeVideo, videoId } = this.props;
+        let { currentUserId, likeVideo, dislikeVideo, videoId, likes } = this.props;
 
         if (!this.props.currentUserId) {
             this.props.history.push({
@@ -99,25 +87,28 @@ class VideoItem extends React.Component {
                 1. if userId is in likes && not in dislikes, remove likes
                 2. dislike
             */
-            if(this.state.likes.includes(currentUserId)){
-                likeVideo(videoId).then((res) => {
-                    res.clip.likes.map((like) => {
-                        return like.userId;
-                    })
-                })
+            if(likes.includes(currentUserId)){
+                // likeVideo(videoId).then((res) => {
+                //     res.clip.likes.map((like) => {
+                //         return like.userId;
+                //     })
+                // })
+                likeVideo(videoId);
             }
-            dislikeVideo(videoId).then((res) => {
-                res.clip.dislikes.map((dislike) => {
-                    return dislike.userId;
-                })
-            });
+            dislikeVideo(videoId);
+            // dislikeVideo(videoId).then((res) => {
+            //     res.clip.dislikes.map((dislike) => {
+            //         return dislike.userId;
+            //     })
+            // });
         }
     }
 
     render() { 
         // const { likes, dislikes } = this.props;
         // const video = this.props.videos[this.props.videoId];
-        const video = this.props.video;
+        debugger
+        const {video, likes, dislikes} = this.props;
         if(video === undefined || this.props.videoId === undefined) {
             return null
         }
@@ -138,11 +129,11 @@ class VideoItem extends React.Component {
                         <div className="thumbs">
                             <div className="likes-count">
                                 <i className="fas fa-thumbs-up" id="up" title="Like" onClick={this.handleLike}></i>
-                                <span>{this.state.likes.length}</span>
+                                <span>{likes.length}</span>
                             </div>
                             <div className="dislikes-count">
                                 <i className="fas fa-thumbs-down" id="down" title="Dislike" onClick={this.handleDislike}></i>
-                                <span>{this.state.dislikes.length}</span>
+                                <span>{dislikes.length}</span>
                             </div>
                             
                         </div>

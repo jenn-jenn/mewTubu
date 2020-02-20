@@ -5,11 +5,21 @@ import { fetchAllUsers } from '../../actions/users/users_actions'
  
 
 const msp = (state, ownProps) => {
+    debugger
+    let likes = state.entities.likes.map((like) => {
+        return like.userId;
+    })
+
+    let dislikes = state.entities.dislikes.map((dislike) => {
+        return dislike.userId;
+    })
     return {
         videoId: ownProps.match.params.videoId,
         videos: state.entities.videos,
         video: state.entities.currVideo,
         currentUserId: state.session.currentUserId,
+        likes: likes, 
+        dislikes: dislikes
     }
 }
 

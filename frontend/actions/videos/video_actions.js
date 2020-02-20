@@ -64,12 +64,12 @@ export const fetchVideos = (query) => (dispatch) => {
 
 export const likeVideo = (videoId) => (dispatch) => {
     return VideoAPIUtil.likeVideo(videoId).then( (clip) => {
-        return dispatch(receiveClip(clip))
+        return dispatch(receiveCurrentClip(clip))
     })
         .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
 }
 
 export const dislikeVideo = (videoId) => (dispatch) => {
-    return VideoAPIUtil.dislikeVideo(videoId).then((clip) => dispatch(receiveClip(clip)))
+    return VideoAPIUtil.dislikeVideo(videoId).then((clip) => dispatch(receiveCurrentClip(clip)))
         .fail(err => dispatch(receiveClipErrors(err.responseJSON)));
 }
