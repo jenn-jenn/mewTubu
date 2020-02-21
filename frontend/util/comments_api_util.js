@@ -15,10 +15,9 @@ export const fetchComments = (videoId) => {
     })
 }
 
-export const deleteComment = (comment) => {
-    const videoId = comment.video_id;
+export const deleteComment = (commentId, videoId) => {
     return $.ajax({
-        url: `/api/videos/${videoId}/comments`,
+        url: `/api/videos/${videoId}/comments/${commentId}`,
         method: 'DELETE'
     })
 }
