@@ -52,24 +52,10 @@ class VideoItem extends React.Component {
                 state: { from: this.props.location.pathname }
             }); 
         } else {
-            /*
-                1. if userId is in dislike, remove dislike
-                2. like
-            */
             if(dislikes.includes(currentUserId)) {
-                // dislikeVideo(videoId).then((res) => {
-                //     let dislikes = res.clip.dislikes.map((dislike) => {
-                //         return dislike.userId;
-                //     })
-                // });
                 dislikeVideo(videoId);
             }
             likeVideo(videoId);
-            // likeVideo(videoId).then((res) => {
-            //     let likes = res.clip.likes.map((like) => {
-            //         return like.userId;
-            //     })
-            // });
         }
     }
 
@@ -83,31 +69,14 @@ class VideoItem extends React.Component {
                 state: { from: this.props.location.pathname }
             }); 
         } else {
-            /*
-                1. if userId is in likes && not in dislikes, remove likes
-                2. dislike
-            */
             if(likes.includes(currentUserId)){
-                // likeVideo(videoId).then((res) => {
-                //     res.clip.likes.map((like) => {
-                //         return like.userId;
-                //     })
-                // })
                 likeVideo(videoId);
             }
             dislikeVideo(videoId);
-            // dislikeVideo(videoId).then((res) => {
-            //     res.clip.dislikes.map((dislike) => {
-            //         return dislike.userId;
-            //     })
-            // });
         }
     }
 
     render() { 
-        // const { likes, dislikes } = this.props;
-        // const video = this.props.videos[this.props.videoId];
-        debugger
         const {video, likes, dislikes} = this.props;
         if(video === undefined || this.props.videoId === undefined) {
             return null

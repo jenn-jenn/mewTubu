@@ -33,10 +33,13 @@ const NavBar = ({ currentUser, logout }) => {
     return (
         <nav className="top-nav">
             <div className="logo">
-                <Link to="/">
+                {/* <Link to="/">
                     <div className="logo-img"></div>                   
                     <h1 className="logo-name">MEWTUBU</h1>
-                </Link>
+                </Link> */}
+                <a href="/"><div className="logo-img"></div></a>
+                <a href="/"><h1 className="logo-name">MEWTUBU</h1></a>
+
             </div>
             
             <SearchbarContainer />

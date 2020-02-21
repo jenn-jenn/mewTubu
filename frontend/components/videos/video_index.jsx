@@ -9,6 +9,7 @@ class VideoIndex extends React.Component {
         }
     }
     componentDidMount() { 
+        this.props.fetchVideos();
         this.props.fetchAllUsers();
         if(Array.isArray(this.props.videos)) {
             this.props.fetchVideos().then(() => {
