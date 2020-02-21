@@ -37,6 +37,14 @@ const Comments = (props) => {
         }
     }
 
+    function checkDropdown(e) {
+        e.preventDefault();
+        debugger
+        if($('#comment-dropdown').css('display') === 'block') {
+            console.log('dropdown showing')
+        }
+    }
+
     return(
         <>
             {comments.map((comment, id) => (
@@ -50,17 +58,17 @@ const Comments = (props) => {
                             <p>{comment.body}</p>
                         </div>
                     </div>
-                        {/* <div className="options">
+                        <div className="options">
                             <div className="ellipse">
                                 <li className="fas fa-ellipsis-v" onClick={handleEllipsis}></li>
                             </div>
-                            <div id="comment-dropdown">
+                            <div id="comment-dropdown" onLoad={checkDropdown}>
                                 <ul className="edit-delete">
                                     <li onClick={handleClick.bind(this, 'edit')}><i className="fas fa-pencil-alt"></i>Edit</li>
                                     <li onClick={handleClick.bind(this, 'delete')}><i className="far fa-trash-alt"></i>Delete</li>
                                 </ul>
                             </div>
-                        </div> */}
+                        </div>
                 </div>
             ))}
         </>

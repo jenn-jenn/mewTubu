@@ -5,7 +5,6 @@ import { fetchAllUsers } from '../../actions/users/users_actions'
  
 
 const msp = (state, ownProps) => {
-    debugger
     let likes = state.entities.likes.map((like) => {
         return like.userId;
     })
