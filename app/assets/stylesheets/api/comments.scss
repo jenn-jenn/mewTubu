@@ -66,73 +66,88 @@
     }   
 }
 
-.comment {
-    // border: 1px red solid; 
-    display: flex;
-    margin: 30px 10px;
-    width: 96%;
-    justify-content: space-between;
+.comments-section {
+    // border: 1px blue solid;
+    margin-bottom: 50px;
 
-    .comment-section {
-        // border: 1px green solid;
-        display:flex;
-
-
-        .comment-icon {
-            // border: 1px blue solid;
-            margin-right: 10px;
+    .comment {
+        // border: 1px red solid; 
+        display: flex;
+        margin: 30px 10px;
+        width: 96%;
+        justify-content: space-between;
+    
+        .comment-section {
+            // border: 1px green solid;
+            display:flex;
+    
+            .comment-icon {
+                // border: 1px blue solid;
+                margin-right: 10px;
+                
+                .fa-user-circle {
+                    font-size: 40px;
+                }
+            }
             
-            .fa-user-circle {
-                font-size: 40px;
+            .comment-body {
+                // border: 1px yellow solid;
+                
+                h6 {
+                    font-weight: bold;
+                }
+                p {
+                    margin: 5px 0;
+                }
             }
         }
-        
-        .comment-body {
-            // border: 1px yellow solid;
-            
-            h6 {
-                font-weight: bold;
-            }
-            p {
-                margin: 5px 0;
-            }
-        }
-    }
-    .options {
-        // border: 1px solid green;
-        
-        .ellipse {
-            // border: 1px dash pink;
-            text-align: right;
-            position: relative;
-            .fa-ellipsis-v {
-                // border: 1px grey solid;
-                text-align: right;
-                font-size: 20px;
-                visibility: hidden;
-
-            }
-            .fa-ellipsis-v:hover {
+        .options {
+            // border: 1px solid green;
+            display: flex;
+            align-items: center;
+    
+            .fa-pencil-alt, .fa-trash-alt {
+                // margin: 2px 2px;
+                font-size: 15px;
+                padding-right: 20px;
                 cursor: pointer;
             }
-        }
-        #comment-dropdown { 
-            // border: 1px solid purple;
-            position: absolute;
-            display: none;
-            
-            .edit-delete {
-                background-color: rgb(54, 54, 54);
-                li {
-                    padding: 5px;
-                }
-                .fa-pencil-alt, .fa-trash-alt {
-                    font-size: 15px;
-                    padding-right: 10px;
-                }
-            }
-            
-        }
-    }
     
+            // .ellipse {
+            //     // border: 1px dash pink;
+            //     text-align: right;
+            //     position: relative;
+            //     .fa-ellipsis-v {
+            //         // border: 1px grey solid;
+            //         text-align: right;
+            //         font-size: 20px;
+            //         display: none;
+            //     }
+            //     .fa-ellipsis-v:hover {
+            //         cursor: pointer;
+            //     }
+            // }
+            // #comment-dropdown { 
+            //     // border: 1px solid purple;
+            //     position: absolute;
+            //     display: none;
+                
+            //     .edit-delete {
+            //         background-color: rgb(54, 54, 54);
+            //         li {
+            //             padding: 5px;
+            //             cursor: pointer;
+            //         }
+            //         .fa-pencil-alt, .fa-trash-alt {
+            //             font-size: 15px;
+            //             padding-right: 10px;
+            //         }
+    
+            //     }
+                
+            // }
+        }
+    
+        
+    }
 }
