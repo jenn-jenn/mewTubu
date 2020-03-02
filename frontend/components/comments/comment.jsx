@@ -56,6 +56,10 @@ const Comments = (props) => {
         }
     }
 
+    function showDelete(commentId) {
+        (currentUser.id === commentId) ? <i onClick={handleClick.bind(this, 'delete')} className="far fa-trash-alt" title="Delete" data-delete={comment.id}></i> : null
+    }
+
     return(
         <>
             {comments.map((comment, id) => (
@@ -71,7 +75,8 @@ const Comments = (props) => {
                     </div>
                         <div className="options">
                             {/* <i onClick={handleClick.bind(this, 'edit')} className="fas fa-pencil-alt" title="Edit" data-edit={comment.id}></i> */}
-                            <i onClick={handleClick.bind(this, 'delete')} className="far fa-trash-alt" title="Delete" data-delete={comment.id}></i>
+                            {/* <i onClick={handleClick.bind(this, 'delete')} className="far fa-trash-alt" title="Delete" data-delete={comment.id}></i> */}
+                            {showDelete(comment.id)}
                         </div>
                 </div>
             ))}
