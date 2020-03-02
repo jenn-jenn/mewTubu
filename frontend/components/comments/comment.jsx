@@ -61,7 +61,6 @@ const Comments = (props) => {
             if(currentUser.id === comment.authorId) {
                 return <i onClick={handleClick.bind(this, 'delete')} className="far fa-trash-alt" title="Delete" data-delete={comment.id}></i>
             } else {
-                console.log('dont match');
                 return null;
             }
         }
