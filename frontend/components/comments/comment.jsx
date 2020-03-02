@@ -56,8 +56,16 @@ const Comments = (props) => {
         }
     }
 
-    function showDelete(commentId) {
-        (currentUser.id === commentId) ? <i onClick={handleClick.bind(this, 'delete')} className="far fa-trash-alt" title="Delete" data-delete={comment.id}></i> : null
+    function showDelete(comment) {
+        if(currentUser) {
+            if(currentUser.id === comment.authorId) {
+                return <i onClick={handleClick.bind(this, 'delete')} className="far fa-trash-alt" title="Delete" data-delete={comment.id}></i>
+            } else {
+                console.log('dont match');
+                return null;
+            }
+        }
+        return null;
     }
 
     return(
@@ -76,7 +84,7 @@ const Comments = (props) => {
                         <div className="options">
                             {/* <i onClick={handleClick.bind(this, 'edit')} className="fas fa-pencil-alt" title="Edit" data-edit={comment.id}></i> */}
                             {/* <i onClick={handleClick.bind(this, 'delete')} className="far fa-trash-alt" title="Delete" data-delete={comment.id}></i> */}
-                            {showDelete(comment.id)}
+                            {showDelete(comment)}
                         </div>
                 </div>
             ))}
